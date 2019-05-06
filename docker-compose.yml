@@ -1,0 +1,138 @@
+version: '3'
+
+services:
+  mqtt:
+    image: eclipse-mosquitto:latest
+    container_name: "mqtt"
+    restart: always
+    networks:
+      - net
+    ports:
+      - 1883:1883
+      - 9001:9001
+    environment:
+      - TZ=Europe/London
+      - VIRTUAL_HOST=mqtt.local
+    volumes:
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/log:/mosquitto/log
+      - ./mqtt/sec:/mosquitto/sec
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: "grafana"
+    networks:
+      - net
+    depends_on:
+      - influxdb
+    # links:
+    #   - influxdb
+    environment:
+      - TZ=Europe/London
+      - PGID=1000
+      - PUID=1000
+      - VIRTUAL_HOST=grafana.local
+    ports:
+      - 3000:3000
+    restart: on-failure
+    volumes:
+      - ./grafana:/var/lib/grafana
+
+  influxdb:
+    image: influxdb:latest
+    container_name: "influxdb"
+    networks:
+      - net
+    # healthcheck:
+    #   test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
+    #   interval: 30s
+    #   timeout: 1s
+    #   retries: 24
+    environment:
+      - TZ=Europe/London
+      - VIRTUAL_HOST=influxdb.local
+    env_file:
+      - ./influxdb/influxdb.env
+      - ./influxdb/influxdbsecrets.env
+
+    ports:
+      # - 8083:8083
+      - 8086:8086
+    restart: on-failure
+    volumes:
+      - ./influxdb:/var/lib/influxdb
+    # env_file:
+    #   - ${INFLUXDB_envfile}
+
+  home-assistant:
+    #image: homeassistant/home-assistant:rc
+    image: homeassistant/home-assistant:latest
+    container_name: "hass"
+    networks:
+      - net
+    restart: always
+    depends_on:
+      - influxdb
+      - mqtt
+    #healthcheck:
+      #test: ["CMD", "curl", "-f", "http://127.0.0.1:8123/ping"]
+      #interval: 30s
+      #timeout: 10s
+      #retries: 6
+    ports:
+      - 8123:8123
+    volumes:
+      - ./homeassistant/config:/config
+    environment:
+      - TZ=Europe/London
+      - VIRTUAL_HOST=home-assistant.local
+
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    env_file:
+      - ./telegraf/telegrafsecrets.env
+    environment:
+      - VIRTUAL_HOST=telegraf.local
+    networks:
+      - net
+    # links:
+    #   - influxdb
+    volumes:
+      - ./telegraf:/etc/telegraf
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  chronograf:
+    image: chronograf:latest
+    container_name: chronograf
+    networks:
+      - net
+    environment:
+      - VIRTUAL_HOST=chronograf.local
+      # - VIRTUAL_PORT=8888
+    volumes:
+      - ./chronograf:/var/lib/chronograf
+    ports:
+      - "8888:8888"
+    # links:
+    #   - influxdb
+
+  nodered:
+    image: nodered/node-red-docker:latest
+    container_name: nodered
+    environment:
+      - VIRTUAL_HOST=nodered.local
+      # - VIRTUAL_PORT=1880
+    environment:
+    - FLOWS=/data/flows_prettyflypi.json
+    networks:
+      - net
+    ports:
+      - 1880:1880
+    volumes:
+      - ./node-red:/data
+
+networks:
+  net:
+  default:

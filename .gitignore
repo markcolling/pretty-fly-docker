@@ -1,0 +1,5 @@
+###### PRETTYFLY .gitignore ######
+
+# You can whitelist files/folders with !, these will not be ignored.
+.DS_Store
+.env

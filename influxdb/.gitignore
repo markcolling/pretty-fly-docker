@@ -1,0 +1,8 @@
+###### INLFUXDB .gitignore ######
+# A * ensures that everything will be ignored.
+*
+influxdbsecrets.env
+
+# You can whitelist files/folders with !, these will not be ignored.
+!.gitignore
+!influxdb.env

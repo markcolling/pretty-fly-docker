@@ -1,0 +1,18 @@
+views:
+  - title: Home Dashboard
+    #icon: mdi:home-outline
+    themes: !include themes.yaml
+    theme: dark_orange
+    cards:
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
+      - type: glance
+        title: Lights
+        show_name: true
+        show_state: true
+        entities:
+          - switch.living_room_ceiling
+          - light.dining_room_ceiling
+      - type: shopping-list

@@ -1,0 +1,13 @@
+switch:
+  - platform: mqtt
+    name: "Living Room Ceiling"
+    state_topic: "test.home/living-room/lights/ceiling/state"
+    command_topic: "test.home/living-room/lights/ceiling/set"
+    availability_topic: "test.home/living-room/lights/ceiling/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true

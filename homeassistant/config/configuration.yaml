@@ -1,0 +1,111 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 51.4622
+  longitude: -0.1376
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+  # Customization file
+  customize: !include customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Show the introduction message on startup.
+introduction:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Discover some devices automatically
+discovery:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+frontend:
+  themes: !include themes.yaml
+  # theme: dark_orange
+  javascript_version: latest
+
+# Lovelace
+lovelace:
+  mode: yaml
+
+# PLATFORMS
+mqtt:
+  broker: "mqtt"
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+# INFLUXDB
+influxdb:
+  host: influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret hass_username
+  password: !secret hass_password
+  # ssl: true
+  # verify_ssl: true
+  # max_retries: 3
+  # default_measurement: state
+  # exclude:
+  #   entities:
+  #      - entity.id1
+  #      - entity.id2
+  #   domains:
+  #      - automation
+  # include:
+  #   entities:
+  #      - entity.id3
+  #      - entity.id4
+  tags:
+    instance: prod
+    source: hass
+
+# DEVICES
+switch:
+  - platform: mqtt
+    name: "living_room_ceiling"
+    state_topic: "test.home/living-room/lights/ceiling/state"
+    command_topic: "test.home/living-room/lights/ceiling/set"
+    availability_topic: "test.home/living-room/lights/ceiling/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
+    unique_id: 00112233445566
+light:
+  - platform: mqtt
+    name: "dining_room_ceiling"
+    state_topic: "test.home/dining-room/lights/ceiling/state"
+    command_topic: "test.home/dining-room/lights/ceiling/set"
+    availability_topic: "test.home/dining-room/lights/ceiling/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
+    unique_id: 00112233445435345
+shopping_list:
