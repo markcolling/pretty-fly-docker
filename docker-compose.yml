@@ -12,7 +12,7 @@ services:
       - 9001:9001
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=mqtt.local
+      - VIRTUAL_HOST=mqtt.prettyfly.net
     volumes:
       - ./mqtt/data:/mosquitto/data
       - ./mqtt/config:/mosquitto/config
@@ -32,7 +32,7 @@ services:
       - TZ=Europe/London
       - PGID=1000
       - PUID=1000
-      - VIRTUAL_HOST=grafana.local
+      - VIRTUAL_HOST=grafana.prettyfly.net
     ports:
       - 3000:3000
     restart: on-failure
@@ -51,7 +51,7 @@ services:
     #   retries: 24
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=influxdb.local
+      - VIRTUAL_HOST=influxdb.prettyfly.net
     env_file:
       - ./influxdb/influxdb.env
       - ./influxdb/influxdbsecrets.env
@@ -86,7 +86,7 @@ services:
       - ./homeassistant/config:/config
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=home-assistant.local
+      - VIRTUAL_HOST=home-assistant.prettyfly.net
 
   telegraf:
     image: telegraf:latest
@@ -94,7 +94,7 @@ services:
     env_file:
       - ./telegraf/telegrafsecrets.env
     environment:
-      - VIRTUAL_HOST=telegraf.local
+      - VIRTUAL_HOST=telegraf.prettyfly.net
     networks:
       - net
     # links:
@@ -109,7 +109,7 @@ services:
     networks:
       - net
     environment:
-      - VIRTUAL_HOST=chronograf.local
+      - VIRTUAL_HOST=chronograf.prettyfly.net
       # - VIRTUAL_PORT=8888
     volumes:
       - ./chronograf:/var/lib/chronograf
@@ -122,16 +122,32 @@ services:
     image: nodered/node-red-docker:latest
     container_name: nodered
     environment:
-      - VIRTUAL_HOST=nodered.local
+      - VIRTUAL_HOST=nodered.prettyfly.net
       # - VIRTUAL_PORT=1880
     environment:
-    - FLOWS=/data/flows_prettyflypi.json
+      - FLOWS=/data/flows_prettyflypi.json
     networks:
       - net
     ports:
       - 1880:1880
     volumes:
       - ./node-red:/data
+
+  unifi-video:
+    image: pducharme/unifi-video-controller:latest
+    container_name: unifi-video
+    environment:
+      - VIRTUAL_HOST=unifi-video.prettyfly.net
+    networks:
+      - net
+    ports:
+      - 7080:7080
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    # volumes:
+    #   - ./unifi-video/data:/var/lib/unifi-video/
+    #   - ./unifi-video/log:/var/log/unifi-video/
 
 networks:
   net:
