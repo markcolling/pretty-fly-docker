@@ -1,6 +1,7 @@
 ###### UNIFI .gitignore ######
 # A * ensures that everything will be ignored.
-*
+/logs
 
 # You can whitelist files/folders with !, these will not be ignored.
 !.gitignore
+!.keep
