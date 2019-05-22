@@ -12,7 +12,9 @@ services:
       - 9001:9001
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=mqtt.prettyfly.net
+      - VIRTUAL_HOST=mqtt$ENV_DOMAIN
+      - VIRTUAL_PORT=1883
+      # THIS MAY NOT WORK FOR CALLING SPECIFIC PORTS. NEED TO CHECK WHEN SET UP MQTT DEVICE
     volumes:
       - ./mqtt/data:/mosquitto/data
       - ./mqtt/config:/mosquitto/config
@@ -32,7 +34,8 @@ services:
       - TZ=Europe/London
       - PGID=1000
       - PUID=1000
-      - VIRTUAL_HOST=grafana.prettyfly.net
+      - VIRTUAL_HOST=grafana$ENV_DOMAIN
+      - VIRTUAL_PORT=3000
     ports:
       - 3000:3000
     restart: on-failure
@@ -51,11 +54,10 @@ services:
     #   retries: 24
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=influxdb.prettyfly.net
+      # - VIRTUAL_HOST=influxdb${ENV_DOMAIN}
     env_file:
       - ./influxdb/influxdb.env
       - ./influxdb/influxdbsecrets.env
-
     ports:
       # - 8083:8083
       - 8086:8086
@@ -86,15 +88,17 @@ services:
       - ./homeassistant/config:/config
     environment:
       - TZ=Europe/London
-      - VIRTUAL_HOST=home-assistant.prettyfly.net
+      - VIRTUAL_HOST=home-assistant$ENV_DOMAIN
+      - VIRTUAL_PORT=8123
 
   telegraf:
     image: telegraf:latest
     container_name: telegraf
     env_file:
       - ./telegraf/telegrafsecrets.env
-    environment:
-      - VIRTUAL_HOST=telegraf.prettyfly.net
+    # environment:
+    #   - VIRTUAL_HOST=telegraf${ENV_DOMAIN}
+    #
     networks:
       - net
     # links:
@@ -109,8 +113,8 @@ services:
     networks:
       - net
     environment:
-      - VIRTUAL_HOST=chronograf.prettyfly.net
-      # - VIRTUAL_PORT=8888
+      - VIRTUAL_HOST=chronograf$ENV_DOMAIN
+      - VIRTUAL_PORT=8888
     volumes:
       - ./chronograf:/var/lib/chronograf
     ports:
@@ -122,10 +126,9 @@ services:
     image: nodered/node-red-docker:latest
     container_name: nodered
     environment:
-      - VIRTUAL_HOST=nodered.prettyfly.net
-      # - VIRTUAL_PORT=1880
-    environment:
-      - FLOWS=/data/flows_prettyflypi.json
+      - VIRTUAL_HOST=nodered${ENV_DOMAIN}
+      - VIRTUAL_PORT=1880
+      # - FLOWS=/data/flows_prettyflypi.json
     networks:
       - net
     ports:
@@ -137,7 +140,8 @@ services:
     image: pducharme/unifi-video-controller:latest
     container_name: unifi-video
     environment:
-      - VIRTUAL_HOST=unifi-video.prettyfly.net
+      - VIRTUAL_HOST=unifi-video$ENV_DOMAIN
+      - VIRTUAL_PORT=7080
     networks:
       - net
     ports:
