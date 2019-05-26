@@ -1,6 +1,5 @@
 ###### NODE_RED .gitignore ######
 .DS_store
-.config.json
 .dist
 .jshintignore
 .npm
