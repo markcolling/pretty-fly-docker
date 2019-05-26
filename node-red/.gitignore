@@ -1,7 +1,25 @@
 ###### NODE_RED .gitignore ######
-# A * ensures that everything will be ignored.
-*
-
-# You can whitelist files/folders with !, these will not be ignored.
-!.gitignore
-!/data/**
+.DS_store
+.config.json
+.dist
+.jshintignore
+.npm
+.project
+.sessions.json
+.settings
+.tern-project
+*.backup
+*_cred*
+coverage
+credentials.json
+flows*.json
+nodes/node-red-nodes/
+node_modules
+public
+locales/zz-ZZ
+nodes/core/locales/zz-ZZ
+!packages/node_modules
+packages/node_modules/@node-red/editor-client/public
+!test/**/node_modules
+docs
+!packages/node_modules/**/docs
