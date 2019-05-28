@@ -26,8 +26,21 @@ nodered/.config.json
 
 6. Pull nodered repo from git using nodered key
 
+###GRAFANA
+7. Set grafana password as per local
+
+###influxdb
+8. Create homeassistant db
+  - Influxdb CLI command
+```bash
+  influx -precision rfc3339
+  CREATE DATABASE homeassistant
+```
+
 ###HOMEASSISTANT
 7. Setup creds as per note
+
+
 
 
 X. Check which MQTT broker HASS is connected to
