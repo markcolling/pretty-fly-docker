@@ -140,7 +140,7 @@ services:
     image: pducharme/unifi-video-controller:latest
     container_name: unifi-video
     environment:
-      - VIRTUAL_HOST=unifi-video$ENV_DOMAIN
+      - VIRTUAL_HOST=unifi-video${ENV_DOMAIN}
       - VIRTUAL_PORT=7080
     networks:
       - net
@@ -152,6 +152,21 @@ services:
     # volumes:
     #   - ./unifi-video/data:/var/lib/unifi-video/
     #   - ./unifi-video/log:/var/log/unifi-video/
+
+  hass-configurator:
+    image: "causticlab/hass-configurator-docker:arm"
+    restart: always
+    container_name: configurator
+    environment:
+      - VIRTUAL_HOST=configurator${ENV_DOMAIN}
+      - VIRTUAL_PORT=3218
+    ports:
+      - 3218:3218
+    networks:
+      - net
+    volumes:
+      - "./configurator:/config"
+      - "./homeassistant/config:/hass-config"
 
 networks:
   net:
