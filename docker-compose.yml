@@ -36,6 +36,7 @@ services:
       - PUID=1000
       - VIRTUAL_HOST=grafana$ENV_DOMAIN
       - VIRTUAL_PORT=3000
+    user: "1000"
     ports:
       - 3000:3000
     restart: on-failure
@@ -54,7 +55,8 @@ services:
     #   retries: 24
     environment:
       - TZ=Europe/London
-      # - VIRTUAL_HOST=influxdb${ENV_DOMAIN}
+      - VIRTUAL_HOST=influxdb${ENV_DOMAIN}
+      - VIRTUAL_PORT=8086
     env_file:
       - ./influxdb/influxdb.env
       - ./influxdb/influxdbsecrets.env

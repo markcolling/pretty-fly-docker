@@ -4,6 +4,6 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-alexa": "0.0.7",
-        "node-red-contrib-alexa-home-skill": "^0.1.17"
+        "node-red-contrib-alexa-home-skill": "~0.1.17"
     }
 }
