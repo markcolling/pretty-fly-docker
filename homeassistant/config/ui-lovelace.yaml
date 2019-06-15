@@ -1,8 +1,12 @@
+title: Home Dashboard
 views:
-  - title: Home Dashboard
-    #icon: mdi:home-outline
-    themes: !include themes.yaml
-    theme: dark_orange
+  - title: Overview
+    id: overview
+    path: home
+    icon: mdi:home-outline
+#    themes: !include themes.yaml
+#    theme: dark_orange
+    
     cards:
       - type: markdown
         title: Lovelace
@@ -16,3 +20,17 @@ views:
           - switch.living_room_ceiling
           - light.dining_room_ceiling
       - type: shopping-list
+
+
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Second view
+    icon: mdi:av-timer
+    id: second-view
+    path: second-view
+    cards:
+        # The markdown card will render markdown text.
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
+    
