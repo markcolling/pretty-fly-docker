@@ -21,6 +21,7 @@ plex.conf
 pyozw.sqlite
 secrets.yaml
 tradfri.conf
+ha.env
 
 # Temporary files
 *.db-journal

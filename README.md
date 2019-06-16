@@ -13,6 +13,7 @@ influxdb/influxdbsecrets.env
 mqtt/sec/secfile
 telegraf/telegrafsecrets.env
 homeassistant/config/secrets.yaml
+homeassistant/config/ha.env
 .env
 
 To be added:

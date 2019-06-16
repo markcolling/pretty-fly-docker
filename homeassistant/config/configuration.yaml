@@ -83,8 +83,12 @@ influxdb:
 panel_iframe:
   grafana:
     title: Grafana
+    icon: mdi:view-dashboard
+    url: !env_var graf_env_domain
+  configurator:
+    title: HASS Configurator
     icon: mdi:wrench
-    url: http://mark-nuc.local:3000
+    url: http://localhost:3218
 
 # DEVICES
 switch:

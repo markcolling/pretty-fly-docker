@@ -43,7 +43,11 @@ services:
       - 3000:3000
     restart: on-failure
     volumes:
-      - ./grafana:/var/lib/grafana
+      # - ./grafana/lib:/var/lib/grafana
+      # - ./grafana/conf:/etc/grafana
+      - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/conf/datasources:/etc/grafana/datasources
+      - ./grafana/lib:/var/lib/grafana
 
   influxdb:
     image: influxdb:latest
@@ -78,6 +82,8 @@ services:
     networks:
       - net
     restart: always
+    env_file:
+      - ./homeassistant/config/ha.env
     depends_on:
       - influxdb
       - mqtt
@@ -96,10 +102,13 @@ services:
       - VIRTUAL_PORT=8123
 
   telegraf:
-    image: telegraf:latest
+    image: nuntz/telegraf-snmp #telegraf:latest
     container_name: telegraf
     env_file:
       - ./telegraf/telegrafsecrets.env
+    environment:
+      - PGID=1000
+      - PUID=1000
     # environment:
     #   - VIRTUAL_HOST=telegraf${ENV_DOMAIN}
     #
@@ -107,8 +116,11 @@ services:
       - net
     # links:
     #   - influxdb
+    #command: bash -c "echo "deb http://ftp.us.debian.org/debian stretch main non-free" >> /etc/apt/sources.list"
+    #command: bash -c "apt-get update && apt-get install -y --no-install-recommends iputils-ping snmp procps snmp-mibs-downloader && rm -rf /var/lib/apt/lists/*"
     volumes:
       - ./telegraf:/etc/telegraf
+      - ./telegraf/mibs:/usr/share/snmp/mibs
       - /var/run/docker.sock:/var/run/docker.sock
 
   chronograf:
