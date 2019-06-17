@@ -1,5 +1,5 @@
 ############ HomeAssistant .gitignore ###############
-
+!/**
 # Files with personal details
 *.crt
 *.csr
@@ -22,6 +22,7 @@ pyozw.sqlite
 secrets.yaml
 tradfri.conf
 ha.env
+.DS_Store
 
 # Temporary files
 *.db-journal
@@ -39,5 +40,6 @@ ozw_log.txt
 
 # Development files
 custom_components/
+!/config/www/
 !/config/www/**
 .HA_version
