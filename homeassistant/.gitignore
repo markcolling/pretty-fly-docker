@@ -39,4 +39,5 @@ ozw_log.txt
 
 # Development files
 custom_components/
+!/config/www/**
 .HA_version

@@ -41,7 +41,6 @@ script: !include scripts.yaml
 
 frontend:
   themes: !include themes.yaml
-  # theme: dark_orange
   javascript_version: latest
 
 # Lovelace

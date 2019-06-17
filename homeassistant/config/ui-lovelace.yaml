@@ -1,17 +1,25 @@
 title: Home Dashboard
+resources:
+  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
+    type: module
 views:
   - title: Overview
+    panel: true
     id: overview
     path: home
     icon: mdi:home-outline
 #    themes: !include themes.yaml
 #    theme: dark_orange
-    
+
+    type: module
     cards:
+    - type: vertical-stack
+      cards:
       - type: markdown
         title: Lovelace
         content: >
           Welcome to your **Lovelace UI**.
+
       - type: glance
         title: Lights
         show_name: true
@@ -19,18 +27,24 @@ views:
         entities:
           - switch.living_room_ceiling
           - light.dining_room_ceiling
+
       - type: shopping-list
 
+      - type: custom:compact-custom-header
+        main_config: true
 
     # Title of the view. Will be used as the tooltip for tab icon
   - title: Second view
+    panel: true
     icon: mdi:av-timer
     id: second-view
     path: second-view
     cards:
-        # The markdown card will render markdown text.
+    - type: vertical-stack
+      cards:
+      # The markdown card will render markdown text.
       - type: markdown
         title: Lovelace
         content: >
           Welcome to your **Lovelace UI**.
-    
+      - type: custom:compact-custom-header
