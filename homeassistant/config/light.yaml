@@ -1,0 +1,17 @@
+#################################################################
+##  Lights
+#################################################################
+
+  - platform: mqtt
+    name: "dining_room_ceiling"
+    state_topic: "test.home/dining-room/lights/ceiling/state"
+    command_topic: "test.home/dining-room/lights/ceiling/set"
+    availability_topic: "test.home/dining-room/lights/ceiling/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
+    unique_id: 00112233445435345

@@ -1,0 +1,16 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Ground Floor
+    icon: mdi:home-outline
+    id: ground-floor
+    path: ground-floor
+    cards:
+    - type: vertical-stack
+      cards:
+      # The markdown card will render markdown text.
+      - type: markdown
+        title: Ground Floor
+        content: >
+          Welcome to your **Lovelace UI**.
+
+      #Needed for compact header. Every view. Main config in first view.
+      - type: custom:compact-custom-header

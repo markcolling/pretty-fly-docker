@@ -15,29 +15,22 @@ homeassistant:
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
-
-# Show the introduction message on startup.
-#introduction:
-
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
 #   base_url: example.duckdns.org:8123
-
 # Discover some devices automatically
 discovery:
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: yr
-
 # Text to speech
-#tts:
-#  - platform: google
+# tts:
+#   - platform: google
 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+switch: !include switch.yaml
+light: !include light.yaml
+sensor: !include sensor.yaml
 
 frontend:
   themes: !include themes.yaml
@@ -60,6 +53,9 @@ influxdb:
   database: homeassistant
   username: !secret hass_username
   password: !secret hass_password
+  tags:
+    instance: prod
+    source: hass
   # ssl: true
   # verify_ssl: true
   # max_retries: 3
@@ -74,9 +70,6 @@ influxdb:
   #   entities:
   #      - entity.id3
   #      - entity.id4
-  tags:
-    instance: prod
-    source: hass
 
 # UI PANELS
 panel_iframe:
@@ -88,34 +81,9 @@ panel_iframe:
     title: HASS Configurator
     icon: mdi:wrench
     url: http://localhost:3218
+  portainer:
+    title: Portainer
+    icon: mdi:dns
+    url: !env_var portainer_env_domain
 
-# DEVICES
-switch:
-  - platform: mqtt
-    name: "living_room_ceiling"
-    state_topic: "test.home/living-room/lights/ceiling/state"
-    command_topic: "test.home/living-room/lights/ceiling/set"
-    availability_topic: "test.home/living-room/lights/ceiling/available"
-    payload_on: "ON"
-    payload_off: "OFF"
-    state_on: "ON"
-    state_off: "OFF"
-    optimistic: false
-    qos: 0
-    retain: true
-    unique_id: 00112233445566
-light:
-  - platform: mqtt
-    name: "dining_room_ceiling"
-    state_topic: "test.home/dining-room/lights/ceiling/state"
-    command_topic: "test.home/dining-room/lights/ceiling/set"
-    availability_topic: "test.home/dining-room/lights/ceiling/available"
-    payload_on: "ON"
-    payload_off: "OFF"
-    state_on: "ON"
-    state_off: "OFF"
-    optimistic: false
-    qos: 0
-    retain: true
-    unique_id: 00112233445435345
 shopping_list:

@@ -1,0 +1,16 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: System Status
+    icon: mdi:computer
+    id: system-status
+    path: system-status
+    cards:
+    - type: vertical-stack
+      cards:
+      # The markdown card will render markdown text.
+      - type: markdown
+        title: System Status
+        content: >
+          Welcome to your **Lovelace UI**.
+
+      #Needed for compact header. Every view. Main config in first view.
+      - type: custom:compact-custom-header

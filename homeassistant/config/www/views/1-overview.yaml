@@ -1,0 +1,26 @@
+  - title: Overview
+    id: overview
+    path: home
+    icon: mdi:tv-outline
+    type: module
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.
+
+      - type: glance
+        title: Lights
+        show_name: true
+        show_state: true
+        entities:
+          - switch.living_room_ceiling
+          - light.dining_room_ceiling
+
+      - type: shopping-list
+
+      #Needed for compact header. Every view. Main config in first view.
+      - type: custom:compact-custom-header
+        main_config: true

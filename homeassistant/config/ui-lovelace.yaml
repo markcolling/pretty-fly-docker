@@ -1,50 +1,56 @@
 title: Home Dashboard
+
 resources:
   - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
     type: module
-views:
-  - title: Overview
-    panel: true
-    id: overview
-    path: home
-    icon: mdi:home-outline
-#    themes: !include themes.yaml
-#    theme: dark_orange
 
-    type: module
-    cards:
-    - type: vertical-stack
-      cards:
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
+views: !include_dir_merge_list www/views
 
-      - type: glance
-        title: Lights
-        show_name: true
-        show_state: true
-        entities:
-          - switch.living_room_ceiling
-          - light.dining_room_ceiling
-
-      - type: shopping-list
-
-      - type: custom:compact-custom-header
-        main_config: true
-
-    # Title of the view. Will be used as the tooltip for tab icon
-  - title: Second view
-    panel: true
-    icon: mdi:av-timer
-    id: second-view
-    path: second-view
-    cards:
-    - type: vertical-stack
-      cards:
-      # The markdown card will render markdown text.
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
-      - type: custom:compact-custom-header
+#   - title: Overview
+#     panel: true
+#     id: overview
+#     path: home
+#     icon: mdi:home-outline
+# #    themes: !include themes.yaml
+# #    theme: dark_orange
+#
+#     type: module
+#     cards:
+#     - type: vertical-stack
+#       cards:
+#       - type: markdown
+#         title: Lovelace
+#         content: >
+#           Welcome to your **Lovelace UI**.
+#
+#       - type: glance
+#         title: Lights
+#         show_name: true
+#         show_state: true
+#         entities:
+#           - switch.living_room_ceiling
+#           - light.dining_room_ceiling
+#
+#       - type: shopping-list
+#
+#       #Needed for compact header. Every view. Main config in first view.
+#       - type: custom:compact-custom-header
+#         main_config: true
+#
+#     # Title of the view. Will be used as the tooltip for tab icon
+#   - title: Second view
+#     panel: true
+#     icon: mdi:av-timer
+#     id: second-view
+#     path: second-view
+#     cards:
+#     - type: vertical-stack
+#       cards:
+#       # The markdown card will render markdown text.
+#       - type: markdown
+#         title: Lovelace
+#         content: >
+#           Welcome to your **Lovelace UI**.
+#
+#       #Needed for compact header. Every view. Main config in first view.
+#       - type: custom:compact-custom-header
