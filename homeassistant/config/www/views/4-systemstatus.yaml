@@ -1,16 +1,187 @@
     # Title of the view. Will be used as the tooltip for tab icon
   - title: System Status
-    icon: mdi:computer
+    icon: mdi:settings
     id: system-status
     path: system-status
+    # panel: true
     cards:
-    - type: vertical-stack
-      cards:
-      # The markdown card will render markdown text.
-      - type: markdown
-        title: System Status
-        content: >
-          Welcome to your **Lovelace UI**.
+      # - type: vertical-stack
+      #   cards:
+      - type: entities
+        show_header_toggle: off
+        entities:
+          - type: section
+            label: Versions
+          - entity: sensor.current_ha_version
+            label: Current Home Assistant Version
+          - entity: sensor.latest_ha_version
+            label: Latest Home Assistant Version
+      - type: entities
+        show_header_toggle: off
+        entities:
+          - type: section
+            label: Network
+          - entity: sensor.speedtest_download
+          - entity: sensor.speedtest_upload
+          - entity: sensor.speedtest_ping
+      - type: entities
+        show_header_toggle: off
+        entities:
+          - type: section
+            label: System Stats
+          - entity: sensor.memory_use_percent
+          - entity: sensor.disk_use_percent
+          - entity: sensor.disk_free
+          - entity: sensor.last_boot
+          - entity: sensor.cpu_temp
 
+      # - type: vertical-stack
+      #   cards:
+      #     - type: custom:compact-custom-header
+      #     - type: custom:layout-card
+      #       layout: vertical
+      #       cards:
+      #         - type: vertical-stack
+      #           cards:
+      #             - type: custom:vertical-stack-in-card
+      #               cards:
+      #                 - type: entities
+      #                   show_header_toggle: false
+      #                   entities:
+      #                     - type: custom:dummy-entity-row
+      #                       entity: sun.sun
+      #                       icon: mdi:nope
+      #                       name: "Nuc: 192.168.1.78"
+      #                     - entity: sensor.last_boot
+      #                       name: Last boot
+      #                     - entity: sensor.google_backup_results
+      #                       name: Hass.io Snapshot Backup
+      #                       icon: mdi:cloud-upload-outline
+      #             - type: horizontal-stack
+      #               cards:
+      #                 - type: custom:mini-graph-card
+      #                   show:
+      #                     graph: false
+      #                   align_state: center
+      #                   name: Containers
+      #                   entities:
+      #                     - sensor.nuc_containers_active
+      #                 - type: custom:mini-graph-card
+      #                   name: Cont. cpu use
+      #                   align_state: center
+      #                   show:
+      #                     graph: false
+      #                   entities:
+      #                     - sensor.nuc_containers_cpu_used
+      #
+      #             - type: horizontal-stack
+      #               cards:
+      #                 - type: custom:mini-graph-card
+      #                   name: Cpu load
+      #                   show:
+      #                     icon: false
+      #                     graph: "bar"
+      #                   font_size: 75
+      #                   entities:
+      #                     - sensor.nuc_cpu_load
+      #                   line_color: "#389638"
+      #                   color_thresholds:
+      #                     - value: 1
+      #                       color: green
+      #                     - value: 2
+      #                       color: orange
+      #
+      #                 - type: custom:mini-graph-card
+      #                   show:
+      #                     icon: false
+      #                     graph: "bar"
+      #                   name: Cpu use
+      #                   entities:
+      #                     - sensor.processor_use
+      #                   line_color: "#389638"
+      #                   color_thresholds:
+      #                     - value: 50
+      #                       color: green
+      #                     - value: 70
+      #                       color: orange
+      #                     - value: 80
+      #                       color: red
+      #
+      #                 - type: custom:mini-graph-card
+      #                   name: Disk use
+      #                   show:
+      #                     icon: false
+      #                     graph: hide
+      #                   entities:
+      #                     - sensor.nuc_disk_used
+      #                   line_color: "#389638"
+      #
+      #             - type: horizontal-stack
+      #               cards:
+      #                 - type: custom:mini-graph-card
+      #                   show:
+      #                     icon: false
+      #                   name: Ram free
+      #                   entities:
+      #                     - sensor.memory_free
+      #                   font_size: 50
+      #                   line_color: "#389638"
+      #                 - type: custom:mini-graph-card
+      #                   name: Ram use
+      #                   show:
+      #                     icon: false
+      #                   entities:
+      #                     - sensor.nuc_ram_used
+      #                   line_color: "#389638"
+      #                   # line_color_above:
+      #                   #   - value: 50
+      #                   #     color: orange
+      #                   #   - value: 80
+      #                   #     color: red
+      #                   # line_color_below:
+      #                   #   - value: 50
+      #                   #     color: green
+      #                 - type: custom:mini-graph-card
+      #                   name: Memory use
+      #                   show:
+      #                     icon: false
+      #                   entities:
+      #                     - sensor.nuc_swap_used
+      #                   line_color: "#389638"
+      #                   # line_color_above:
+      #                   #   - value: 50
+      #                   #     color: orange
+      #                   #   - value: 80
+      #                   #     color: red
+      #                   # line_color_below:
+      #                   #   - value: 50
+      #                   #     color: green
+      #             - type: custom:mini-graph-card
+      #               name: Speed test
+      #               show:
+      #                   icon: false
+      #                   extrema: true
+      #                   fill: false
+      #               entities:
+      #                 - sensor.speedtest_download
+      #                 - sensor.speedtest_ping
+      #                 - sensor.speedtest_upload
+      #               line_color: "#389638"
+        # - type: entities
+        #   title: Entities card sample
+        #   # show_header_toggle: true
+        #   entities:
+        #     - type: call-service
+        #       icon: mdi:power
+        #       name: Bed light
+        #       action_name: Toggle light
+        #       service: light.toggle
+        #       service_data:
+        #         entity_id: light.bed_light
+        #     - type: divider
+        #     - type: weblink
+        #       name: Home Assistant
+        #       url: https://www.home-assistant.io/
+        #       icon: mdi:home-assistant
       #Needed for compact header. Every view. Main config in first view.
       - type: custom:compact-custom-header

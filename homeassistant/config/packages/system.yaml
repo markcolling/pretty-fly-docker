@@ -1,0 +1,110 @@
+# input_boolean:
+#   ha_update_available:
+#     name: HA Update Avaiable
+#     initial: off
+#     icon: mdi:cloud-download
+
+sensor:
+  #Home Assistant Version (current)
+  - platform: command_line
+    name: current_ha_version
+    friendly_name: "Current Home Assistant Version"
+    command: "cat /config/.HA_VERSION"
+    icon: mdi:home
+
+  #Home Assistant Version (available)
+  - platform: rest
+    friendly_name: "Latest Home Assistant Version"
+    resource: https://s3.amazonaws.com/hassio-version/stable.json
+    name: latest_ha_version
+    value_template: "{{ value_json.homeassistant.default }}"
+    scan_interval: 3600
+    icon: mdi:home
+
+  #System Resources
+  - platform: systemmonitor
+    resources:
+      - type: memory_use_percent
+      - type: processor_use
+      - type: disk_use_percent
+      - type: disk_free
+      - type: last_boot
+  # - platform: command_line
+  #   name: cpu_temp
+  #   friendly_name: CPU Temperature
+  #   command: "/bin/cat /sys/class/thermal/thermal_zone2/temp"
+  #   unit_of_measurement: "°C"
+  #   value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+  # - platform: filesize
+  #   file_paths:
+  #     - !secret filesize_homeassistant_db
+  #     - !secret filesize_homeassistant_log
+  #     - !secret filesize_ozw_log
+  #     - !secret filesize_configuration
+
+sensor.speedtest_download:
+  friendly_name: "Download"
+  icon: mdi:download
+sensor.speedtest_upload:
+  friendly_name: "Upload"
+  icon: mdi:upload
+sensor.speedtest_ping:
+  friendly_name: "Ping"
+  icon: mdi:timer
+sensor.processor_use:
+  <<: *customize
+  friendly_name: "Processor Usage"
+sensor.memory_use_percent:
+  <<: *customize
+  friendly_name: "Memory Use"
+sensor.disk_use:
+  <<: *customize
+  friendly_name: "Disk Use"
+sensor.disk_free:
+  <<: *customize
+  friendly_name: "Disk Free"
+sensor.last_boot:
+  <<: *customize
+  friendly_name: "Last Boot"
+sensor.cpu_temp:
+  <<: *customize
+  friendly_name: "CPU Temp"
+
+# group:
+#   host_view:
+#     name: Host
+#     view: true
+#     entities:
+#       - group.host_performance
+#       - group.host_storage
+#       - group.host_network
+#       - group.host_info
+#       - group.host_batterij_zwave
+#       - group.host_maintenance
+#   host_performance:
+#     # Systeeminformatie
+#     name: System Performance
+#     entities:
+#       - sensor.processor_use
+#       - sensor.memory_use_percent
+#       - sensor.cpu_temperature
+#       - binary_sensor.cpu_high
+#       - binary_sensor.cpu_hot
+#   host_storage:
+#     name: System Storage
+#     entities:
+#       - sensor.disk_use_percent
+#       - sensor.disk_free
+#       - sensor.home_assistant_v2_db
+#       - sensor.home_assistant_log
+#       - sensor.ozw_log_txt
+#       - sensor.configuration_yaml
+#   host_network:
+#     name: Host Network
+#     entities:
+#       - sensor.speedtest_ping
+#       - sensor.speedtest_download
+#       - sensor.speedtest_upload
+#       - sensor.myip
+#       - sensor.ssl_certificate_expiry

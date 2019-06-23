@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/London
   # Customization file
   customize: !include customize.yaml
+  packages: !include_dir_named packages
+
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
@@ -20,6 +22,9 @@ default_config:
 #   base_url: example.duckdns.org:8123
 # Discover some devices automatically
 discovery:
+
+#Speed Test
+speedtestdotnet:
 
 # Text to speech
 # tts:
@@ -32,9 +37,12 @@ switch: !include switch.yaml
 light: !include light.yaml
 sensor: !include sensor.yaml
 
+hacs:
+  token: !secret hacs_token
+
 frontend:
   themes: !include themes.yaml
-  javascript_version: latest
+  javascript_version: auto
 
 # Lovelace
 lovelace:
@@ -87,3 +95,14 @@ panel_iframe:
     url: !env_var portainer_env_domain
 
 shopping_list:
+
+system_health:
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 20
+  server_id: 2789  # Vodafone UK
+  monitored_conditions:
+    - ping
+    - download
+    - upload
