@@ -6,3 +6,7 @@ influxdbsecrets.env
 # You can whitelist files/folders with !, these will not be ignored.
 !.gitignore
 !influxdb.env
+!/config/
+!influxdb.conf
+!/meta/
+!meta.db

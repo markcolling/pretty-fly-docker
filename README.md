@@ -1,5 +1,9 @@
 # PRETTYFLY
 
+## Pre-Deployment
+
+1. Check if any new Home Assistant entities require adding to Influxdb
+
 ## Deployment
 
 1. Git clone pretty-fly-docker
@@ -41,6 +45,7 @@ nodered/.config.json
 ###HOMEASSISTANT
 7. Setup creds as per note
 
+8. Check that InfluxDB
 
 
 

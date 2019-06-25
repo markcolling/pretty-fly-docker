@@ -53,22 +53,22 @@ sensor.speedtest_ping:
   friendly_name: "Ping"
   icon: mdi:timer
 sensor.processor_use:
-  <<: *customize
+  # <<: *customize
   friendly_name: "Processor Usage"
 sensor.memory_use_percent:
-  <<: *customize
+  # <<: *customize
   friendly_name: "Memory Use"
-sensor.disk_use:
-  <<: *customize
+sensor.disk_use_percent:
+  # <<: *customize
   friendly_name: "Disk Use"
 sensor.disk_free:
-  <<: *customize
+  # <<: *customize
   friendly_name: "Disk Free"
 sensor.last_boot:
-  <<: *customize
+  # <<: *customize
   friendly_name: "Last Boot"
 sensor.cpu_temp:
-  <<: *customize
+  # <<: *customize
   friendly_name: "CPU Temp"
 
 # group:

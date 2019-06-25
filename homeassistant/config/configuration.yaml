@@ -61,6 +61,20 @@ influxdb:
   database: homeassistant
   username: !secret hass_username
   password: !secret hass_password
+  default_measurement: state
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+      - switch
+      - light
+  exclude:
+    entities:
+      - sensor.last_boot
+      - sensor.latest_ha_version
+      - sensor.current_ha_version
+      - sensor.yr_symbol
+
   tags:
     instance: prod
     source: hass
