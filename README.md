@@ -50,3 +50,9 @@ nodered/.config.json
 
 
 X. Check which MQTT broker HASS is connected to
+
+TO DO:
+- HA logging levels
+- HA retention
+- InfluxDB retention, CQ and config
+- System monitor in docker (volume mapping)

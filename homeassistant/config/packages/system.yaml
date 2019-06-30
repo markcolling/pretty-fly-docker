@@ -8,27 +8,26 @@ sensor:
   #Home Assistant Version (current)
   - platform: command_line
     name: current_ha_version
-    friendly_name: "Current Home Assistant Version"
     command: "cat /config/.HA_VERSION"
-    icon: mdi:home
+    # icon: mdi:home
 
   #Home Assistant Version (available)
   - platform: rest
-    friendly_name: "Latest Home Assistant Version"
     resource: https://s3.amazonaws.com/hassio-version/stable.json
     name: latest_ha_version
     value_template: "{{ value_json.homeassistant.default }}"
     scan_interval: 3600
-    icon: mdi:home
+    # icon: mdi:home
 
   #System Resources
   - platform: systemmonitor
     resources:
       - type: memory_use_percent
       - type: processor_use
-      - type: disk_use_percent
-      - type: disk_free
+      # - type: disk_use_percent
+      # - type: disk_free
       - type: last_boot
+
   # - platform: command_line
   #   name: cpu_temp
   #   friendly_name: CPU Temperature
@@ -67,9 +66,15 @@ sensor.disk_free:
 sensor.last_boot:
   # <<: *customize
   friendly_name: "Last Boot"
-sensor.cpu_temp:
+# sensor.cpu_temp:
+#   # <<: *customize
+#   friendly_name: "CPU Temp"
+sensor.current_ha_version:
   # <<: *customize
-  friendly_name: "CPU Temp"
+  friendly_name: "Current HA Version"
+sensor.latest_ha_version:
+  # <<: *customize
+  friendly_name: "Latest HA Version"
 
 # group:
 #   host_view:

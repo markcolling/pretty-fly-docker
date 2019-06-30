@@ -1,6 +1,6 @@
     # Title of the view. Will be used as the tooltip for tab icon
   - title: First Floor
-    icon: mdi:home-outline
+    icon: mdi:arrow-up-bold-circle
     id: first-floor
     path: first-floor
     cards:

@@ -33,7 +33,7 @@
           - entity: sensor.disk_use_percent
           - entity: sensor.disk_free
           - entity: sensor.last_boot
-          - entity: sensor.cpu_temp
+          # - entity: sensor.cpu_temp
 
       # - type: vertical-stack
       #   cards:

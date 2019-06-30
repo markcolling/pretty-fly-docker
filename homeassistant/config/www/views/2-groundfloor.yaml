@@ -1,6 +1,6 @@
     # Title of the view. Will be used as the tooltip for tab icon
   - title: Ground Floor
-    icon: mdi:home-outline
+    icon: mdi:arrow-down-bold-circle
     id: ground-floor
     path: ground-floor
     cards:
