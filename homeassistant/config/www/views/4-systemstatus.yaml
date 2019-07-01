@@ -11,11 +11,10 @@
         show_header_toggle: off
         entities:
           - type: section
-            label: Versions
+            label: Software Versions (current/latest)
+          - entity: sensor.ha_versions
           - entity: sensor.current_ha_version
-            label: Current Home Assistant Version
           - entity: sensor.latest_ha_version
-            label: Latest Home Assistant Version
       - type: entities
         show_header_toggle: off
         entities:
