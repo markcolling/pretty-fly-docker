@@ -15,6 +15,8 @@ resources:
     type: js
   - url: /local/custom-ui/dummy-entity-row.js
     type: js
+  - url: /local/custom-ui/mini-media-player-bundle.js?v=1.2.1
+    type: module
 
 
 views: !include_dir_merge_list www/views

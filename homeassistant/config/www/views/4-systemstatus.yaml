@@ -13,8 +13,6 @@
           - type: section
             label: Software Versions (current/latest)
           - entity: sensor.ha_versions
-          - entity: sensor.current_ha_version
-          - entity: sensor.latest_ha_version
       - type: entities
         show_header_toggle: off
         entities:

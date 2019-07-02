@@ -21,6 +21,26 @@
 
       - type: shopping-list
 
+    - type: vertical-stack
+      cards:
+      - type: custom:mini-media-player
+        entity: media_player.living_room
+        hide:
+          power: false
+          icon: true
+          source: true
+        speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.living_room
+              name: Sonos Living Room
+
+    # - type: vertical-stack
+    #   cards:
+    #   - type: weather-forecast
+    #     entity: weather.dark_sky
+
       #Needed for compact header. Every view. Main config in first view.
       - type: custom:compact-custom-header
         main_config: true
