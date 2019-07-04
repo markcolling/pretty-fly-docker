@@ -1,21 +1,23 @@
 title: Home Dashboard
 
 resources:
-  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
+  - url: /local/custom_lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
     type: module
-  - url: /local/custom-ui/mini-graph-card-bundle.js?v=0.4.3
+  - url: /local/custom_ui/mini-graph-card-bundle.js?v=0.4.3
     type: js
-  - url: /local/custom-ui/layout-card.js
+  - url: /local/custom_ui/layout-card.js
     type: js
-  - url: /local/custom-ui/card-tools.js?v=0.4
+  - url: /local/custom_ui/card-tools.js?v=0.4
     type: js
-  - url: /local/custom-ui/bar-card.js?v=1.0.0
+  - url: /local/custom_ui/bar-card.js?v=1.0.0
     type: js
-  - url: /local/custom-ui/vertical-stack-in-card.js?v=0.1.3
+  - url: /local/custom_ui/vertical-stack-in-card.js?v=0.1.3
     type: js
-  - url: /local/custom-ui/dummy-entity-row.js
+  - url: /local/custom_ui/dummy-entity-row.js
     type: js
-  - url: /local/custom-ui/mini-media-player-bundle.js?v=1.2.1
+  - url: /local/custom_ui/mini-media-player-bundle.js?v=1.2.1
+    type: module
+  - url: /local/custom_ui/dark-sky-weather-card.js?v=7.1
     type: module
 
 

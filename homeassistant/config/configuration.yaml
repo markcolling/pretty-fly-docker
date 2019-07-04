@@ -74,7 +74,6 @@ influxdb:
       - sensor.latest_ha_version
       - sensor.current_ha_version
       - sensor.yr_symbol
-
   tags:
     instance: prod
     source: hass
@@ -112,8 +111,8 @@ shopping_list:
 
 system_health:
 
-weather:
-  
+# weather:
+
 speedtestdotnet:
   scan_interval:
     minutes: 20
