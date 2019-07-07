@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 51.4622
-  longitude: -0.1376
+  latitude: !secret home_lat
+  longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 0
   # metric for Metric, imperial for Imperial
@@ -125,4 +125,4 @@ speedtestdotnet:
 # Example configuration.yaml entry with manually specified addresses
 sonos:
   media_player:
-    hosts: 192.168.1.4
+    hosts: 192.168.1.11

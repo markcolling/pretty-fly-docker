@@ -1,14 +1,14 @@
     # Title of the view. Will be used as the tooltip for tab icon
-  - title: Ground Floor
-    icon: mdi:arrow-down-bold-circle
-    id: ground-floor
-    path: ground-floor
+  - title: Cameras
+    icon: mdi:cctv
+    id: cameras
+    path: cameras
     cards:
     - type: vertical-stack
       cards:
       # The markdown card will render markdown text.
       - type: markdown
-        title: Ground Floor
+        title: cameras
         content: >
           Welcome to your **Lovelace UI**.
 

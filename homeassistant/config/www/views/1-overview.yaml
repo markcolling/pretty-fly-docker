@@ -3,13 +3,139 @@
     path: home
     icon: mdi:home-assistant
     type: module
+    panel: true
     cards:
-    - type: vertical-stack
+    - type: custom:layout-card
+      column_num: 4
+      layout: vertical
+      column_width:
+      max_width: [10%, 30%, 30%, 30%]
       cards:
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 1
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 2
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 3
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 4
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 5
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 6
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.dining_room_ceiling
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: card
+        default_color: rgb(255, 233, 155)
+        action: more_info
+        name: Button 7
+        styles:
+          card:
+          - height: 90px
+          # - font-size: 12px
+          # - font-weight: bold
+      - break
+
+      - type: 'custom:floorplan-card'
+        # title: Simple Floorplan
+        config:
+          image: /local/floorplan/ground-floorplan.svg
+          rules:
+            - entities:
+                - light.dining_room_ceiling
+                - sensor.living_room_ceiling
+              states:
+                - class: 'binary-sensor-off'
+                  state: 'off'
+                - class: 'binary-sensor-on'
+                  state: 'on'
+          stylesheet: /local/floorplan/examples/simple/simple.css?v=1.1.14
+
+      - break
+
+      - type: 'custom:floorplan-card'
+        # title: Simple Floorplan
+        config:
+          image: /local/floorplan/first-floorplan.svg
+          rules:
+            - entities:
+                - light.dining_room_ceiling
+                - sensor.living_room_ceiling
+              states:
+                - class: 'binary-sensor-off'
+                  state: 'off'
+                - class: 'binary-sensor-on'
+                  state: 'on'
+          stylesheet: /local/floorplan/examples/simple/simple.css?v=1.1.14
+      - break
 
       - type: glance
         title: Lights
@@ -19,10 +145,6 @@
           - switch.living_room_ceiling
           - light.dining_room_ceiling
 
-      - type: shopping-list
-
-    - type: vertical-stack
-      cards:
       - type: custom:mini-media-player
         title: Sonos
         entity: media_player.living_room
@@ -37,8 +159,6 @@
             - entity_id: media_player.living_room
               name: Sonos Living Room
 
-    - type: vertical-stack
-      cards:
       - type: custom:dark-sky-weather-card
         entity_current_conditions: sensor.dark_sky_icon
         entity_temperature: sensor.dark_sky_temperature
@@ -80,12 +200,12 @@
         entity_pop_5: sensor.dark_sky_precip_probability_5d
         static_icons: true
 
-    - type: vertical-stack
-      cards:
-      - type: markdown
-        title: Lovelace
-        content: >
-          Welcome to your **Lovelace UI**.
+      # - type: vertical-stack
+      #   cards:
+      #   - type: markdown
+      #     title: Lovelace
+      #     content: >
+      #       Welcome to your **Lovelace UI**.
 
       #Needed for compact header. Every view. Main config in first view.
       - type: custom:compact-custom-header

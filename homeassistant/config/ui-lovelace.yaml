@@ -19,6 +19,10 @@ resources:
     type: module
   - url: /local/custom_ui/dark-sky-weather-card.js?v=7.1
     type: module
+  - url: /local/floorplan/floorplan-card.js?v=1.1.14
+    type: module
+  - url: /local/custom_ui/button-card.js
+    type: module
 
 
 views: !include_dir_merge_list www/views
