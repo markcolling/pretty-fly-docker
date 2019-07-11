@@ -135,15 +135,6 @@
                 - class: 'binary-sensor-on'
                   state: 'on'
           stylesheet: /local/floorplan/examples/simple/simple.css?v=1.1.14
-      - break
-
-      - type: glance
-        title: Lights
-        show_name: true
-        show_state: true
-        entities:
-          - switch.living_room_ceiling
-          - light.dining_room_ceiling
 
       - type: custom:mini-media-player
         title: Sonos
@@ -158,6 +149,8 @@
           entities:
             - entity_id: media_player.living_room
               name: Sonos Living Room
+
+      - break
 
       - type: custom:dark-sky-weather-card
         entity_current_conditions: sensor.dark_sky_icon
@@ -199,6 +192,14 @@
         entity_pop_4: sensor.dark_sky_precip_probability_4d
         entity_pop_5: sensor.dark_sky_precip_probability_5d
         static_icons: true
+
+      - type: glance
+        title: Lights
+        show_name: true
+        show_state: true
+        entities:
+          - switch.living_room_ceiling
+          - light.dining_room_ceiling
 
       # - type: vertical-stack
       #   cards:
