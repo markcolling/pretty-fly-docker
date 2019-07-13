@@ -31,8 +31,8 @@ sensor:
     resources:
       - type: memory_use_percent
       - type: processor_use
-      # - type: disk_use_percent
-      # - type: disk_free
+      - type: disk_use_percent
+      - type: disk_free
       - type: last_boot
 
   # - platform: command_line

@@ -13,6 +13,7 @@
           - type: section
             label: Software Versions (current/latest)
           - entity: sensor.ha_versions
+
       - type: entities
         show_header_toggle: off
         entities:
@@ -21,6 +22,7 @@
           - entity: sensor.speedtest_download
           - entity: sensor.speedtest_upload
           - entity: sensor.speedtest_ping
+          
       - type: entities
         show_header_toggle: off
         entities:

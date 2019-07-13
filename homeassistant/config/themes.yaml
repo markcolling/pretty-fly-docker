@@ -259,6 +259,13 @@ Dark - Cyan:
   secondary-text-color: "#00E2D8"
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#5B7283"
+
+  ### Added by MC
+  paper-item-selected_-_background-color: "var(--primary-color)"
+  paper-item-icon_-_color: "#44739e"
+  paper-item-icon-color: "var(--primary-color)"
+  paper-item-icon-active-color: "#fbce42"
+
   ### Sidebar Menu ###
   sidebar-icon-color: "#BCC5D1"
   sidebar-text-color: "#F7F8FA"

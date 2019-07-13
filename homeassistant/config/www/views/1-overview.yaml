@@ -12,94 +12,99 @@
       max_width: [10%, 30%, 30%, 30%]
       cards:
       - type: "custom:button-card"
-        entity: light.dining_room_ceiling
+        entity: switch.living_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 1
         styles:
           card:
-          - height: 90px
+          - height: 98px
+        state:
+        - value: 'unavailable'
+          styles:
+            icon:
+              - colour: var(--disabled-text-color)
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 2
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 3
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 4
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 5
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 6
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
         entity: light.dining_room_ceiling
         # icon: mdi:lightbulb
         color: auto
-        color_type: card
+        color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
         name: Button 7
         styles:
           card:
-          - height: 90px
+          - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - break
