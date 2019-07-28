@@ -1,0 +1,52 @@
+binary_sensor:
+  - platform: template
+    sensors:
+
+###### DOWNSTAIRS - Motion Fill Shapes ######
+      living_room_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      library_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      kitchen_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      hallway_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      front_door_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      downstairs_bathroom_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      outdoor_side_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      outdoor_front_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      outdoor_back_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+
+###### DOWNSTAIRS - Motion Stroke Shapes ######
+      living_room_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      library_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      kitchen_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      hallway_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      front_door_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      downstairs_bathroom_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"

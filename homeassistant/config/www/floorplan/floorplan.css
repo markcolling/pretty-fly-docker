@@ -1,0 +1,18 @@
+.motion-fill-inactive, .motion-border-inactive {
+  visibility: hidden !important;
+}
+.motion-fill-active, .motion-border-active {
+
+}
+
+
+
+.test-on {
+  fill: white !important;
+}
+.test-off {
+  visibility: hidden !important;
+}
+.test-unavailable {
+  fill: grey !important;
+}

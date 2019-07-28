@@ -3,36 +3,59 @@
     icon: mdi:settings
     id: system-status
     path: system-status
-    # panel: true
+    panel: true
     cards:
       # - type: vertical-stack
       #   cards:
-      - type: entities
-        show_header_toggle: off
-        entities:
-          - type: section
-            label: Software Versions (current/latest)
-          - entity: sensor.ha_versions
+      - type: custom:layout-card
+        column_num: 4
+        layout: vertical
+        column_width:
+        max_width: [30%, 30%, 30%]
+        cards:
+        - type: entities
+          show_header_toggle: off
+          entities:
+            - type: section
+              label: Software Versions (current/latest)
+            - entity: sensor.ha_versions
 
-      - type: entities
-        show_header_toggle: off
-        entities:
-          - type: section
-            label: Network
-          - entity: sensor.speedtest_download
-          - entity: sensor.speedtest_upload
-          - entity: sensor.speedtest_ping
-          
-      - type: entities
-        show_header_toggle: off
-        entities:
-          - type: section
-            label: System Stats
-          - entity: sensor.memory_use_percent
-          - entity: sensor.disk_use_percent
-          - entity: sensor.disk_free
-          - entity: sensor.last_boot
-          # - entity: sensor.cpu_temp
+        - break
+
+        - type: entities
+          show_header_toggle: off
+          entities:
+            - type: section
+              label: Network Stats
+            - entity: sensor.speedtest_download
+            - entity: sensor.speedtest_upload
+            - entity: sensor.speedtest_ping
+
+        - break
+
+        - type: entities
+          show_header_toggle: off
+          entities:
+            - type: section
+              label: System Stats
+            - entity: sensor.memory_use_percent
+            - entity: sensor.disk_use_percent
+            - entity: sensor.disk_free
+            - entity: sensor.last_boot
+            # - entity: sensor.cpu_temp
+            - type: section
+              label: Synology Stats
+            # - entity: sensor.disk_status_volume_1
+            - entity: sensor.volume_status_volume_1
+            - entity: sensor.cpu_total_load_volume_1
+            - entity: sensor.volume_percentage_used_volume_1
+            - entity: sensor.volume_status_volume_2
+            - entity: sensor.cpu_total_load_volume_2
+            - entity: sensor.volume_percentage_used_volume_2
+
+
+        #Needed for compact header. Every view. Main config in first view.
+        - type: custom:compact-custom-header
 
       # - type: vertical-stack
       #   cards:
@@ -182,5 +205,3 @@
         #       name: Home Assistant
         #       url: https://www.home-assistant.io/
         #       icon: mdi:home-assistant
-      #Needed for compact header. Every view. Main config in first view.
-      - type: custom:compact-custom-header

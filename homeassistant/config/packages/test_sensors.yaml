@@ -1,0 +1,14 @@
+switch:
+  - platform: mqtt
+    name: "test_room_light"
+    state_topic: "test.home/test_room/lights/state"
+    command_topic: "test.home/test_room/lights/set"
+    availability_topic: "test.home/test_room/lights/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    state_on: "ON"
+    state_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
+    unique_id: 001234534214235

@@ -18,15 +18,16 @@
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Button 1
+        name: Living Room Switch
         styles:
           card:
           - height: 98px
         state:
-        - value: 'unavailable'
-          styles:
-            icon:
-              - colour: var(--disabled-text-color)
+          - value: default
+            colour: var(--disabled-text-color)
+            styles:
+              label:
+                - colour: var(--disabled-text-color)
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
@@ -36,20 +37,20 @@
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Button 2
+        name: Dining Room Light
         styles:
           card:
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
-        entity: light.dining_room_ceiling
+        entity: switch.test_room_light
         # icon: mdi:lightbulb
         color: auto
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Button 3
+        name: Test Light
         styles:
           card:
           - height: 98px
@@ -115,14 +116,43 @@
           image: /local/floorplan/ground-floorplan.svg
           rules:
             - entities:
-                - light.dining_room_ceiling
-                - sensor.living_room_ceiling
+                - binary_sensor.living_room_motion_fill
+                - binary_sensor.library_motion_fill
+                - binary_sensor.hallway_motion_fill
+                - binary_sensor.kitchen_motion_fill
+                - binary_sensor.front_door_motion_fill
+                - binary_sensor.downstairs_bathroom_motion_fill
+                - binary_sensor.outdoor_side_motion_fill
+                - binary_sensor.outdoor_front_motion_fill
+                - binary_sensor.outdoor_back_motion_fill
               states:
-                - class: 'binary-sensor-off'
+                - class: 'motion-fill-inactive'
                   state: 'off'
-                - class: 'binary-sensor-on'
+                - class: 'motion-fill-active'
                   state: 'on'
-          stylesheet: /local/floorplan/examples/simple/simple.css?v=1.1.14
+
+            - entities:
+                - binary_sensor.living_room_motion_border
+                - binary_sensor.library_motion_border
+                - binary_sensor.kitchen_motion_border
+                - binary_sensor.hallway_motion_border
+                - binary_sensor.front_door_motion_border
+                - binary_sensor.downstairs_bathroom_motion_border
+              states:
+                - class: 'motion-border-inactive'
+                  state: 'off'
+                - class: 'motion-border-active'
+                  state: 'on'
+
+
+            # - entities:
+            #     - switch.living_room_motion
+            #   states:
+            #     - class: 'living-room_fill'
+            #       state: 'off'
+            #     - class: 'living-room_fill'
+            #       state: 'on'
+          stylesheet: /local/floorplan/floorplan.css
 
       - break
 
@@ -133,7 +163,7 @@
           rules:
             - entities:
                 - light.dining_room_ceiling
-                - sensor.living_room_ceiling
+                - switch.living_room_ceiling
               states:
                 - class: 'binary-sensor-off'
                   state: 'off'
@@ -205,6 +235,7 @@
         entities:
           - switch.living_room_ceiling
           - light.dining_room_ceiling
+          - switch.test_room_light
 
       # - type: vertical-stack
       #   cards:

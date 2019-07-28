@@ -92,6 +92,16 @@ influxdb:
   #      - entity.id3
   #      - entity.id4
 
+## Recorder
+recorder:
+  purge_keep_days: 31
+  include:
+    domains:
+      sensors
+  exclude:
+    entities:
+      - sensor.dark_sky_*
+
 # UI PANELS
 panel_iframe:
   grafana:

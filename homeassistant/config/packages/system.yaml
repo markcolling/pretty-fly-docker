@@ -5,27 +5,6 @@
 #     icon: mdi:cloud-download
 
 sensor:
-  - platform: template
-    sensors:
-      ha_versions:
-        friendly_name: Home Assistant
-        value_template: "{{ states.sensor.current_ha_version.state }}  /  {{ states.sensor.latest_ha_version.state }}"
-
-  #Home Assistant Version (current)
-  - platform: command_line
-    name: "Current HA Version"
-    command: "cat /config/.HA_VERSION"
-
-    # icon: mdi:home
-
-  #Home Assistant Version (available)
-  - platform: rest
-    resource: https://s3.amazonaws.com/hassio-version/stable.json
-    name: "Latest HA Version"
-    value_template: "{{ value_json.homeassistant.default }}"
-    scan_interval: 36000
-    # icon: mdi:home
-
   #System Resources
   - platform: systemmonitor
     resources:
@@ -76,12 +55,7 @@ sensor.last_boot:
 # sensor.cpu_temp:
 #   # <<: *customize
 #   friendly_name: "CPU Temp"
-sensor.current_ha_version:
-  # <<: *customize
-  friendly_name: "Current HA Version"
-sensor.latest_ha_version:
-  # <<: *customize
-  friendly_name: "Latest HA Version"
+
 
 # group:
 #   host_view:
