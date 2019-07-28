@@ -1,11 +1,18 @@
-.motion-fill-inactive, .motion-border-inactive {
+.motion-fill-inactive, .motion-border-inactive, .battery-warning-off {
   visibility: hidden !important;
 }
 .motion-fill-active, .motion-border-active {
 
 }
+.battery-warning-on {
+  animation: blinker 1s step-start infinite;
+}
 
-
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 
 .test-on {
   fill: white !important;

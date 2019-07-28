@@ -50,3 +50,97 @@ binary_sensor:
       downstairs_bathroom_motion_border:
         device_class: motion
         value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+
+###### DOWNSTAIRS - Battery Warning Shapes ######
+      living_room_window_4_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      living_room_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      living_room_window_2_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      hallway_door_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      library_door_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      kitchen_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      kitchen_window_2_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      downstairs_bathroom_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      kitchen_door_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      living_room_window_3_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+
+###### UPSTAIRS - Motion Fill Shapes ######
+      landing_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_3_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bathroom_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_2_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+
+###### UPSTAIRS - Motion Stroke Shapes ######
+
+      landing_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_3_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bathroom_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_2_motion_border:
+        device_class: motion
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+
+###### UPSTAIRS - Battery Warning Shapes ######
+
+      bedroom_1_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_window_4_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_window_2_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_window_3_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_2_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bathroom_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_3_window_1_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+      bedroom_1_window_5_battery:
+        device_class: battery
+        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
