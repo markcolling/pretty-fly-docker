@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351 530.19">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351 564.36">
   <defs>
     <style>
       .cls-1, .cls-2, .cls-4, .cls-6, .cls-7 {
@@ -15,7 +15,7 @@
         stroke-width: 0.25px;
       }
 
-      .cls-12, .cls-3 {
+      .cls-11, .cls-3 {
         fill: #f7f8fa;
       }
 
@@ -43,143 +43,129 @@
         stroke-width: 4px;
       }
 
-      .cls-8 {
-        fill: #de3428;
-      }
-
-      .cls-10, .cls-14, .cls-9 {
+      .cls-13, .cls-8, .cls-9 {
         fill: #22232d;
       }
 
-      .cls-10 {
+      .cls-9 {
         font-size: 10px;
       }
 
-      .cls-10, .cls-12 {
+      .cls-11, .cls-9 {
         font-family: Helvetica, Helvetica;
       }
 
-      .cls-11, .cls-15 {
+      .cls-10, .cls-14 {
         fill: #231f20;
       }
 
-      .cls-12 {
+      .cls-11 {
         font-size: 14px;
       }
 
-      .cls-13 {
+      .cls-12 {
         letter-spacing: -0.02em;
       }
 
-      .cls-14, .cls-15 {
+      .cls-13, .cls-14 {
         font-size: 19.24px;
         font-family: HelveticaNeue-CondensedBold, Helvetica Neue;
         font-weight: 700;
       }
 
-      .cls-16 {
+      .cls-15 {
         letter-spacing: -0.06em;
       }
     </style>
   </defs>
   <title>first-floorplan</title>
   <g id="Background">
-    <rect class="cls-1" x="0.5" y="0.5" width="350" height="529.19"/>
+    <rect class="cls-1" x="0.5" y="0.5" width="350" height="563.36"/>
   </g>
   <g id="house-outline">
-    <path id="house-border" class="cls-2" d="M305.21,513.44H137.69V325.73H65.4V45.51h34.75V11.82h114V45.51h91.06V513.44" transform="translate(0.5 0.5)"/>
-    <path id="house-fill" class="cls-3" d="M305.21,513.44H137.69V325.73H65.4V45.51h34.75V11.82h114V45.51h91.06V513.44" transform="translate(0.5 0.5)"/>
-    <path id="bedroom_2_border" class="cls-2" d="M65.4,187.14H219.23V325.73H65.4Z" transform="translate(0.5 0.5)"/>
-    <path id="landing_border" class="cls-2" d="M305.21,388H242V356.1l-22.74-30.37V187.14h86Z" transform="translate(0.5 0.5)"/>
-    <path id="bedroom_3_border" class="cls-2" d="M137.69,513.44V426.91L242,426.86V388h63.24V513.44H137.69Z" transform="translate(0.5 0.5)"/>
-    <path id="bedroom_1_border" class="cls-2" d="M195.33,187.14H65.4V45.51h34.75V11.82h114V45.51h91.06V187.14H195.33" transform="translate(0.5 0.5)"/>
-    <path id="bathroom_border" class="cls-2" d="M219.23,325.73,242,356.1v70.76H137.69V325.73h81.54" transform="translate(0.5 0.5)"/>
+    <path id="house-border" class="cls-2" d="M305.21,532.25H137.69V344.55H65.4V64.32h34.75V30.63h114V64.32h91.06V532.25" transform="translate(0.5 0.5)"/>
+    <path id="house-fill" class="cls-3" d="M305.21,532.25H137.69V344.55H65.4V64.32h34.75V30.63h114V64.32h91.06V532.25" transform="translate(0.5 0.5)"/>
+    <path id="bedroom_2_border" class="cls-2" d="M65.4,206H219.23v138.6H65.4Z" transform="translate(0.5 0.5)"/>
+    <path id="landing_border" class="cls-2" d="M305.21,406.81H242v-31.9l-22.74-30.36V206h86Z" transform="translate(0.5 0.5)"/>
+    <path id="bedroom_3_border" class="cls-2" d="M137.69,532.25V445.72L242,445.67V406.81h63.24V532.25H137.69Z" transform="translate(0.5 0.5)"/>
+    <path id="bedroom_1_border" class="cls-2" d="M195.33,206H65.4V64.32h34.75V30.63h114V64.32h91.06V206H195.33" transform="translate(0.5 0.5)"/>
+    <path id="bathroom_border" class="cls-2" d="M219.23,344.55,242,374.91v70.76H137.69V344.55h81.54" transform="translate(0.5 0.5)"/>
   </g>
   <g id="misc">
-    <rect class="cls-4" x="259.58" y="241.12" width="46.14" height="93.9"/>
+    <rect class="cls-4" x="259.58" y="259.93" width="46.14" height="93.9"/>
   </g>
   <g id="motion_fill">
-    <path id="binary_sensor.landing_motion_fill" class="cls-5" d="M305.21,388H242V356.1l-22.74-30.37V187.14h86Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_3_motion_fill" class="cls-5" d="M137.69,513.44V426.91L242,426.86V388h63.24V513.44H137.69Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_motion_fill" class="cls-5" d="M195.33,187.14H65.4V45.51h34.75V11.82h114V45.51h91.06V187.14H195.33" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bathroom_motion_fill" class="cls-5" d="M219.23,325.73,242,356.1v70.76H137.69V325.73h81.54" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_2_motion_fill" class="cls-5" d="M65.4,187.14H219.23V325.73H65.4Z" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.landing_motion_fill" class="cls-5" d="M305.21,406.81H242v-31.9l-22.74-30.36V206h86Z" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_3_motion_fill" class="cls-5" d="M137.69,532.25V445.72L242,445.67V406.81h63.24V532.25H137.69Z" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_motion_fill" class="cls-5" d="M195.33,206H65.4V64.32h34.75V30.63h114V64.32h91.06V206H195.33" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bathroom_motion_fill" class="cls-5" d="M219.23,344.55,242,374.91v70.76H137.69V344.55h81.54" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_2_motion_fill" class="cls-5" d="M65.4,206H219.23v138.6H65.4Z" transform="translate(0.5 0.5)"/>
   </g>
   <g id="motion_border">
-    <path id="binary_sensor.landing_motion_border" class="cls-6" d="M220.93,328l-1.7-2.27V230.22M254.59,388H242V356.1l-1.79-2.4M273,187.14h32.19V388H294.59M219.23,201.49V187.14H233" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_3_motion_border" class="cls-6" d="M294.59,388.1h10.62V513.44H137.69V426.86H242V388h12.64" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_2_motion_border" class="cls-6" d="M219.23,230.22v95.51H65.4V187.14H219.23v14.35" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_motion_border" class="cls-6" d="M233,187.14H65.4V45.51h34.75V11.82h114V45.51h91.06V187.14H273" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bathroom_motion_border" class="cls-6" d="M240.18,353.7l1.79,2.4v70.76H137.69V325.73h81.54m0,0,1.7,2.27" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.landing_motion_border" class="cls-6" d="M220.93,346.81l-1.7-2.26V249m35.36,157.78H242v-31.9l-1.79-2.4M273,206h32.19V406.81H294.59M219.23,220.3V206H233" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_3_motion_border" class="cls-6" d="M294.59,406.92h10.62V532.25H137.69V445.67H242V406.81h12.64" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_2_motion_border" class="cls-6" d="M219.23,249v95.52H65.4V206H219.23V220.3" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_motion_border" class="cls-6" d="M233,206H65.4V64.32h34.75V30.63h114V64.32h91.06V206H273" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bathroom_motion_border" class="cls-6" d="M240.18,372.51l1.79,2.4v70.76H137.69V344.55h81.54m0,0,1.7,2.26" transform="translate(0.5 0.5)"/>
   </g>
   <g id="openings">
-    <line id="sensor.bedroom_1_window_2" class="cls-7" x1="104.49" y1="12.32" x2="158.92" y2="12.32"/>
-    <line id="sensor.bedroom_1_window_3" class="cls-7" x1="157.37" y1="12.32" x2="210.79" y2="12.32"/>
-    <line id="sensor.bedroom_1_window_1" class="cls-7" x1="100.29" y1="44.18" x2="100.29" y2="15.98"/>
-    <line id="sensor.bedroom_1_window_4" class="cls-7" x1="214.66" y1="44.18" x2="214.66" y2="15.98"/>
-    <line id="sensor.bedroom_1_window_5" class="cls-7" x1="299.1" y1="46.01" x2="257.1" y2="46.01"/>
-    <line id="sensor.bedroom_2_window_1" class="cls-7" x1="121.29" y1="326.23" x2="79.29" y2="326.23"/>
-    <line id="sensor.bathroom_window_1" class="cls-7" x1="138.21" y1="335.09" x2="138.21" y2="370.95"/>
-    <line id="sensor.bedroom_3_window_1" class="cls-7" x1="251.45" y1="513.94" x2="188" y2="513.94"/>
-  </g>
-  <g id="sensor_battery_warnings">
-    <path id="binary_sensor.bedroom_1_window_1_battery" class="cls-8" d="M117.39,18.29v2.18H119c1.17,0,1.78.59,1.79,1.74q0,8.49,0,17a1.49,1.49,0,0,1-1.65,1.65q-5.14,0-10.29,0a1.48,1.48,0,0,1-1.64-1.65q0-8.51,0-17c0-1.14.62-1.7,1.78-1.73h1.58V18.29Zm-2.3,7.92H112.9v5.55h2.19Zm0,10.12v-2.2h-2.14v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_window_4_battery" class="cls-8" d="M205.24,18.29v2.18h1.61c1.16,0,1.78.59,1.78,1.74q0,8.49,0,17A1.48,1.48,0,0,1,207,40.85q-5.15,0-10.29,0a1.48,1.48,0,0,1-1.64-1.65q0-8.51,0-17c0-1.14.61-1.7,1.78-1.73h1.57V18.29ZM203,26.21h-2.19v5.55H203Zm0,10.12v-2.2h-2.14v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_window_2_battery" class="cls-8" d="M135.44,2.39V4.57c.56,0,1.08,0,1.61,0a1.58,1.58,0,0,1,1.78,1.73q0,8.5,0,17A1.49,1.49,0,0,1,137.18,25q-5.15,0-10.29,0a1.48,1.48,0,0,1-1.64-1.65q0-8.51,0-17c0-1.14.62-1.7,1.79-1.73.49,0,1,0,1.57,0V2.39Zm-2.3,7.92H131v5.55h2.19Zm0,10.12v-2.2H131v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_window_3_battery" class="cls-8" d="M186.2,1.79V4c.56,0,1.08,0,1.6,0,1.17,0,1.78.59,1.79,1.73q0,8.49,0,17a1.49,1.49,0,0,1-1.65,1.66q-5.15,0-10.29,0A1.49,1.49,0,0,1,176,22.7q0-8.49,0-17c0-1.14.62-1.7,1.78-1.73.5,0,1,0,1.58,0V1.79Zm-2.3,7.92h-2.19v5.56h2.19Zm0,10.13v-2.2h-2.14v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_2_window_1_battery" class="cls-8" d="M103.19,315.58v2.18h1.6c1.17,0,1.78.59,1.79,1.73q0,8.5,0,17a1.49,1.49,0,0,1-1.65,1.66q-5.15,0-10.29,0A1.49,1.49,0,0,1,93,336.48q0-8.49,0-17c0-1.14.62-1.7,1.78-1.73h1.58v-2.18Zm-2.3,7.91H98.7v5.56h2.19Zm0,10.13v-2.2H98.73v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bathroom_window_1_battery" class="cls-8" d="M155,341.23v2.18c.57,0,1.09,0,1.61,0,1.16,0,1.78.59,1.78,1.73q0,8.5,0,17a1.48,1.48,0,0,1-1.64,1.66q-5.15,0-10.29,0a1.48,1.48,0,0,1-1.64-1.66q0-8.49,0-17c0-1.14.62-1.7,1.79-1.73.5,0,1,0,1.57,0v-2.18Zm-2.29,7.92h-2.2v5.55h2.2Zm0,10.12v-2.2h-2.14v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_3_window_1_battery" class="cls-8" d="M222.63,501.05v2.18c.56,0,1.08,0,1.6,0,1.17,0,1.78.59,1.79,1.73q0,8.49,0,17a1.48,1.48,0,0,1-1.65,1.65q-5.15,0-10.29,0a1.47,1.47,0,0,1-1.64-1.65q0-8.51,0-17c0-1.14.62-1.7,1.78-1.73.5,0,1,0,1.58,0v-2.18Zm-2.3,7.92h-2.19v5.56h2.19Zm0,10.13v-2.2h-2.14v2.2Z" transform="translate(0.5 0.5)"/>
-    <path id="binary_sensor.bedroom_1_window_5_battery" class="cls-8" d="M281,34.22V36.4h1.6c1.17,0,1.78.59,1.79,1.73q0,8.5,0,17a1.48,1.48,0,0,1-1.64,1.65q-5.14,0-10.29,0a1.48,1.48,0,0,1-1.64-1.65q0-8.51,0-17c0-1.14.62-1.7,1.78-1.73h1.58V34.22Zm-2.3,7.92h-2.19v5.55h2.19Zm0,10.12v-2.2h-2.13v2.2Z" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_window_2" class="cls-7" d="M104,30.63h54.43" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_window_3" class="cls-7" d="M156.87,30.63h53.42" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_window_1" class="cls-7" d="M99.79,62.5V34.29" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_window_4" class="cls-7" d="M214.16,62.5V34.29" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_1_window_5" class="cls-7" d="M256.6,64.32h42" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_2_window_1" class="cls-7" d="M120.79,344.55h-42" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bathroom_window_1" class="cls-7" d="M137.71,353.4v35.86" transform="translate(0.5 0.5)"/>
+    <path id="binary_sensor.bedroom_3_window_1" class="cls-7" d="M251,532.25H187.5" transform="translate(0.5 0.5)"/>
   </g>
   <g id="icons">
-    <path id="sensor.living_room_motion" class="cls-9" d="M73.67,70.07V67.46c8.62-.92,13.42-5.68,14.4-14.44h2.51C91.09,61.21,84.05,70.11,73.67,70.07Zm11.25-17H82.25c-.55,5.23-3.43,8-8.57,8.56v2.74C80.66,64.3,85.21,58.43,84.92,53.09ZM73.71,58.67a5.51,5.51,0,0,0,5.55-5.59H73.71Z" transform="translate(0.5 0.5)"/>
+    <path id="sensor.living_room_motion" class="cls-8" d="M73.67,88.88V86.27c8.62-.92,13.42-5.68,14.4-14.44h2.51C91.09,80,84.05,88.92,73.67,88.88Zm11.25-17H82.25c-.55,5.22-3.43,8-8.57,8.55V83.2C80.66,83.11,85.21,77.24,84.92,71.91ZM73.71,77.49a5.53,5.53,0,0,0,5.55-5.6H73.71Z" transform="translate(0.5 0.5)"/>
     <g id="sensor.living_room_ceiling">
-      <path class="cls-9" d="M171.63,96.1V88.44h3V96.1c1.33,0,2.57,0,3.79,0,.38,0,.94.16,1.07.43,2,3.89,4,7.81,6,11.86H160.89c.15-.37.27-.73.43-1.06,1.72-3.42,3.47-6.83,5.14-10.27a1.5,1.5,0,0,1,1.68-1C169.25,96.16,170.36,96.1,171.63,96.1Z" transform="translate(0.5 0.5)"/>
-      <path class="cls-9" d="M170.17,110.11h5.92a2.88,2.88,0,0,1-2.84,3C171.59,113.16,170.42,112.05,170.17,110.11Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M171.63,114.91v-7.66h3v7.66c1.33,0,2.57,0,3.79,0,.38,0,.94.17,1.07.43,2,3.89,4,7.81,6,11.86H160.89c.15-.37.27-.72.43-1.06,1.72-3.42,3.47-6.82,5.14-10.27a1.51,1.51,0,0,1,1.68-1C169.25,115,170.36,114.91,171.63,114.91Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M170.17,128.92h5.92a2.88,2.88,0,0,1-2.84,3C171.59,132,170.42,130.86,170.17,128.92Z" transform="translate(0.5 0.5)"/>
     </g>
-    <path id="sensor.living_room_motion-2" data-name="sensor.living_room_motion" class="cls-9" d="M90.09,316.52H87.48c-.93-8.62-5.68-13.42-14.44-14.4v-2.51C81.23,299.1,90.13,306.14,90.09,316.52Zm-17-11.25v2.67c5.22.55,8,3.43,8.56,8.58h2.74C84.32,309.53,78.45,305,73.11,305.27Zm5.58,11.21a5.52,5.52,0,0,0-5.6-5.55v5.55Z" transform="translate(0.5 0.5)"/>
+    <path id="sensor.living_room_motion-2" data-name="sensor.living_room_motion" class="cls-8" d="M90.09,335.34H87.48c-.93-8.62-5.68-13.42-14.44-14.41v-2.51C81.23,317.92,90.13,325,90.09,335.34Zm-17-11.25v2.66c5.22.55,8,3.44,8.56,8.58h2.74C84.32,328.34,78.45,323.79,73.11,324.09Zm5.58,11.21a5.51,5.51,0,0,0-5.6-5.55v5.55Z" transform="translate(0.5 0.5)"/>
     <g id="sensor.living_room_ceiling-2" data-name="sensor.living_room_ceiling">
-      <path class="cls-9" d="M140.74,250.3v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.17,1.07.43,2,3.9,4,7.82,6,11.86H130c.15-.36.27-.72.43-1.05,1.72-3.42,3.47-6.83,5.14-10.27a1.51,1.51,0,0,1,1.68-1C138.37,250.36,139.48,250.3,140.74,250.3Z" transform="translate(0.5 0.5)"/>
-      <path class="cls-9" d="M139.29,264.31h5.91a2.87,2.87,0,0,1-2.83,3C140.71,267.37,139.54,266.25,139.29,264.31Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M140.74,269.12v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.16,1.07.43,2,3.89,4,7.81,6,11.86H130c.15-.37.27-.73.43-1.06,1.72-3.42,3.47-6.83,5.14-10.27a1.5,1.5,0,0,1,1.68-1C138.37,269.18,139.48,269.12,140.74,269.12Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M139.29,283.13h5.91a2.86,2.86,0,0,1-2.83,3C140.71,286.18,139.54,285.07,139.29,283.13Z" transform="translate(0.5 0.5)"/>
     </g>
     <g id="sensor.living_room_ceiling-3" data-name="sensor.living_room_ceiling">
-      <path class="cls-9" d="M260.65,270.27v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.17,1.07.43,2,3.89,4,7.82,6,11.86h-24.6c.15-.36.26-.72.43-1.05,1.72-3.42,3.47-6.83,5.14-10.27a1.51,1.51,0,0,1,1.68-1C258.27,270.33,259.39,270.27,260.65,270.27Z" transform="translate(0.5 0.5)"/>
-      <path class="cls-9" d="M259.19,284.28h5.92a2.88,2.88,0,0,1-2.83,3C260.61,287.33,259.45,286.22,259.19,284.28Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M260.65,289.08v-7.65h3v7.65c1.33,0,2.56,0,3.79,0,.37,0,.93.17,1.07.44,2,3.89,4,7.81,6,11.85h-24.6c.15-.36.26-.72.43-1.05,1.72-3.42,3.47-6.83,5.14-10.27a1.49,1.49,0,0,1,1.68-1C258.27,289.14,259.39,289.08,260.65,289.08Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M259.19,303.1h5.92a2.87,2.87,0,0,1-2.83,3C260.61,306.15,259.45,305,259.19,303.1Z" transform="translate(0.5 0.5)"/>
     </g>
     <g id="sensor.living_room_ceiling-4" data-name="sensor.living_room_ceiling">
-      <path class="cls-9" d="M188.26,373.69V366h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.16,1.07.43,2,3.89,4,7.81,6,11.85H177.53c.15-.36.27-.72.43-1.05,1.72-3.42,3.47-6.83,5.14-10.27a1.49,1.49,0,0,1,1.68-1C185.89,373.75,187,373.69,188.26,373.69Z" transform="translate(0.5 0.5)"/>
-      <path class="cls-9" d="M186.81,387.7h5.91a2.86,2.86,0,0,1-2.83,3C188.23,390.75,187.06,389.63,186.81,387.7Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M188.26,392.5v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.16,1.07.43,2,3.89,4,7.81,6,11.86H177.53c.15-.37.27-.73.43-1.06,1.72-3.42,3.47-6.83,5.14-10.27a1.51,1.51,0,0,1,1.68-1C185.89,392.56,187,392.5,188.26,392.5Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M186.81,406.51h5.91a2.86,2.86,0,0,1-2.83,3C188.23,409.56,187.06,408.45,186.81,406.51Z" transform="translate(0.5 0.5)"/>
     </g>
     <g id="sensor.living_room_ceiling-5" data-name="sensor.living_room_ceiling">
-      <path class="cls-9" d="M217.66,465.48v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.16,1.07.43,2,3.89,3.95,7.81,6,11.86H206.92c.15-.37.27-.73.44-1.06,1.71-3.42,3.46-6.83,5.14-10.27a1.51,1.51,0,0,1,1.68-1C215.28,465.54,216.4,465.48,217.66,465.48Z" transform="translate(0.5 0.5)"/>
-      <path class="cls-9" d="M216.2,479.49h5.92a2.87,2.87,0,0,1-2.83,3C217.62,482.54,216.46,481.43,216.2,479.49Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M217.66,484.29v-7.66h3v7.66c1.33,0,2.56,0,3.79,0,.37,0,.93.17,1.07.43,2,3.89,3.95,7.81,6,11.86H206.92c.15-.37.27-.72.44-1.06,1.71-3.42,3.46-6.82,5.14-10.27a1.51,1.51,0,0,1,1.68-1C215.28,484.35,216.4,484.29,217.66,484.29Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M216.2,498.3h5.92a2.88,2.88,0,0,1-2.83,3C217.62,501.35,216.46,500.24,216.2,498.3Z" transform="translate(0.5 0.5)"/>
     </g>
   </g>
   <g id="temp">
     <g id="sensor.living_room_therm">
-      <path class="cls-9" d="M79,179.46h-.36a2.24,2.24,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.33-5.57,1.77,1.77,0,0,0,.45-1.06c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.43A3.23,3.23,0,0,1,82,161.6c0,2.5,0,5,0,7.5a1.89,1.89,0,0,0,.51,1.21,5.19,5.19,0,0,1-.36,7.78A14.36,14.36,0,0,1,79,179.46Zm-1.26-15c0,2,0,3.86,0,5.73a1.07,1.07,0,0,1-.6,1.14,3.07,3.07,0,0,0-1.5,3.51,3.26,3.26,0,0,0,6.12.61,2.83,2.83,0,0,0-.78-3.69c-1.17-.73-1.11-1.64-1.09-2.7,0-1.28,0-2.56,0-3.84,0-.26,0-.52,0-.76Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M79,198.27h-.36a2.91,2.91,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.18,5.18,0,0,1,1.33-5.56,1.8,1.8,0,0,0,.45-1.07c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.43A3.24,3.24,0,0,1,82,180.41c0,2.5,0,5,0,7.5a1.89,1.89,0,0,0,.51,1.21,5.19,5.19,0,0,1-.36,7.78A13.91,13.91,0,0,1,79,198.27Zm-1.26-15c0,2,0,3.86,0,5.74a1.08,1.08,0,0,1-.6,1.14,3.05,3.05,0,0,0-1.5,3.5,3.26,3.26,0,0,0,6.12.61,2.83,2.83,0,0,0-.78-3.69c-1.17-.73-1.11-1.64-1.09-2.7,0-1.28,0-2.56,0-3.84,0-.26,0-.51,0-.76Z" transform="translate(0.5 0.5)"/>
     </g>
-    <text class="cls-10" transform="translate(87.92 167.52)">TºC<tspan class="cls-11"><tspan x="0" y="12">H%</tspan></tspan></text>
+    <text class="cls-9" transform="translate(87.92 186.33)">TºC<tspan class="cls-10"><tspan x="0" y="12">H%</tspan></tspan></text>
     <g id="sensor.living_room_therm-2" data-name="sensor.living_room_therm">
-      <path class="cls-9" d="M79.4,215.69H79a2.91,2.91,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.33-5.56,1.8,1.8,0,0,0,.45-1.07c0-2.53,0-5.06,0-7.59s1.72-3.91,4-3.42a3.23,3.23,0,0,1,2.41,3.42c0,2.5,0,5,0,7.5a1.94,1.94,0,0,0,.51,1.21,5.19,5.19,0,0,1-.36,7.78A13.91,13.91,0,0,1,79.4,215.69Zm-1.26-15c0,2,0,3.86,0,5.74a1.08,1.08,0,0,1-.6,1.14,3.05,3.05,0,0,0-1.5,3.5,3.26,3.26,0,0,0,6.12.62,2.84,2.84,0,0,0-.78-3.7c-1.17-.73-1.11-1.64-1.09-2.7,0-1.28,0-2.56,0-3.84,0-.26,0-.51,0-.76Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M79.4,234.5H79a2.91,2.91,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.33-5.56,1.77,1.77,0,0,0,.45-1.06c0-2.53,0-5.06,0-7.59s1.72-3.92,4-3.43a3.23,3.23,0,0,1,2.41,3.42c0,2.5,0,5,0,7.51a1.92,1.92,0,0,0,.51,1.2,5.19,5.19,0,0,1-.36,7.78A13.91,13.91,0,0,1,79.4,234.5Zm-1.26-15c0,2,0,3.86,0,5.74a1.08,1.08,0,0,1-.6,1.14,3.05,3.05,0,0,0-1.5,3.5,3.26,3.26,0,0,0,6.12.62,2.84,2.84,0,0,0-.78-3.7c-1.17-.73-1.11-1.64-1.09-2.69,0-1.28,0-2.57,0-3.85,0-.25,0-.51,0-.76Z" transform="translate(0.5 0.5)"/>
     </g>
-    <text class="cls-10" transform="translate(88.3 203.75)">TºC<tspan class="cls-11"><tspan x="0" y="12">H%</tspan></tspan></text>
+    <text class="cls-9" transform="translate(88.3 222.57)">TºC<tspan class="cls-10"><tspan x="0" y="12">H%</tspan></tspan></text>
     <g id="sensor.living_room_therm-3" data-name="sensor.living_room_therm">
-      <path class="cls-9" d="M211,421.15h-.36a3.22,3.22,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.32-5.56,1.81,1.81,0,0,0,.46-1.07c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.42a3.25,3.25,0,0,1,2.41,3.42c0,2.5,0,5,0,7.5a1.87,1.87,0,0,0,.51,1.21,5.19,5.19,0,0,1-.36,7.78A13.91,13.91,0,0,1,211,421.15Zm-1.26-15c0,2,0,3.86,0,5.74a1.11,1.11,0,0,1-.6,1.14,3.05,3.05,0,0,0-1.5,3.5,3.26,3.26,0,0,0,6.12.62,2.84,2.84,0,0,0-.78-3.7c-1.18-.73-1.11-1.64-1.09-2.69,0-1.29,0-2.57,0-3.85,0-.26,0-.51,0-.76Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M211,440h-.36a4.83,4.83,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.32-5.56,1.79,1.79,0,0,0,.46-1.06c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.43a3.25,3.25,0,0,1,2.41,3.43c0,2.5,0,5,0,7.5a1.91,1.91,0,0,0,.51,1.21,5.19,5.19,0,0,1-.36,7.78A14.34,14.34,0,0,1,211,440Zm-1.26-15c0,2,0,3.86,0,5.74a1.11,1.11,0,0,1-.6,1.14,3.05,3.05,0,0,0-1.5,3.5,3.26,3.26,0,0,0,6.12.62,2.84,2.84,0,0,0-.78-3.7c-1.18-.73-1.11-1.63-1.09-2.69,0-1.28,0-2.57,0-3.85,0-.25,0-.51,0-.76Z" transform="translate(0.5 0.5)"/>
     </g>
-    <text class="cls-10" transform="translate(219.88 409.22)">TºC<tspan class="cls-11"><tspan x="0" y="12">H%</tspan></tspan></text>
+    <text class="cls-9" transform="translate(219.88 428.03)">TºC<tspan class="cls-10"><tspan x="0" y="12">H%</tspan></tspan></text>
     <g id="sensor.living_room_therm-4" data-name="sensor.living_room_therm">
-      <path class="cls-9" d="M149.08,506.36h-.35a3.28,3.28,0,0,0-.5-.17,4.94,4.94,0,0,1-4.32-3.48,5.2,5.2,0,0,1,1.32-5.56,1.72,1.72,0,0,0,.45-1.06c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.43a3.23,3.23,0,0,1,2.4,3.43c0,2.5,0,5,0,7.5a2,2,0,0,0,.52,1.21,5.2,5.2,0,0,1-.37,7.78A14.63,14.63,0,0,1,149.08,506.36Zm-1.26-15c0,2,0,3.86,0,5.74a1.09,1.09,0,0,1-.59,1.14,3.08,3.08,0,0,0-1.51,3.51,3.27,3.27,0,0,0,6.13.61,2.84,2.84,0,0,0-.79-3.7C149.9,497.94,150,497,150,496c0-1.28,0-2.57,0-3.85,0-.25,0-.51-.06-.76Z" transform="translate(0.5 0.5)"/>
+      <path class="cls-8" d="M149.08,525.17h-.35a2.42,2.42,0,0,0-.5-.16,5,5,0,0,1-4.32-3.48,5.22,5.22,0,0,1,1.32-5.57,1.72,1.72,0,0,0,.45-1.06c0-2.53,0-5.06,0-7.59s1.73-3.91,4-3.43a3.23,3.23,0,0,1,2.4,3.43c0,2.5,0,5,0,7.5a2,2,0,0,0,.52,1.21,5.2,5.2,0,0,1-.37,7.78A14.16,14.16,0,0,1,149.08,525.17Zm-1.26-15c0,2,0,3.87,0,5.74a1.08,1.08,0,0,1-.59,1.14,3.09,3.09,0,0,0-1.51,3.51,3.27,3.27,0,0,0,6.13.61,2.83,2.83,0,0,0-.79-3.69c-1.17-.73-1.11-1.64-1.09-2.7,0-1.28,0-2.56,0-3.85,0-.25,0-.51-.06-.76Z" transform="translate(0.5 0.5)"/>
     </g>
-    <text class="cls-10" transform="translate(157.98 494.42)">TºC<tspan class="cls-11"><tspan x="0" y="12">H%</tspan></tspan></text>
+    <text class="cls-9" transform="translate(157.98 513.23)">TºC<tspan class="cls-10"><tspan x="0" y="12">H%</tspan></tspan></text>
   </g>
   <g id="text">
-    <text class="cls-12" transform="translate(331.67 140.17) rotate(-90)">FIRS<tspan class="cls-13" x="31.89" y="0">T</tspan><tspan x="40.2" y="0" xml:space="preserve"> FLOOR</tspan></text>
-    <text class="cls-14" transform="translate(299.1 118.5) rotate(-90)">MASTER</text>
-    <text class="cls-14" transform="translate(214.3 321.94) rotate(-89.55)">BEDROOM 2</text>
-    <text class="cls-14" transform="translate(299.1 485.65) rotate(-90)">BEDROOM 3</text>
-    <text class="cls-15" transform="translate(158.92 422.31) rotate(-90)">B<tspan class="cls-16" x="10.7" y="0">A</tspan><tspan x="20.34" y="0">TH</tspan></text>
-    <text class="cls-14" transform="translate(299.1 266.15) rotate(-90)">LANDING</text>
+    <text class="cls-11" transform="translate(331.67 158.98) rotate(-90)">FIRS<tspan class="cls-12" x="31.89" y="0">T</tspan><tspan x="40.2" y="0" xml:space="preserve"> FLOOR</tspan></text>
+    <text class="cls-13" transform="translate(299.1 137.31) rotate(-90)">MASTER</text>
+    <text class="cls-13" transform="translate(214.28 340.73) rotate(-89.55)">BEDROOM 2</text>
+    <text class="cls-13" transform="translate(299.1 504.46) rotate(-90)">BEDROOM 3</text>
+    <text class="cls-14" transform="translate(158.92 441.12) rotate(-90)">B<tspan class="cls-15" x="10.7" y="0">A</tspan><tspan x="20.34" y="0">TH</tspan></text>
+    <text class="cls-13" transform="translate(299.1 284.96) rotate(-90)">LANDING</text>
   </g>
 </svg>

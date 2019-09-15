@@ -1,16 +1,1 @@
-# switch:
-# ## Turns the non-binary motion sensor into a binary sensor - which is more useful for automations
-#   - platform: mqtt
-#     name: "living_room_motion"
-#     state_topic: "test.home/living-room/motion/state"
-#     availability_topic: "test.home/living-room/motion/available"
-#     payload_on: "ON"
-#     payload_off: "OFF"
-#     optimistic: false
-#     qos: 0
-#     retain: true
-#     unique_id: 00112233445534
 
-# sensor.living_room_motion:
-#   # <<: *customize
-#   device_class: motion

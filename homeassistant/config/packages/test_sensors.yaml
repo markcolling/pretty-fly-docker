@@ -12,3 +12,33 @@ switch:
     qos: 0
     retain: true
     unique_id: 001234534214235
+
+binary_sensor:
+  - platform: mqtt
+    name: "test_room_opening"
+    state_topic: "test.home/test_room/opening_1/state"
+    availability_topic: "test.home/test_room/opening_1/available"
+    payload_on: "ON"
+    payload_off: "OFF"
+    # optimistic: false
+    qos: 0
+    # retain: true
+    unique_id: 001121312445534
+
+binary_sensor.test_room_opening:
+  # <<: *customize
+  device_class: door
+
+sensor:
+  - platform: mqtt
+    state_topic: "test.home/test_room/temperature"
+    name: "test_room_temp"
+    unit_of_measurement: "C"
+    value_template: "{{  value | round(1) }}"
+
+sensor:
+  - platform: mqtt
+    state_topic: "test.home/test_room/humidity"
+    name: "test_room_humidity"
+    unit_of_measurement: "%"
+    value_template: "{{  value | round(1) }}"

@@ -57,57 +57,57 @@
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
-        entity: light.dining_room_ceiling
+        entity: binary_sensor.test_room_opening
         # icon: mdi:lightbulb
         color: auto
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Button 4
+        name: Test Opening
         styles:
           card:
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
-      - type: "custom:button-card"
-        entity: light.dining_room_ceiling
-        # icon: mdi:lightbulb
-        color: auto
-        color_type: icon
-        default_color: rgb(255, 233, 155)
-        action: more_info
-        name: Button 5
-        styles:
-          card:
-          - height: 98px
-          # - font-size: 12px
-          # - font-weight: bold
-      - type: "custom:button-card"
-        entity: light.dining_room_ceiling
-        # icon: mdi:lightbulb
-        color: auto
-        color_type: icon
-        default_color: rgb(255, 233, 155)
-        action: more_info
-        name: Button 6
-        styles:
-          card:
-          - height: 98px
-          # - font-size: 12px
-          # - font-weight: bold
-      - type: "custom:button-card"
-        entity: light.dining_room_ceiling
-        # icon: mdi:lightbulb
-        color: auto
-        color_type: icon
-        default_color: rgb(255, 233, 155)
-        action: more_info
-        name: Button 7
-        styles:
-          card:
-          - height: 98px
-          # - font-size: 12px
-          # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: light.dining_room_ceiling
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Button 5
+      #   styles:
+      #     card:
+      #     - height: 98px
+      #     # - font-size: 12px
+      #     # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: light.dining_room_ceiling
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Button 6
+      #   styles:
+      #     card:
+      #     - height: 98px
+      #     # - font-size: 12px
+      #     # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: light.dining_room_ceiling
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Button 7
+      #   styles:
+      #     card:
+      #     - height: 98px
+      #     # - font-size: 12px
+      #     # - font-weight: bold
       - break
 
       - type: 'custom:floorplan-card'
@@ -160,6 +160,26 @@
                   state: 'off'
                 - class: 'battery-warning-on'
                   state: 'on'
+
+            - entities:
+                - binary_sensor.downstairs_bathroom_window_1
+              states:
+                - class: 'opening-closed'
+                  state: 'off'
+                - class: 'opening-open'
+                  state: 'on'
+                - class: 'opening-unavailable'
+                  state: 'unavailable'
+
+            - entities:
+                - sensor.living_room_window_2
+              states:
+                - class: 'opening-closed'
+                  state: 'off'
+                - class: 'opening-open'
+                  state: 'on'
+                - class: 'opening-unavailable'
+                  state: 'unavailable'
 
 
 
@@ -217,6 +237,7 @@
                   state: 'off'
                 - class: 'battery-warning-on'
                   state: 'on'
+
           stylesheet: /local/floorplan/floorplan.css
 
       - type: custom:mini-media-player

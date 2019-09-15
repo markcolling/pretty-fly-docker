@@ -5,7 +5,7 @@
 
 }
 .battery-warning-on {
-  animation: blinker 1s step-start infinite;
+  animation: blinker 1s step-start infinite !important;
 }
 
 @keyframes blinker {
@@ -22,4 +22,14 @@
 }
 .test-unavailable {
   fill: grey !important;
+}
+
+.opening-closed {
+  stroke: var(--primary-color) !important;
+}
+.opening-open{
+  stroke: #DE3428 !important;
+}
+.opening-unavailable{
+  stroke: grey !important;
 }

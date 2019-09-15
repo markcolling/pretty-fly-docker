@@ -1,0 +1,12 @@
+binary_sensor:
+    - platform: mqtt
+      name: downstairs_bathroom_window_1
+      state_topic: "tele/sonoff-rf-bridge/RESULT"
+      value_template: '{{value_json.RfReceived.Data}}'
+      payload_on: "E1990A"
+      payload_off: "E1990E"
+      device_class: Window
+      optimistic: false
+      qos: 1
+      retain: false
+      friendly_name: "Downstairs Bathroom Window"
