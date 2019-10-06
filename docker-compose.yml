@@ -45,7 +45,7 @@ services:
     volumes:
       # - ./grafana/lib:/var/lib/grafana
       # - ./grafana/conf:/etc/grafana
-      - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini ### NEED TO UPDATE TO SOLVE GRAFANA ISSUE ON NUC
       - ./grafana/conf/datasources:/etc/grafana/datasources
       - ./grafana/lib:/var/lib/grafana
 
@@ -77,7 +77,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.94.4
+    image: homeassistant/home-assistant:0.99.3
     container_name: "hass"
     networks:
       - net
@@ -139,7 +139,7 @@ services:
     #   - influxdb
 
   nodered:
-    image: nodered/node-red-docker:latest
+    image: nodered/node-red:latest
     container_name: nodered
     environment:
       - VIRTUAL_HOST=nodered${ENV_DOMAIN}

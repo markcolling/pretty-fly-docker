@@ -37,6 +37,9 @@ switch: !include switch.yaml
 light: !include light.yaml
 sensor: !include sensor.yaml
 
+logger:
+  default: warn
+
 hacs:
   token: !secret hacs_token
 
@@ -97,10 +100,10 @@ recorder:
   purge_keep_days: 31
   include:
     domains:
-      sensors
-  exclude:
-    entities:
-      - sensor.dark_sky_*
+      sensor
+  # exclude:
+  #   entities:
+  #     - sensor.dark_sky_*
 
 # UI PANELS
 panel_iframe:
@@ -116,6 +119,10 @@ panel_iframe:
     title: Portainer
     icon: mdi:dns
     url: !env_var portainer_env_domain
+  # node_red:
+  #   title: Node Red
+  #   icon: mdi:swap-vertical-variant
+  #   url: !env_var nodered_env_domain
 
 shopping_list:
 
@@ -138,3 +145,8 @@ speedtestdotnet:
 sonos:
   media_player:
     hosts: 192.168.1.11
+
+alarm_control_panel:
+  - platform: yale_smart_alarm
+    username: !secret yale_username
+    password: !secret yale_password
