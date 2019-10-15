@@ -8,67 +8,54 @@
     - type: custom:layout-card
       column_num: 4
       layout: vertical
-      column_width:
+      # column_width: [1216px, 1216px, 1216px, 1216px]
       max_width: [10%, 30%, 30%, 30%]
       cards:
       - type: "custom:button-card"
-        entity: switch.living_room_ceiling
+        entity: person.mark_colling
         # icon: mdi:lightbulb
         color: auto
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Living Room Switch
-        styles:
-          card:
-          - height: 98px
-        state:
-          - value: default
-            colour: var(--disabled-text-color)
-            styles:
-              label:
-                - colour: var(--disabled-text-color)
-          # - font-size: 12px
-          # - font-weight: bold
-      - type: "custom:button-card"
-        entity: light.dining_room_ceiling
-        # icon: mdi:lightbulb
-        color: auto
-        color_type: icon
-        default_color: rgb(255, 233, 155)
-        action: more_info
-        name: Dining Room Light
+        name: Mark
         styles:
           card:
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
       - type: "custom:button-card"
-        entity: switch.test_room_light
+        entity: person.katie
         # icon: mdi:lightbulb
         color: auto
         color_type: icon
         default_color: rgb(255, 233, 155)
         action: more_info
-        name: Test Light
+        name: Katie
         styles:
           card:
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
-      - type: "custom:button-card"
-        entity: binary_sensor.test_room_opening
-        # icon: mdi:lightbulb
-        color: auto
-        color_type: icon
-        default_color: rgb(255, 233, 155)
-        action: more_info
-        name: Test Opening
-        styles:
-          card:
-          - height: 98px
-          # - font-size: 12px
-          # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: switch.living_room_ceiling
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Living Room Switch
+      #   styles:
+      #     card:
+      #     - height: 98px
+      #   state:
+      #     - value: default
+      #       colour: var(--disabled-text-color)
+      #       styles:
+      #         label:
+      #           - colour: var(--disabled-text-color)
+      #     # - font-size: 12px
+      #     # - font-weight: bold
       # - type: "custom:button-card"
       #   entity: light.dining_room_ceiling
       #   # icon: mdi:lightbulb
@@ -76,12 +63,38 @@
       #   color_type: icon
       #   default_color: rgb(255, 233, 155)
       #   action: more_info
-      #   name: Button 5
+      #   name: Dining Room Light
       #   styles:
       #     card:
       #     - height: 98px
       #     # - font-size: 12px
       #     # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: switch.test_room_light
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Test Light
+      #   styles:
+      #     card:
+      #     - height: 98px
+      #     # - font-size: 12px
+      #     # - font-weight: bold
+      # - type: "custom:button-card"
+      #   entity: binary_sensor.test_room_opening
+      #   # icon: mdi:lightbulb
+      #   color: auto
+      #   color_type: icon
+      #   default_color: rgb(255, 233, 155)
+      #   action: more_info
+      #   name: Test Opening
+      #   styles:
+      #     card:
+      #     - height: 98px
+          # - font-size: 12px
+          # - font-weight: bold
       # - type: "custom:button-card"
       #   entity: light.dining_room_ceiling
       #   # icon: mdi:lightbulb
@@ -297,14 +310,36 @@
         entity_pop_5: sensor.dark_sky_precip_probability_5d
         static_icons: true
 
-      - type: glance
-        title: Lights
-        show_name: true
-        show_state: true
+      - type: custom:flex-table-card
+        # title: Trains to Waterloo
+        max_rows: 5
         entities:
-          - switch.living_room_ceiling
-          - light.dining_room_ceiling
-          - switch.test_room_light
+          include: sensor.next_train_to_wat
+        columns:
+          # - name: Origin
+          #   attr_as_list: next_trains
+          #   modify: x.origin_name
+          # - name: Destination
+          #   attr_as_list: next_trains
+          #   modify: x.destination_name
+          - name: Next Train to WAT
+            attr_as_list: next_trains
+            modify: x.scheduled
+          - name: Est
+            attr_as_list: next_trains
+            modify: x.estimated
+          - name: Status
+            attr_as_list: next_trains
+            modify: x.status
+
+      # - type: glance
+      #   title: Lights
+      #   show_name: true
+      #   show_state: true
+      #   entities:
+      #     - switch.living_room_ceiling
+      #     - light.dining_room_ceiling
+      #     - switch.test_room_light
 
       # - type: vertical-stack
       #   cards:

@@ -1,0 +1,12 @@
+sensor:
+  - platform: uk_transport
+    app_id: !secret transport_APP_ID
+    app_key: !secret transport_APP_KEY
+    # scan_interval: 1000
+    queries:
+      - mode: train
+        origin: WAL
+        destination: WAT
+      # - mode: train
+      #   origin: WAT
+      #   destination: WAL

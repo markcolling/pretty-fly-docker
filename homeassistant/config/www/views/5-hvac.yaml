@@ -1,0 +1,13 @@
+# Title of the view. Will be used as the tooltip for tab icon
+- title: Heating
+  icon: mdi:home-analytics
+  id: heating
+  path: heating
+  cards:
+  - type: vertical-stack
+    cards:
+    # The markdown card will render markdown text.
+    - type: markdown
+      title: Heating
+      content: >
+        Welcome to your **Lovelace UI**.

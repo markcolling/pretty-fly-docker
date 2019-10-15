@@ -297,3 +297,7 @@ Dark - Cyan:
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
+
+
+dark_cyan_custom_sensor:
+  accent-color: '#00E4D7' 

@@ -5,9 +5,9 @@ resources:
     type: module
   - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
     type: module
-  - url: /local/custom_ui/layout-card.js
+  - url: /community_plugin/lovelace-layout-card/layout-card.js
     type: js
-  - url: /local/custom_ui/card-tools.js?v=0.4
+  - url: /community_plugin/lovelace-card-tools/card-tools.js
     type: js
   - url: /community_plugin/bar-card/bar-card.js
     type: js
@@ -23,7 +23,15 @@ resources:
     type: module
   - url: /community_plugin/button-card/button-card.js
     type: module
+  - url: /community_plugin/flex-table-card/flex-table-card.js
+    type: js
+  - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
+    type: js
 
+cch:
+  options: clock
+  swipe: true
+  # kiosk_mode: true
 
 views: !include_dir_merge_list www/views
 

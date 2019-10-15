@@ -1,0 +1,2 @@
+binary_sensor.sonoff_rf_bridge:
+    friendly_name: "Sonoff RF Bridge"

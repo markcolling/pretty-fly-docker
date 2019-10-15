@@ -52,9 +52,13 @@ nodered/.config.json
 X. Check which MQTT broker HASS is connected to
 
 TO DO:
-- HA logging levels
 - InfluxDB retention, CQ and config
 - System monitor in docker (volume mapping)
-- Update HACS store
 - Change packages structure
 - Add Alexa TTS
+- Update synology secrets
+- Complete PING file
+- Remove unwanted sensors from recorder - Last boot
+- Add Yale
+- Add trains
+- Add location

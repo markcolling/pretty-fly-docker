@@ -17,19 +17,56 @@
           show_header_toggle: off
           entities:
             - type: section
+              label: System Component Status
+            - entity: binary_sensor.sonoff_rf_bridge
+              type: "custom:secondaryinfo-entity-row"
+              secondary_info: "192.168.1.XX"
+        - type: entities
+          show_header_toggle: off
+          entities:
+            - type: section
               label: Software Versions (current/latest)
             - entity: sensor.ha_versions
 
         - break
 
-        - type: entities
-          show_header_toggle: off
-          entities:
-            - type: section
-              label: Network Stats
-            - entity: sensor.speedtest_download
-            - entity: sensor.speedtest_upload
-            - entity: sensor.speedtest_ping
+        # - type: entities
+        #   show_header_toggle: off
+        #   entities:
+        #     - type: section
+        #       label: Network Stats
+            # - entity: sensor.speedtest_download
+            # - entity: sensor.speedtest_upload
+            # - entity: sensor.speedtest_ping
+
+        - type: custom:vertical-stack-in-card
+          cards:
+          - type: entities
+            show_header_toggle: off
+            entities:
+              - type: section
+                label: Network Stats
+          - type: sensor
+            theme: dark_cyan_custom_sensor
+            entity: sensor.speedtest_download
+            name: Download
+            hours_to_show: 24
+            graph: line
+            detail: 2
+          - type: sensor
+            theme: dark_cyan_custom_sensor
+            entity: sensor.speedtest_upload
+            name: Upload
+            hours_to_show: 24
+            graph: line
+            detail: 2
+          - type: sensor
+            theme: dark_cyan_custom_sensor
+            entity: sensor.speedtest_ping
+            name: Ping
+            hours_to_show: 24
+            graph: line
+            detail: 2
 
         - break
 
@@ -52,10 +89,6 @@
             - entity: sensor.volume_status_volume_2
             - entity: sensor.cpu_total_load_volume_2
             - entity: sensor.volume_percentage_used_volume_2
-
-
-        #Needed for compact header. Every view. Main config in first view.
-        - type: custom:compact-custom-header
 
       # - type: vertical-stack
       #   cards:

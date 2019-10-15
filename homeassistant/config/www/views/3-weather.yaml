@@ -1,16 +1,13 @@
     # Title of the view. Will be used as the tooltip for tab icon
-  - title: First Floor
-    icon: mdi:arrow-up-bold-circle
-    id: first-floor
-    path: first-floor
+  - title: Weather
+    icon: mdi:weather-partly-cloudy
+    id: weather
+    path: weather
     cards:
     - type: vertical-stack
       cards:
       # The markdown card will render markdown text.
       - type: markdown
-        title: First Floor
+        title: Weather
         content: >
           Welcome to your **Lovelace UI**.
-
-      #Needed for compact header. Every view. Main config in first view.
-      - type: custom:compact-custom-header

@@ -180,8 +180,8 @@ binary_sensor:
 
 # ##### Temperature template
 
-sensor:
-  - platform: template
-    sensor:
-      living_room_temp_text:
-          value_template: "{{ states.sensor.test_room_temp.state }} \n {{ states.sensor.test_room_humidity.state }}"
+# sensor:
+#   - platform: template
+#     sensor:
+#       living_room_temp_text:
+#           value_template: "{{ states.sensor.test_room_temp.state }} \n {{ states.sensor.test_room_humidity.state }}"
