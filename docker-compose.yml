@@ -77,7 +77,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.99.3
+    image: homeassistant/home-assistant:0.100.3
     container_name: "hass"
     networks:
       - net
