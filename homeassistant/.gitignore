@@ -40,10 +40,10 @@ home-assistant.log
 ozw_log.txt
 
 # Development files
-/config/custom_components/hacs/**
-/config/custom_components/breaking_changes/**
-!/config/custom_components/hacs/.keep
-!/config/custom_components/breaking_changes/.keep
+# /config/custom_components/hacs/**
+# /config/custom_components/breaking_changes/**
+# !/config/custom_components/hacs/.keep
+# !/config/custom_components/breaking_changes/.keep
 !/config/www/
 !/config/www/**
 .HA_version
