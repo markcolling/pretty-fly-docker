@@ -144,8 +144,8 @@ services:
     environment:
       - VIRTUAL_HOST=nodered${ENV_DOMAIN}
       - VIRTUAL_PORT=1880
-      - PGID=1000
-      - PUID=1000
+      - PGID=1001
+      - PUID=1001
       # - FLOWS=/data/flows_prettyflypi.json
     networks:
       - net
