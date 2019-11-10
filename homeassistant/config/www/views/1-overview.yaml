@@ -194,7 +194,24 @@
                 - class: 'opening-unavailable'
                   state: 'unavailable'
 
-
+          # - name: Sensors
+            - entities:
+                - sensor.day_room_temperature
+                - sensor.kitchen_temperature
+              text_template: '${entity.state ? entity.state + "\u00b0C" : "\#\#"}'
+              class_template: '
+                var temp = parseFloat(entity.state.replace("°", ""));
+                if (temp < 10)
+                  return "temp-low";
+                else if (temp < 30)
+                  return "temp-medium";
+                else
+                  return "temp-high";
+                '
+            - entities:
+                - sensor.day_room_humidity
+                - sensor.kitchen_humidity
+              text_template: '${entity.state ? entity.state + "\%" : "\#\#"}'
 
             # - entities:
             #     - switch.living_room_motion
@@ -331,13 +348,13 @@
       #     - name: Status
       #       attr_as_list: next_trains
       #       modify: x.status
-      #   # on_empty:
-      #   #   # to hide the entire flex-table (default: false)
-      #   #   hide: true
-      #   #   # if `!hide` show the following text instead of content
-      #   #   text: "No trains to show"
-      #   #   # do not show the column headers (default: false)
-      #   #   hide_headers: true
+      #   on_empty:
+      #     # to hide the entire flex-table (default: false)
+      #     hide: true
+      #     # if `!hide` show the following text instead of content
+      #     # text: "No trains to show"
+      #     # do not show the column headers (default: false)
+      #     hide_headers: true
 
       # - type: glance
       #   title: Lights

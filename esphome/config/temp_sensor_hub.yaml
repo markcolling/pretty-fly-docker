@@ -1,0 +1,58 @@
+esphome:
+  name: temp_sensor_hub
+  platform: ESP32
+  board: esp32dev
+
+wifi:
+  ssid: "PrettyFlyForAWifi"
+  password: "a1b2c3d4e5"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Temp Sensor Hub Fallback Hotspot"
+    password: "52bqLsukXFBJ"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Enable Bluetooth scanning for this ESP32
+esp32_ble_tracker:
+
+sensor:
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:36:B0:9A
+    temperature:
+      name: "Day Room Temperature"
+    humidity:
+      name: "Day Room Humidity"
+    battery_level:
+      name: "Day Room Battery Level"
+  - platform: xiaomi_lywsdcgq
+    mac_address: 58:2D:34:36:B2:89
+    temperature:
+      name: "Kitchen Temperature"
+    humidity:
+      name: "Kitchen Humidity"
+    battery_level:
+      name: "Kitchen Battery Level"
+
+time:
+  - platform: homeassistant
+    on_time:
+      - seconds: 0
+        minutes: 0
+        hours: 4
+        days_of_week: MON-SUN
+        then:
+           - switch.toggle: restart_switch
+switch:
+  - platform: restart
+    name: "test_temperature Restart"
+    id: restart_switch

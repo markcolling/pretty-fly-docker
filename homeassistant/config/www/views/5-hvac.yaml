@@ -3,11 +3,52 @@
   icon: mdi:home-analytics
   id: heating
   path: heating
+  type: module
+  panel: true
   cards:
-  - type: vertical-stack
+  - type: horizontal-stack # forces everything to fit in one row
     cards:
-    # The markdown card will render markdown text.
-    - type: markdown
-      title: Heating
-      content: >
-        Welcome to your **Lovelace UI**.
+    # column_num: 3
+    # layout: vertical
+    # # column_width: [1216px, 1216px, 1216px, 1216px]
+    # max_width: [30%, 30%, 30%]
+    # cards:
+    - type: custom:thermostat-card
+      title: Kitchen Floor
+      entity: climate.kitchen_floor
+    # - type: custom:thermostat-card
+    #   title: Bedroom
+    #   entity: climate.ecobee
+    # - type: custom:thermostat-card
+    #   title: Rest of House
+    #   entity: climate.ecobee
+
+    # - break
+
+    - type: vertical-stack # column 1
+      cards:
+      - type: sensor
+        entity: sensor.kitchen_temperature
+        name: Kitchen Temperature
+        detail: 2
+        graph: line
+      - type: sensor
+        entity: sensor.kitchen_humidity
+        name: Kitchen Humidity
+        detail: 2
+        graph: line
+
+    # - break
+
+    - type: vertical-stack # column 1
+      cards:
+      - type: sensor
+        entity: sensor.day_room_temperature
+        name: Day Room Temperature
+        detail: 2
+        graph: line
+      - type: sensor
+        entity: sensor.day_room_humidity
+        name: Day Room Humidity
+        detail: 2
+        graph: line

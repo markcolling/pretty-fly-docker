@@ -20,7 +20,10 @@
               label: System Component Status
             - entity: binary_sensor.sonoff_rf_bridge
               type: "custom:secondaryinfo-entity-row"
-              secondary_info: "192.168.1.XX"
+              secondary_info: "192.168.1.16"
+            - entity: binary_sensor.ble_sensor_hub
+              type: "custom:secondaryinfo-entity-row"
+              secondary_info: "192.168.1.34"
         - type: entities
           show_header_toggle: off
           entities:

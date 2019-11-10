@@ -144,6 +144,8 @@ services:
     environment:
       - VIRTUAL_HOST=nodered${ENV_DOMAIN}
       - VIRTUAL_PORT=1880
+      - PGID=1000
+      - PUID=1000
       # - FLOWS=/data/flows_prettyflypi.json
     networks:
       - net
@@ -169,21 +171,39 @@ services:
     #   - ./unifi-video/data:/var/lib/unifi-video/
     #   - ./unifi-video/log:/var/log/unifi-video/
 
-  hass-configurator:
-    image: "causticlab/hass-configurator-docker:arm"
+  # hass-configurator:
+  #   image: "causticlab/hass-configurator-docker:arm"
+  #   restart: always
+  #   container_name: configurator
+  #   environment:
+  #     - VIRTUAL_HOST=configurator${ENV_DOMAIN}
+  #     - VIRTUAL_PORT=3218
+  #   ports:
+  #     - 3218:3218
+  #   networks:
+  #     - net
+  #   volumes:
+  #     - "./configurator:/config"
+  #     - "./homeassistant/config:/hass-config"
+
+  esphome:
+    image: "esphome/esphome"
     restart: always
-    container_name: configurator
+    container_name: esphome
     environment:
-      - VIRTUAL_HOST=configurator${ENV_DOMAIN}
-      - VIRTUAL_PORT=3218
+      - VIRTUAL_HOST=esphome${ENV_DOMAIN}
+      - VIRTUAL_PORT=6052
     ports:
-      - 3218:3218
+      - 6052:6052
     networks:
       - net
     volumes:
-      - "./configurator:/config"
-      - "./homeassistant/config:/hass-config"
-
+      - "./esphome/config:/config"
+    # devices:
+    #   # - "/dev/ttyUSB0:/dev/ttyUSB0"
+    #   # - "/dev/cu.usbserial-0001:/dev/cu.usbserial-0001"
+    #   # - "/dev/ttyUSB0"
+    #   - "/dev/SLAB_USBtoUART:/dev/SLAB_USBtoUART"
 networks:
   net:
   default:

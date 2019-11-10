@@ -1,0 +1,40 @@
+binary_sensor:
+    - platform: template
+      sensors:
+        ble_sensor_hub:
+          device_class: connectivity
+          friendly_name: "BLE Sensor Hub"
+          # value_template: "{{ is_state('sensor.day_room_battery_level', 'unavailable') }}"
+          value_template: "{{ states.switch.test_temperature_restart.state != 'unavailable' }}"
+
+# sensor:
+#   - platform: xiaomi_mijia
+#     mac_address: 58:2D:34:36:B0:9A
+#     temperature:
+#       name: "Day Room Temperature"
+#     humidity:
+#       name: "Day Room Humidity"
+#     battery_level:
+#       name: "Day Room Battery Level"
+#   - platform: xiaomi_mijia
+#     mac_address: 58:2D:34:36:B2:89
+#     temperature:
+#       name: "Kitchen Temperature"
+#     humidity:
+#       name: "Kitchen Humidity"
+#     battery_level:
+#       name: "Kitchen Battery Level"
+#
+# time:
+#   - platform: homeassistant
+#     on_time:
+#       - seconds: 0
+#         minutes: 0
+#         hours: 4
+#         days_of_week: MON-SUN
+#         then:
+#            - switch.toggle: restart_switch
+# switch:
+#   - platform: restart
+#     name: "test_temperature Restart"
+#     id: restart_switch

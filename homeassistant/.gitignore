@@ -24,6 +24,7 @@ secrets.yaml
 tradfri.conf
 ha.env
 .DS_Store
+.ios.conf
 
 # Temporary files
 *.db-journal
