@@ -327,34 +327,34 @@
         entity_pop_5: sensor.dark_sky_precip_probability_5d
         static_icons: true
 
-      # - type: custom:flex-table-card
-      #   # title: Trains to Waterloo
-      #   max_rows: 5
-      #   entities:
-      #     include: sensor.next_train_to_wat
-      #   columns:
-      #     # - name: Origin
-      #     #   attr_as_list: next_trains
-      #     #   modify: x.origin_name
-      #     # - name: Destination
-      #     #   attr_as_list: next_trains
-      #     #   modify: x.destination_name
-      #     - name: Next Train to WAT
-      #       attr_as_list: next_trains
-      #       modify: x.scheduled
-      #     - name: Est
-      #       attr_as_list: next_trains
-      #       modify: x.estimated
-      #     - name: Status
-      #       attr_as_list: next_trains
-      #       modify: x.status
-      #   on_empty:
-      #     # to hide the entire flex-table (default: false)
-      #     hide: true
-      #     # if `!hide` show the following text instead of content
-      #     # text: "No trains to show"
-      #     # do not show the column headers (default: false)
-      #     hide_headers: true
+      - type: custom:flex-table-card
+        # title: Trains to Waterloo
+        max_rows: 5
+        entities:
+          include: sensor.next_train_to_wat
+        columns:
+          # - name: Origin
+          #   attr_as_list: next_trains
+          #   modify: x.origin_name
+          # - name: Destination
+          #   attr_as_list: next_trains
+          #   modify: x.destination_name
+          - name: Next Train to WAT
+            attr_as_list: next_trains
+            modify: x.scheduled
+          - name: Est
+            attr_as_list: next_trains
+            modify: x.estimated
+          - name: Status
+            attr_as_list: next_trains
+            modify: x.status
+        on_empty:
+          # to hide the entire flex-table (default: false)
+          hide: true
+          # if `!hide` show the following text instead of content
+          # text: "No trains to show"
+          # do not show the column headers (default: false)
+          hide_headers: true
 
       # - type: glance
       #   title: Lights

@@ -1,0 +1,18 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Automations
+    icon: mdi:toggle-switch
+    id: automations
+    path: automations
+    cards:
+    - type: vertical-stack
+      cards:
+      # The markdown card will render markdown text.
+      - type: markdown
+        title: Automation Control
+        content: >
+          Welcome to your **Lovelace UI**.
+      - type: "custom:button-card"
+        name: Transport
+        entity: input_boolean.toggle_transport_api
+        tap_action:
+          action: toggle
