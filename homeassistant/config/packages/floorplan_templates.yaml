@@ -1,3 +1,18 @@
+input_boolean:
+  toggle_motion_fill:
+      name: Toggle Motion Fill
+      initial: on
+      icon: mdi:toggle-switch
+  toggle_battery_warning:
+      name: Toggle Battery Warning
+      initial: off
+      icon: mdi:toggle-switch
+  toggle_motion_border:
+      name: Toggle Motion Border
+      initial: on
+      icon: mdi:toggle-switch
+
+
 binary_sensor:
   - platform: template
     sensors:
@@ -5,145 +20,145 @@ binary_sensor:
 ###### DOWNSTAIRS - Motion Fill Shapes ######
       living_room_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       library_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       kitchen_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       hallway_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       front_door_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       downstairs_bathroom_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       outdoor_side_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       outdoor_front_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       outdoor_back_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
 
 ###### DOWNSTAIRS - Motion Stroke Shapes ######
       living_room_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       library_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       kitchen_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       hallway_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       front_door_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       downstairs_bathroom_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
 
 ###### DOWNSTAIRS - Battery Warning Shapes ######
       living_room_window_4_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       living_room_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       living_room_window_2_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       hallway_door_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       library_door_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       kitchen_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       kitchen_window_2_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       downstairs_bathroom_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       kitchen_door_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       living_room_window_3_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
 
 ###### UPSTAIRS - Motion Fill Shapes ######
       landing_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       bedroom_3_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       bedroom_1_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       bathroom_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
       bedroom_2_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
 
 ###### UPSTAIRS - Motion Stroke Shapes ######
 
       landing_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       bedroom_3_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       bedroom_1_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       bathroom_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
       bedroom_2_motion_border:
         device_class: motion
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_motion_border', 'on') }}"
 
 ###### UPSTAIRS - Battery Warning Shapes ######
 
       bedroom_1_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_1_window_4_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_1_window_2_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_1_window_3_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_2_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bathroom_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_3_window_1_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
       bedroom_1_window_5_battery:
         device_class: battery
-        value_template: "{{ is_state('switch.test_room_light', 'on') }}"
+        value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
 
 ###### DOWNSTAIRS - Opening ######
 

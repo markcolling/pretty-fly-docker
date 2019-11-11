@@ -38,6 +38,12 @@ switch: !include switch.yaml
 light: !include light.yaml
 sensor: !include sensor.yaml
 
+# person:
+#   - name: Mark
+#     id: mark6789
+#   - name: Katie
+#     id: mark6789
+
 logger:
   default: warn
 

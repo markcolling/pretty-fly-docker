@@ -151,6 +151,7 @@ services:
       - net
     ports:
       - 1880:1880
+    user: node-red
     volumes:
       - ./node-red:/data
 
