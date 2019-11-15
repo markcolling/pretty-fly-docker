@@ -122,155 +122,156 @@
       #     # - font-size: 12px
       #     # - font-weight: bold
       - break
+      - !include ../components/A_ground_floorplan.yaml
 
-      - type: 'custom:floorplan-card'
-        # title: Simple Floorplan
-        config:
-          image: /local/floorplan/ground-floorplan.svg
-          rules:
-            - entities:
-                - binary_sensor.living_room_motion_fill
-                - binary_sensor.library_motion_fill
-                - binary_sensor.hallway_motion_fill
-                - binary_sensor.kitchen_motion_fill
-                - binary_sensor.front_door_motion_fill
-                - binary_sensor.downstairs_bathroom_motion_fill
-                - binary_sensor.outdoor_side_motion_fill
-                - binary_sensor.outdoor_front_motion_fill
-                - binary_sensor.outdoor_back_motion_fill
-              states:
-                - class: 'motion-fill-inactive'
-                  state: 'off'
-                - class: 'motion-fill-active'
-                  state: 'on'
-
-            - entities:
-                - binary_sensor.living_room_motion_border
-                - binary_sensor.library_motion_border
-                - binary_sensor.kitchen_motion_border
-                - binary_sensor.hallway_motion_border
-                - binary_sensor.front_door_motion_border
-                - binary_sensor.downstairs_bathroom_motion_border
-              states:
-                - class: 'motion-border-inactive'
-                  state: 'off'
-                - class: 'motion-border-active'
-                  state: 'on'
-
-            - entities:
-                - binary_sensor.living_room_window_4_battery
-                - binary_sensor.living_room_window_1_battery
-                - binary_sensor.living_room_window_2_battery
-                - binary_sensor.hallway_door_1_battery
-                - binary_sensor.library_door_1_battery
-                - binary_sensor.kitchen_window_1_battery
-                - binary_sensor.kitchen_window_2_battery
-                - binary_sensor.downstairs_bathroom_window_1_battery
-                - binary_sensor.kitchen_door_1_battery
-                - binary_sensor.living_room_window_3_battery
-              states:
-                - class: 'battery-warning-off'
-                  state: 'off'
-                - class: 'battery-warning-on'
-                  state: 'on'
-
-            - entities:
-                - binary_sensor.downstairs_bathroom_window_1
-              states:
-                - class: 'opening-closed'
-                  state: 'off'
-                - class: 'opening-open'
-                  state: 'on'
-                - class: 'opening-unavailable'
-                  state: 'unavailable'
-
-            - entities:
-                - sensor.living_room_window_2
-              states:
-                - class: 'opening-closed'
-                  state: 'off'
-                - class: 'opening-open'
-                  state: 'on'
-                - class: 'opening-unavailable'
-                  state: 'unavailable'
-
-          # - name: Sensors
-            - entities:
-                - sensor.day_room_temperature
-                - sensor.kitchen_temperature
-              text_template: '${entity.state ? entity.state + "\u00b0C" : "\#\#"}'
-              class_template: '${entity.state ? "active" : ""}'
-                # '
-                # var temp = parseFloat(entity.state.replace("°", ""));
-                # if (temp < 10)
-                #   return "temp-low";
-                # else if (temp < 30)
-                #   return "temp-medium";
-                # else
-                #   return "temp-high";
-                # '
-            - entities:
-                - sensor.day_room_humidity
-                - sensor.kitchen_humidity
-              text_template: '${entity.state ? entity.state + "\%" : "\#\#"}'
-              class_template: '${entity.state ? "active" : ""}'
-            # - entities:
-            #     - switch.living_room_motion
-            #   states:
-            #     - class: 'living-room_fill'
-            #       state: 'off'
-            #     - class: 'living-room_fill'
-            #       state: 'on'
-          stylesheet: /local/floorplan/floorplan.css
+      # - type: 'custom:floorplan-card'
+      #   # title: Simple Floorplan
+      #   config:
+      #     image: /local/floorplan/ground-floorplan.svg
+      #     rules:
+      #       - entities:
+      #           - binary_sensor.living_room_motion_fill
+      #           - binary_sensor.library_motion_fill
+      #           - binary_sensor.hallway_motion_fill
+      #           - binary_sensor.kitchen_motion_fill
+      #           - binary_sensor.front_door_motion_fill
+      #           - binary_sensor.downstairs_bathroom_motion_fill
+      #           - binary_sensor.outdoor_side_motion_fill
+      #           - binary_sensor.outdoor_front_motion_fill
+      #           - binary_sensor.outdoor_back_motion_fill
+      #         states:
+      #           - class: 'motion-fill-inactive'
+      #             state: 'off'
+      #           - class: 'motion-fill-active'
+      #             state: 'on'
+      #
+      #       - entities:
+      #           - binary_sensor.living_room_motion_border
+      #           - binary_sensor.library_motion_border
+      #           - binary_sensor.kitchen_motion_border
+      #           - binary_sensor.hallway_motion_border
+      #           - binary_sensor.front_door_motion_border
+      #           - binary_sensor.downstairs_bathroom_motion_border
+      #         states:
+      #           - class: 'motion-border-inactive'
+      #             state: 'off'
+      #           - class: 'motion-border-active'
+      #             state: 'on'
+      #
+      #       - entities:
+      #           - binary_sensor.living_room_window_4_battery
+      #           - binary_sensor.living_room_window_1_battery
+      #           - binary_sensor.living_room_window_2_battery
+      #           - binary_sensor.hallway_door_1_battery
+      #           - binary_sensor.library_door_1_battery
+      #           - binary_sensor.kitchen_window_1_battery
+      #           - binary_sensor.kitchen_window_2_battery
+      #           - binary_sensor.downstairs_bathroom_window_1_battery
+      #           - binary_sensor.kitchen_door_1_battery
+      #           - binary_sensor.living_room_window_3_battery
+      #         states:
+      #           - class: 'battery-warning-off'
+      #             state: 'off'
+      #           - class: 'battery-warning-on'
+      #             state: 'on'
+      #
+      #       - entities:
+      #           - binary_sensor.downstairs_bathroom_window_1
+      #         states:
+      #           - class: 'opening-closed'
+      #             state: 'off'
+      #           - class: 'opening-open'
+      #             state: 'on'
+      #           - class: 'opening-unavailable'
+      #             state: 'unavailable'
+      #
+      #       - entities:
+      #           - sensor.living_room_window_2
+      #         states:
+      #           - class: 'opening-closed'
+      #             state: 'off'
+      #           - class: 'opening-open'
+      #             state: 'on'
+      #           - class: 'opening-unavailable'
+      #             state: 'unavailable'
+      #
+      #     # - name: Sensors
+      #       - entities:
+      #           - sensor.day_room_temperature
+      #           - sensor.kitchen_temperature
+      #         text_template: '${entity.state ? entity.state + "\u00b0C" : "\#\#"}'
+      #         class_template: '${entity.state ? "active" : ""}'
+      #           # '
+      #           # var temp = parseFloat(entity.state.replace("°", ""));
+      #           # if (temp < 10)
+      #           #   return "temp-low";
+      #           # else if (temp < 30)
+      #           #   return "temp-medium";
+      #           # else
+      #           #   return "temp-high";
+      #           # '
+      #       - entities:
+      #           - sensor.day_room_humidity
+      #           - sensor.kitchen_humidity
+      #         text_template: '${entity.state ? entity.state + "\%" : "\#\#"}'
+      #         class_template: '${entity.state ? "active" : ""}'
+      #       # - entities:
+      #       #     - switch.living_room_motion
+      #       #   states:
+      #       #     - class: 'living-room_fill'
+      #       #       state: 'off'
+      #       #     - class: 'living-room_fill'
+      #       #       state: 'on'
+      #     stylesheet: /local/floorplan/floorplan.css
 
       - break
-
-      - type: 'custom:floorplan-card'
-        # title: Simple Floorplan
-        config:
-          image: /local/floorplan/first-floorplan.svg
-          rules:
-            - entities:
-              - binary_sensor.landing_motion_fill
-              - binary_sensor.bedroom_3_motion_fill
-              - binary_sensor.bedroom_1_motion_fill
-              - binary_sensor.bathroom_motion_fill
-              - binary_sensor.bedroom_2_motion_fill
-              states:
-                - class: 'motion-fill-inactive'
-                  state: 'off'
-                - class: 'motion-fill-active'
-                  state: 'on'
-
-            - entities:
-              - binary_sensor.landing_motion_border
-              - binary_sensor.bedroom_3_motion_border
-              - binary_sensor.bedroom_1_motion_border
-              - binary_sensor.bathroom_motion_border
-              - binary_sensor.bedroom_2_motion_border
-              states:
-                - class: 'motion-border-inactive'
-                  state: 'off'
-                - class: 'motion-border-active'
-                  state: 'on'
-
-            - entities:
-              - binary_sensor.bedroom_1_window_1_battery
-              - binary_sensor.bedroom_1_window_4_battery
-              - binary_sensor.bedroom_1_window_2_battery
-              - binary_sensor.bedroom_1_window_3_battery
-              - binary_sensor.bedroom_2_window_1_battery
-              - binary_sensor.bathroom_window_1_battery
-              - binary_sensor.bedroom_3_window_1_battery
-              - binary_sensor.bedroom_1_window_5_battery
-              states:
-                - class: 'battery-warning-off'
-                  state: 'off'
-                - class: 'battery-warning-on'
-                  state: 'on'
-
-          stylesheet: /local/floorplan/floorplan.css
-
+      - !include ../components/B_first_floorplan.yaml
+      # - type: 'custom:floorplan-card'
+      #   # title: Simple Floorplan
+      #   config:
+      #     image: /local/floorplan/first-floorplan.svg
+      #     rules:
+      #       - entities:
+      #         - binary_sensor.landing_motion_fill
+      #         - binary_sensor.bedroom_3_motion_fill
+      #         - binary_sensor.bedroom_1_motion_fill
+      #         - binary_sensor.bathroom_motion_fill
+      #         - binary_sensor.bedroom_2_motion_fill
+      #         states:
+      #           - class: 'motion-fill-inactive'
+      #             state: 'off'
+      #           - class: 'motion-fill-active'
+      #             state: 'on'
+      #
+      #       - entities:
+      #         - binary_sensor.landing_motion_border
+      #         - binary_sensor.bedroom_3_motion_border
+      #         - binary_sensor.bedroom_1_motion_border
+      #         - binary_sensor.bathroom_motion_border
+      #         - binary_sensor.bedroom_2_motion_border
+      #         states:
+      #           - class: 'motion-border-inactive'
+      #             state: 'off'
+      #           - class: 'motion-border-active'
+      #             state: 'on'
+      #
+      #       - entities:
+      #         - binary_sensor.bedroom_1_window_1_battery
+      #         - binary_sensor.bedroom_1_window_4_battery
+      #         - binary_sensor.bedroom_1_window_2_battery
+      #         - binary_sensor.bedroom_1_window_3_battery
+      #         - binary_sensor.bedroom_2_window_1_battery
+      #         - binary_sensor.bathroom_window_1_battery
+      #         - binary_sensor.bedroom_3_window_1_battery
+      #         - binary_sensor.bedroom_1_window_5_battery
+      #         states:
+      #           - class: 'battery-warning-off'
+      #             state: 'off'
+      #           - class: 'battery-warning-on'
+      #             state: 'on'
+      #
+      #     stylesheet: /local/floorplan/floorplan.css
+      #
       - type: custom:mini-media-player
         title: Sonos
         entity: media_player.living_room

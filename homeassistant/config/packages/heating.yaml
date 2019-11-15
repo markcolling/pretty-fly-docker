@@ -1,11 +1,11 @@
 climate:
   - platform: mqtt
     name: Kitchen Floor
-    mode_command_topic: "TEST/heating/ufh/mode_command"
-    mode_state_topic: "TEST/heating/ufh/mode_state"
-    temperature_state_topic: "TEST/heating/ufh/currentsetpoint"
-    temperature_command_topic: "TEST/heating/ufh/currentsetpoint/command"
-    current_temperature_topic: "TEST/heating/ufh/temperature"
+    mode_command_topic: "/heating/ufh/mode_command"
+    mode_state_topic: "/heating/ufh/mode_state"
+    temperature_state_topic: "/heating/ufh/currentsetpoint"
+    temperature_command_topic: "/heating/ufh/currentsetpoint/command"
+    current_temperature_topic: "/heating/ufh/temperature"
     value_template: "{{ value_json }}"
     initial: 20
     qos: 0
@@ -20,8 +20,30 @@ climate:
     temp_step: 1
     retain: true
 
-    # mode_command_topic: "TEST/cmnd/heating/ufh/sonoff"
-    # mode_state_topic: "TEST/tele/heating/ufh/sonoff/STATE"
+  - platform: mqtt
+    name: Central Heating
+    mode_command_topic: "/heating/ch/mode_command"
+    mode_state_topic: "/heating/ch/mode_state"
+    power_command_topic: "/heating/ch/power_command"
+    power_state_topic: "/heating/ch/power_state"
+    temperature_state_topic: "/heating/ch/currentsetpoint"
+    temperature_command_topic: "/heating/ch/currentsetpoint/command"
+    current_temperature_topic: "/heating/ch/temperature"
+    value_template: "{{ value_json }}"
+    initial: 20
+    qos: 0
+    payload_on: ON
+    payload_off: OFF
+    modes:
+      - "auto"
+      - "heat"
+      - "off"
+    min_temp: 12
+    max_temp: 30
+    temp_step: 1
+    retain: true
+    # mode_command_topic: "/cmnd/heating/ufh/sonoff"
+    # mode_state_topic: "/tele/heating/ufh/sonoff/STATE"
     # mode_state_template: "{{ value_json.POWER.value }}"
 
 

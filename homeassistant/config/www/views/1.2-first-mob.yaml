@@ -1,0 +1,10 @@
+- title: First Floor
+  id: overview-first
+  path: overview-first
+  icon: mdi:numeric-1-circle-outline
+  type: module
+  panel: true
+  cards:
+  - type: vertical-stack
+    cards:
+    - !include ../components/B_first_floorplan.yaml

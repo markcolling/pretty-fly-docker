@@ -1,0 +1,10 @@
+- title: Ground Floor
+  id: overview-ground
+  path: overview-ground
+  icon: mdi:alpha-g-circle-outline
+  type: module
+  panel: true
+  cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/A_ground_floorplan.yaml

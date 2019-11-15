@@ -127,6 +127,8 @@ panel_iframe:
 
 ios:
 
+notify:
+
 system_health:
 
 breaking_changes:
@@ -171,6 +173,7 @@ influxdb:
       - sensor.day_room_humidity
       - sensor.day_room_temperature
       - sensor.dark_sky_temperature
+      - climate.central_heating
     domains:
       - sensors
 

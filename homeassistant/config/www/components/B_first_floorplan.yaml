@@ -1,0 +1,45 @@
+type: 'custom:floorplan-card'
+# title: Simple Floorplan
+config:
+  image: /local/floorplan/first-floorplan.svg
+  rules:
+    - entities:
+      - binary_sensor.landing_motion_fill
+      - binary_sensor.bedroom_3_motion_fill
+      - binary_sensor.bedroom_1_motion_fill
+      - binary_sensor.bathroom_motion_fill
+      - binary_sensor.bedroom_2_motion_fill
+      states:
+        - class: 'motion-fill-inactive'
+          state: 'off'
+        - class: 'motion-fill-active'
+          state: 'on'
+
+    - entities:
+      - binary_sensor.landing_motion_border
+      - binary_sensor.bedroom_3_motion_border
+      - binary_sensor.bedroom_1_motion_border
+      - binary_sensor.bathroom_motion_border
+      - binary_sensor.bedroom_2_motion_border
+      states:
+        - class: 'motion-border-inactive'
+          state: 'off'
+        - class: 'motion-border-active'
+          state: 'on'
+
+    - entities:
+      - binary_sensor.bedroom_1_window_1_battery
+      - binary_sensor.bedroom_1_window_4_battery
+      - binary_sensor.bedroom_1_window_2_battery
+      - binary_sensor.bedroom_1_window_3_battery
+      - binary_sensor.bedroom_2_window_1_battery
+      - binary_sensor.bathroom_window_1_battery
+      - binary_sensor.bedroom_3_window_1_battery
+      - binary_sensor.bedroom_1_window_5_battery
+      states:
+        - class: 'battery-warning-off'
+          state: 'off'
+        - class: 'battery-warning-on'
+          state: 'on'
+
+  stylesheet: /local/floorplan/floorplan.css

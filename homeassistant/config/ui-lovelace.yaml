@@ -37,28 +37,22 @@ cch:
   # kiosk_mode: true
   # conditional_styles:
   #   - user_agent: Mobile
-  #     condition:
-  #       state: off                      # When input_boolean is off...
-  #     background: url('/local/bg.jpg')  # change background image and...
-  #     tab:                              # change color and icon of tab 3
-  #       3:
-  #         on_icon: mdi:death-star
-  #         off_icon: mdi:death-star-variant
-  #         color: yellow
+  #     # condition:
+  #     #   state: off                      # When input_boolean is off...
+  #     # background: url('/local/bg.jpg')  # change background image and...
+  #     config:
+  #       options: show
+  #       hide_tabs: 1
   # menu: overflow
-  # exceptions:
-  #   - conditions:
-  #       user: maykar, bramkragten, Ludeeus
-  #       user_agent: Mobile
-  #       media_query: "(max-width: 600px)"
-  #     config:
-  #       options: clock
-  #       clock_format: 12
-  #       hide_tabs: 4,5,9
-  #   - conditions:
-  #       query_string: kiosk
-  #     config:
-  #       kiosk_mode: true
+  hide_tabs: 1,2
+  exceptions:
+    - conditions:
+        user_agent: Mobile
+        media_query: "(max-width: 600px)"
+      config:
+        options: show
+        hide_tabs: 0
+        default_tab: 1
 
 views: !include_dir_merge_list www/views
 
