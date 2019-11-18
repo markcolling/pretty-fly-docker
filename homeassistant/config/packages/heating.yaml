@@ -29,7 +29,7 @@ climate:
     temperature_state_topic: "/heating/ch/currentsetpoint"
     temperature_command_topic: "/heating/ch/currentsetpoint/command"
     current_temperature_topic: "/heating/ch/temperature"
-    value_template: "{{ value_json }}"
+    # value_template: "{{ value_json }}"
     initial: 20
     qos: 0
     payload_on: ON
@@ -50,3 +50,11 @@ climate:
 #IF FLOOR IS AT TEMP, ROOM IS AT TEMP - Turn both off
 #IF FLOOR IS AT TEMP, ROOM IS NOT AT TEMP - Turn both on
 #IF FLOOR IS NOT AT TEMP, ROOM IS AT TEMP - Turn rad off
+
+sensor:
+  - platform: template
+    sensors:
+      ch_target_temp:
+        friendly_name: "Central Heating Target Temp"
+        unit_of_measurement: "°C"
+        value_template: "{{ state_attr('climate.central_heating', 'temperature') }}"

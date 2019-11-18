@@ -173,7 +173,7 @@ influxdb:
       - sensor.day_room_humidity
       - sensor.day_room_temperature
       - sensor.dark_sky_temperature
-      - climate.central_heating
+      - sensor.ch_target_temp
     domains:
       - sensors
 
