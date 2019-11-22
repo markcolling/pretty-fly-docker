@@ -84,23 +84,6 @@ config:
         # else
         #   return "temp-high";
         # '
-  # - name: Sensors
-    - entities:
-        - sensor.day_room_therm
-        - sensor.kitchen_therm
-      class_template:
-
-        # var temp = parseFloat(entity.state.replace("°", ""));
-        '
-        var temp = entity.state;
-
-        if (temp < 17.5)
-          return "temp-low";
-        else if (temp < 21)
-          return "temp-medium";
-        else
-          return "temp-high";
-        '
     - entities:
         - sensor.day_room_humidity
         - sensor.kitchen_humidity

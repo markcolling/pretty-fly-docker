@@ -126,9 +126,8 @@ class HacsIntegration(HacsRepository):
             return
 
         self.content.files = []
-        if isinstance(self.content.objects, list):
-            for filename in self.content.objects or []:
-                self.content.files.append(filename.name)
+        for filename in self.content.objects or []:
+            self.content.files.append(filename.name)
 
         await self.get_manifest()
 

@@ -229,7 +229,7 @@ class HacsRepository(Hacs):
     @property
     def display_version_or_commit(self):
         """Does the repositoriy use releases or commits?"""
-        if self.releases.releases:
+        if self.versions.installed is not None:
             version_or_commit = "version"
         else:
             version_or_commit = "commit"
@@ -413,7 +413,8 @@ class HacsRepository(Hacs):
                     and self.information.full_name != "hacs/integration"
                 ):
                     await self.reload_custom_components()
-                self.pending_restart = True
+                else:
+                    self.pending_restart = True
 
             elif self.information.category == "theme":
                 try:
@@ -471,18 +472,12 @@ class HacsRepository(Hacs):
         """Download the content of a directory."""
         try:
             # Get content
-            contents = []
-            if self.releases.releases:
-                for release in self.releases.objects:
-                    if self.status.selected_tag == release.tag_name:
-                        contents = release.assets
-            if not contents:
-                if self.content.single:
-                    contents = self.content.objects
-                else:
-                    contents = await self.repository_object.get_contents(
-                        directory_path, self.ref
-                    )
+            if self.content.single:
+                contents = self.content.objects
+            else:
+                contents = await self.repository_object.get_contents(
+                    directory_path, self.ref
+                )
 
             for content in contents:
                 if content.type == "dir" and (

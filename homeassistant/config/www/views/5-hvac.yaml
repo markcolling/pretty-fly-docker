@@ -51,11 +51,3 @@
           name: Day Room Humidity
           detail: 2
           graph: line
-
-        - type: iframe
-          url: http://grafana.dev.prettyfly.net/d/ZURDkF1Wz/house-temperatures?orgId=1&from=1573948800000&to=1574197842558&panelId=2&fullscreen
-          aspect_ratio: 75%
-          # style: |
-          #   ha-card {
-          #     width:100%;
-          #   }

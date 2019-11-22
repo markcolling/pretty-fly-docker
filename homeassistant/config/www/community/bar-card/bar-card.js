@@ -4,9 +4,6 @@ class BarCard extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
   setConfig (config) {
-    while(this.shadowRoot.lastChild)
-      this.shadowRoot.removeChild(this.shadowRoot.lastChild);
-
     // Default Card variables
     const initialConfig = Object.assign({}, config)
 
@@ -1003,7 +1000,7 @@ class BarCard extends HTMLElement {
       }
       return
     }
-
+    
     // Define config
     const config = this._configAttributeCheck(entity, index)
 
@@ -1030,7 +1027,7 @@ class BarCard extends HTMLElement {
       } else {
         entityState = entityObject.state
       }
-
+      
       if(!isNaN(entityState)){
         entityState = Number(entityState)
       }
@@ -1039,7 +1036,7 @@ class BarCard extends HTMLElement {
         entityState = Math.min(entityState, configMax)
         entityState = Math.max(entityState, configMin)
       }
-
+      
       if (config.decimal !== false) {
         entityState = entityState.toFixed(config.decimal)
       }
@@ -1226,7 +1223,7 @@ class BarCard extends HTMLElement {
 customElements.define('bar-card', BarCard)
 
 console.info(
-  `%cBAR-CARD\n%cVersion: 1.6.2`,
+  `%cBAR-CARD\n%cVersion: 1.6.1`,
   "color: green; font-weight: bold;",
   ""
 );
