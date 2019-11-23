@@ -13,13 +13,27 @@ binary_sensor:
     - platform: mqtt
       name: "downstairs_bathroom_window_1"
       state_topic: "tele/sonoff-rf-bridge/RESULT"
-      availability_topic: "tele/sonoff-rf-bridge/devices/downstairs_bathroom_window_1"
+      availability_topic: "tele/sonoff-rf-bridge/LWT"
       value_template: '{{value_json.RfReceived.Data}}'
       payload_on: "E1990A"
       payload_off: "E1990E"
-      payload_available: "available"
-      payload_not_available: "unavailable"
+      payload_available: "Online"
+      payload_not_available: "Offline"
       device_class: Window
+      # qos: 1
+      # retain: false
+    #  friendly_name: "Downstairs Bathroom Window"
+    - platform: mqtt
+      name: "day_room_motion_1"
+      state_topic: "tele/sonoff-rf-bridge/RESULT"
+      availability_topic: "tele/sonoff-rf-bridge/LWT"
+      value_template: '{{value_json.RfReceived.Data}}'
+      payload_on: "EF384E"
+      payload_off: ""
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: Motion
+      off_delay: 300
       # qos: 1
       # retain: false
     #  friendly_name: "Downstairs Bathroom Window"

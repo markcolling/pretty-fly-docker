@@ -10,6 +10,8 @@ services:
     ports:
       - 1883:1883
       - 9001:9001
+    env_file:
+      - ./mqtt/mqtt.env
     environment:
       - TZ=Europe/London
       - VIRTUAL_HOST=mqtt$ENV_DOMAIN
@@ -38,15 +40,15 @@ services:
       - PUID=1000
       - VIRTUAL_HOST=grafana$ENV_DOMAIN
       - VIRTUAL_PORT=3000
-    user: "1000"
+    # user: "472"
     ports:
       - 3000:3000
     restart: on-failure
     volumes:
       # - ./grafana/lib:/var/lib/grafana
-      # - ./grafana/conf:/etc/grafana
-      - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini ### NEED TO UPDATE TO SOLVE GRAFANA ISSUE ON NUC
-      - ./grafana/conf/datasources:/etc/grafana/datasources
+      - ./grafana/conf:/etc/grafana
+      # - ./grafana/conf/grafana.ini:/etc/grafana/grafana.ini ### NEED TO UPDATE TO SOLVE GRAFANA ISSUE ON NUC
+      # - ./grafana/conf/datasources:/etc/grafana/datasources
       - ./grafana/lib:/var/lib/grafana
 
   influxdb:

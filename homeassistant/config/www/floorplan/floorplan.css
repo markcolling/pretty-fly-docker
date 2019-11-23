@@ -1,7 +1,7 @@
-.motion-fill-inactive, .motion-border-inactive, .battery-warning-off {
+.motion-fill-inactive, .battery-warning-off {
   visibility: hidden !important;
 }
-.motion-fill-active, .motion-border-active {
+.motion-fill-active {
 
 }
 .battery-warning-on {
@@ -32,4 +32,14 @@
 }
 .opening-unavailable{
   stroke: grey !important;
+}
+
+.temp-low {
+  fill: #02a7ff !important;
+}
+.temp-medium{
+  fill: #f4b400 !important;
+}
+.temp-high{
+  fill: #d63737 !important;
 }
