@@ -40,7 +40,7 @@ services:
       - PUID=1000
       - VIRTUAL_HOST=grafana$ENV_DOMAIN
       - VIRTUAL_PORT=3000
-    # user: "472"
+    user: "104"
     ports:
       - 3000:3000
     restart: on-failure
