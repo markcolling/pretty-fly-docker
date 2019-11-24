@@ -6,7 +6,9 @@ esphome:
 wifi:
   ssid: "PrettyFlyForAWifi"
   password: "a1b2c3d4e5"
-
+  
+  use_address: 192.168.1.34
+  
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Temp Sensor Hub Fallback Hotspot"
@@ -43,16 +45,18 @@ sensor:
     battery_level:
       name: "Kitchen Battery Level"
 
-time:
-  - platform: homeassistant
-    on_time:
-      - seconds: 0
-        minutes: 0
-        hours: 4
-        days_of_week: MON-SUN
-        then:
-           - switch.toggle: restart_switch
+# time:
+#   - platform: homeassistant
+#     on_time:
+#       - seconds: 0
+#         minutes: 0
+#         hours: 4
+#         days_of_week: MON-SUN
+#         then:
+#           - switch.toggle: restart_switch
+
 switch:
   - platform: restart
     name: "test_temperature Restart"
     id: restart_switch
+

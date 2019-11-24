@@ -43,6 +43,9 @@ config:
         - binary_sensor.downstairs_bathroom_window_1_battery
         - binary_sensor.kitchen_door_1_battery
         - binary_sensor.living_room_window_3_battery
+        - binary_sensor.kitchen_temp_battery
+        - binary_sensor.day_room_temp_battery
+        - binary_sensor.day_room_motion_battery
       states:
         - class: 'battery-warning-off'
           state: 'off'

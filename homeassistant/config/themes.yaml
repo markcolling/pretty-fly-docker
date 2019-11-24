@@ -295,9 +295,9 @@ Dark - Cyan:
   paper-toggle-button-unchecked-button-color: "#A8B3C3"
   paper-toggle-button-unchecked-bar-color: "#CED5DD"
   ### Table row ###
-  table-row-background-color: var(--primary-background-color)
-  table-row-alternative-background-color: var(--secondary-background-color)
+  table-row-background-color: "#1F1F28"
+  table-row-alternative-background-color: "#1F1F28"
 
 
 dark_cyan_custom_sensor:
-  accent-color: '#00E4D7' 
+  accent-color: '#00E4D7'
