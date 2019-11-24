@@ -4,8 +4,8 @@ esphome:
   board: esp32dev
 
 wifi:
-  ssid: "PrettyFlyForAWifi"
-  password: "a1b2c3d4e5"
+  ssid: !env_var WIFI_SSID
+  password: !env_var WIFI_PWD
   
   use_address: 192.168.1.34
   
