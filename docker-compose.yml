@@ -193,7 +193,7 @@ services:
     image: "esphome/esphome"
     restart: always
     container_name: esphome
-    env_file: "./esphome/config/.env"
+    env_file: "./esphome/config/esphome.env"
     environment:
       - VIRTUAL_HOST=esphome${ENV_DOMAIN}
       - VIRTUAL_PORT=6052
