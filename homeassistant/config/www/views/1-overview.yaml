@@ -17,7 +17,8 @@
         color: var(--primary-text-color)
         color_type: icon
         default_color: var(--disabled-text-color)
-        action: more_info
+        tap_action:
+          action: more-info
         name: Mark
         state:
           - value: 'home'
@@ -43,7 +44,8 @@
         color: var(--primary-text-color)
         color_type: icon
         default_color: var(--disabled-text-color)
-        action: more_info
+        tap_action:
+          action: more-info
         state:
           - value: 'home'
             icon: mdi:home-account
@@ -54,38 +56,38 @@
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
-      # - type: "custom:button-card"
-      #   entity: switch.living_room_ceiling
-      #   # icon: mdi:lightbulb
-      #   color: auto
-      #   color_type: icon
-      #   default_color: rgb(255, 233, 155)
-      #   action: more_info
-      #   name: Living Room Switch
-      #   styles:
-      #     card:
-      #     - height: 98px
-      #   state:
-      #     - value: default
-      #       colour: var(--disabled-text-color)
-      #       styles:
-      #         label:
-      #           - colour: var(--disabled-text-color)
-      #     # - font-size: 12px
-      #     # - font-weight: bold
-      # - type: "custom:button-card"
-      #   entity: light.dining_room_ceiling
-      #   # icon: mdi:lightbulb
-      #   color: auto
-      #   color_type: icon
-      #   default_color: rgb(255, 233, 155)
-      #   action: more_info
-      #   name: Dining Room Light
-      #   styles:
-      #     card:
-      #     - height: 98px
-      #     # - font-size: 12px
-      #     # - font-weight: bold
+      - type: "custom:button-card"
+        entity: light.xmas_lights
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: icon
+        icon: mdi:pine-tree
+        default_color: rgb(255, 233, 155)
+        action: toggle
+        name: Xmas Lights
+        styles:
+          card:
+          - height: 98px
+        # state:
+        #   - value: default
+        #     colour: var(--disabled-text-color)
+        #     styles:
+        #       label:
+        #         - colour: var(--disabled-text-color)
+          # - font-size: 12px
+          # - font-weight: bold
+      - type: "custom:button-card"
+        entity: switch.xmas_lights_mode
+        # icon: mdi:lightbulb
+        color: auto
+        color_type: icon
+        icon: mdi:pine-tree
+        default_color: rgb(255, 233, 155)
+        action: toggle
+        name: Lights Mode
+        styles:
+          card:
+          - height: 98px
       # - type: "custom:button-card"
       #   entity: switch.test_room_light
       #   # icon: mdi:lightbulb

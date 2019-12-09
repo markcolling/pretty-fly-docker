@@ -1,0 +1,19 @@
+# Example configuration.yaml entry
+light:
+  - platform: mqtt
+    name: "Xmas lights"
+    # state_topic: "iot/christmas_lights/status"
+    command_topic: "iot/christmas_lights/set"
+    # brightness_state_topic: "iot/christmas_lights/status"
+    # brightness_command_topic: 'iot/christmas_lights/set'
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    # optimistic: false
+
+switch:
+  - platform: mqtt
+    name: "Xmas lights mode"
+    command_topic: "iot/christmas_lights/set"
+    payload_on: MODE_UP
+    payload_off: MODE_UP
