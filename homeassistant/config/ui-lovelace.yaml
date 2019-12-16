@@ -48,7 +48,7 @@ cch:
   #       options: show
   #       hide_tabs: 1
   # menu: overflow
-  hide_tabs: 1,2
+  hide_tabs: 1,2,3
   exceptions:
     - conditions:
         user_agent: Mobile

@@ -1,0 +1,9 @@
+- title: Buttons
+  id: overview-buttons
+  path: overview-buttons
+  icon: mdi:robot
+  type: module
+  panel: true
+  cards:
+  - type: vertical-stack
+    cards: !include ../components/home_buttons.yaml
