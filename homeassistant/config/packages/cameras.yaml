@@ -1,0 +1,4 @@
+camera:
+  - platform: generic
+    name: Office Touchpad
+    still_image_url: !secret fully_kiosk_cam_still

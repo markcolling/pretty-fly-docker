@@ -40,7 +40,7 @@ services:
       - PUID=1000
       - VIRTUAL_HOST=grafana$ENV_DOMAIN
       - VIRTUAL_PORT=3000
-    user: "104"
+    user: "472"
     ports:
       - 3000:3000
     restart: on-failure
@@ -79,7 +79,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.101.2
+    image: homeassistant/home-assistant:0.106.6
     container_name: "hass"
     networks:
       - net
@@ -157,19 +157,21 @@ services:
     volumes:
       - ./node-red:/data
 
-  unifi-video:
-    image: pducharme/unifi-video-controller:latest
-    container_name: unifi-video
-    environment:
-      - VIRTUAL_HOST=unifi-video${ENV_DOMAIN}
-      - VIRTUAL_PORT=7080
-    networks:
-      - net
-    ports:
-      - 7080:7080
-    cap_add:
-      - SYS_ADMIN
-      - DAC_READ_SEARCH
+  # unifi-video:
+  #   image: pducharme/unifi-video-controller:latest
+  #   container_name: unifi-video
+  #   environment:
+  #     - VIRTUAL_HOST=unifi-video${ENV_DOMAIN}
+  #     - VIRTUAL_PORT=7080
+  #   networks:
+  #     - net
+  #   ports:
+  #     - 7080:7080
+  #   security_opt:
+  #     - apparmor:unconfined
+  #   cap_add:
+  #     - SYS_ADMIN
+  #     - DAC_READ_SEARCH
     # volumes:
     #   - ./unifi-video/data:/var/lib/unifi-video/
     #   - ./unifi-video/log:/var/log/unifi-video/
@@ -204,7 +206,7 @@ services:
     volumes:
       - "./esphome/config:/config"
     # devices:
-    #   # - "/dev/ttyUSB0:/dev/ttyUSB0"
+    #   - "/dev/ttyUSB0:/dev/ttyUSB0"
     #   # - "/dev/cu.usbserial-0001:/dev/cu.usbserial-0001"
     #   # - "/dev/ttyUSB0"
     #   - "/dev/SLAB_USBtoUART:/dev/SLAB_USBtoUART"

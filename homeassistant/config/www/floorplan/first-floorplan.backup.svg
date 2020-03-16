@@ -15,12 +15,12 @@
       }
 
       .cls-3 {
-        stroke: var(--primary-text-color, #F7F8FA);
+        stroke: #f7f8fa;
         stroke-width: 0.25px;
       }
 
       .cls-12, .cls-4 {
-        fill: var(--primary-text-color, #F7F8FA);
+        fill: #f7f8fa;
       }
 
       .cls-4 {
@@ -33,12 +33,12 @@
       }
 
       .cls-6 {
-        fill: var(--primary-color, #00E4D7);
+        fill: #00e4d7;
         opacity: 0.3;
       }
 
       .cls-7 {
-        stroke: var(--primary-color, #00E4D7);
+        stroke: #00e4d7;
         stroke-width: 2px;
       }
 

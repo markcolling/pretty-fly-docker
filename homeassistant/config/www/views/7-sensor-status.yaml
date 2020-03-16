@@ -1,0 +1,54 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Sensor Status
+    icon: mdi:access-point
+    id: sensor-status
+    path: sensor-status
+    panel: true
+    cards:
+    - type: custom:layout-card
+      layout: vertical
+      cards:
+      - type: entities
+        show_header_toggle: off
+        title: Heating and Temperature
+        entities:
+          - type: section
+            label: BLE Sensor Status
+          - entity: binary_sensor.ble_sensor_hub
+            secondary_info: last-changed
+          - entity:  sensor.day_room_temperature
+            name: Day Room Thermometer
+            secondary_info: last-changed
+          - entity:  sensor.kitchen_temperature
+            name: Kitchen Thermometer
+            secondary_info: last-changed
+          - type: section
+            label: Drayton Sensor Status
+          - entity: sensor.day_room_therm
+            name: Test Rad Temp
+            secondary_info: last-changed
+          - entity: sensor.test_drayton_trv
+            name: Test TRV
+            secondary_info: last-changed
+      - break
+      - type: entities
+        title: Motion & Doors
+        show_header_toggle: off
+        entities:
+          - type: section
+            label: RF Sensor Status
+          - entity: binary_sensor.sonoff_rf_bridge
+            secondary_info: last-changed
+          - entity: binary_sensor.day_room_motion_1
+            name: Day Room Motion Sensor
+            secondary_info: last-changed
+      - break
+      - type: entities
+        title: All Automations
+        show_header_toggle: true
+        entities:
+          - type: section
+            label: API Automations
+          - entity: input_boolean.toggle_transport_api
+            icon: mdi:train
+            secondary_info: last-changed

@@ -1,0 +1,38 @@
+esphome:
+  name: test_wled_receiver
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "SKYEB2D6"
+  password: "QCUSUEXR"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Test Wled Receiver"
+    password: "E4WmpJar7BxZ"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+binary_sensor:
+  - platform: gpio
+    name: "Pin D3"
+    id: pin_d3
+    pin: 
+      number: D3
+      mode: INPUT_PULLUP
+      
+# time:
+  # - platform: sntp
+  #   on_time:
+  #     - cron: '/5 * * * * *'
+  #       then:
+  #         - logger.log: "PIN MODE:"

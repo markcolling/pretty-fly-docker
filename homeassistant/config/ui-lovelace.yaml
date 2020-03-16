@@ -1,7 +1,9 @@
 title: Home Dashboard
 
 resources:
-  - url: /community_plugin/compact-custom-header/compact-custom-header.js
+  # - url: /community_plugin/compact-custom-header/compact-custom-header.js
+  #   type: module
+  - url: /community_plugin/custom-header/custom-header.js
     type: module
   - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
     type: module
@@ -35,7 +37,8 @@ resources:
     url: /local/custom_lovelace/custom.css
 
 
-cch:
+custom_header:
+  compact_mode: true
   options: clock
   swipe: true
   # kiosk_mode: true

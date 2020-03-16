@@ -1,0 +1,309 @@
+esphome:
+  name: stair_led_sensor_bottom
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "SKYEB2D6"
+  password: "QCUSUEXR"
+  
+  manual_ip:
+    static_ip: 192.168.0.127
+    gateway: 192.168.0.1
+    subnet: 255.255.255.0
+    
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Stair Led Sensor - Bottom"
+    password: "1qChdXJ56VR7"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+#PIR SENSOR
+binary_sensor:
+  - platform: gpio
+    pin: D8 #UPDATE TO BOTTOM PIR PIN
+    name: "Bottom Stair Motion"
+    device_class: motion
+    on_press:
+    - while:
+        condition:
+          binary_sensor.is_off: stair_motion_upwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_upwards
+            state: ON
+        - logger.log: "CUSTOM: Upwards motion triggered by bottom sensor"
+    - while:
+        condition:
+          binary_sensor.is_on: stair_motion_downwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_downwards
+            state: OFF
+        - logger.log: "CUSTOM: Downwards motion completed by bottom sensor"        
+#TOP OF STAIRS SENSOR
+  - platform: gpio
+    pin: D3 #UPDATE TO TOP SENSOR PIN
+    name: "Top Stair Motion"
+    device_class: motion
+    on_press:
+    - while:
+        condition:
+          binary_sensor.is_off: stair_motion_downwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_downwards
+            state: ON
+        - logger.log: "CUSTOM: Downwards motion triggered by top sensor"
+    - while:
+        condition:
+          binary_sensor.is_on: stair_motion_upwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_upwards
+            state: OFF
+        - logger.log: "CUSTOM: Upwards motion completed by top sensor"
+        
+#ON STAIRS SENSOR - DOWN
+  - platform: template
+    name: "Stair Motion - Down"
+    id: stair_motion_downwards
+    on_press: 
+      then:
+      - remote_transmitter.transmit_nec: #CHANGE TO START DOWNWARDS ANIMATION
+          address: 0x1234
+          command: 0x78AB
+      - logger.log: "CUSTOM: RF Message Sent to Start Downwards Animation"
+      - delay: 20s
+      - while:
+          condition:
+            binary_sensor.is_on: stair_motion_downwards
+          then:
+            - binary_sensor.template.publish: 
+                id: stair_motion_downwards
+                state: OFF   
+            - logger.log: "CUSTOM: Downwards motion completed due to timeout"
+              
+    on_release:
+      then:
+      - remote_transmitter.transmit_nec: #CHANGE TO FINISH DOWNWARDS ANIMATION
+          address: 0x1234
+          command: 0x78AB
+      - logger.log: "CUSTOM: RF Message Sent to Finish Downwards Animation"
+      
+#ON STAIRS SENSOR - UP
+  - platform: template
+    name: "Stair Motion - Up"
+    id: stair_motion_upwards
+    on_press:
+      then:
+      # - output.turn_on: pwm_output
+      # - delay: 5000ms      
+      
+      - remote_transmitter.transmit_nec: #CHANGE TO START UPWARDS ANIMATION
+          address: 0x1234
+          command: 0x78AB
+      # - output.turn_on: pwm_output
+      # - delay: 9100ms
+      # - output.turn_off: pwm_output
+      # - delay: 4500ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 550ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 550ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 600ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 550ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1650ms
+      # - output.turn_on: pwm_output
+      # - delay: 600ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      # - delay: 1700ms
+      # - output.turn_on: pwm_output
+      # - delay: 550ms
+      # - output.turn_off: pwm_output
+      - logger.log: "CUSTOM: RF Message Sent to Start Upwards Animation"
+      - delay: 20s
+      - while:
+          condition:
+            binary_sensor.is_on: stair_motion_upwards
+          then:
+          - binary_sensor.template.publish: 
+              id: stair_motion_upwards
+              state: OFF  
+          - logger.log: "CUSTOM: Upwards motion completed due to timeout"                
+    on_release: 
+      then:
+      - remote_transmitter.transmit_nec: #CHANGE TO FINISH UPWARDS ANIMATION
+          address: 0x1234
+          command: 0x78AB
+      - logger.log: "CUSTOM: RF Message Sent to Finish Upwards Animation"
+    
+        
+#OUTPUT TO WLED IR PIN
+remote_transmitter:
+  pin: D3 #IR OUT PIN (GOES TO D2 ON WLED)
+  # Infrared remotes use a 50% carrier signal
+  carrier_duty_percent: 50%
+
+#LIGHT SENSOR
+sensor:
+  - platform: adc
+    pin: A0 #UPDATE TO LIGHT SENSOR PIN
+    name: Top of Stairs Illuminance
+    unit_of_measurement: volts
+    update_interval: 60s
+    
+# Example configuration entry
+output:
+  - platform: esp8266_pwm
+    pin: D2
+    frequency: 38000 Hz
+    id: pwm_output
+
+# Test sqitch
+switch:
+  - platform: template
+    name: "Upwards motion - Test"
+    turn_on_action:
+    - while:
+        condition:
+          binary_sensor.is_off: stair_motion_upwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_upwards
+            state: ON
+        - logger.log: "CUSTOM: Upwards motion triggered by test switch"
+    - while:
+        condition:
+          binary_sensor.is_on: stair_motion_downwards
+        then:
+        - binary_sensor.template.publish: 
+            id: stair_motion_downwards
+            state: OFF
+        - logger.log: "CUSTOM: Downwards motion completed by test switch"        

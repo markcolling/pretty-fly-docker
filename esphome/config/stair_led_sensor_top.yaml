@@ -1,0 +1,50 @@
+esphome:
+  name: stair_led_sensor_top
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "SKYEB2D6"
+  password: "QCUSUEXR"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Stair Led Sensor - Top"
+    password: "1qChdXJ56VR7"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+#PIR SENSOR
+binary_sensor:
+  - platform: gpio
+    pin: D1 #UPDATE TO PIR PIN
+    name: "PIR Sensor"
+    device_class: motion
+    on_press:
+      then:
+        - output.turn_on: sensor_output
+    on_release:
+      then:
+        - output.turn_off: sensor_output
+        
+#OUTPUT TO BOTTOM SENSOR
+output:
+  - platform: gpio
+    pin: D2 #UPDATE TO OUTPUT PIN
+    id: sensor_output
+
+#LIGHT SENSOR
+sensor:
+  - platform: adc
+    pin: A0 #UPDATE TO LIGHT SENSOR PIN
+    name: Top of Stairs Illuminance
+    unit_of_measurement: volts
+    update_interval: 60s

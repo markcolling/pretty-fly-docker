@@ -62,3 +62,4 @@ TO DO:
 - Add Yale
 - Add trains
 - Add location
+- Update Sonoff RF Sensor

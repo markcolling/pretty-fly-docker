@@ -1,0 +1,16 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Lights
+    icon: mdi:lightbulb
+    id: lights
+    path: lights
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Lights
+        show_header_toggle: true
+        entities:
+        - type: section
+          label: Dining Room
+        - entity: light.dining_room_ceiling
+          secondary_info: last-changed

@@ -1,0 +1,153 @@
+esphome:
+  name: herb_hydroponics
+  platform: ESP8266
+  board: d1_mini_lite
+
+# WiFi connection, replace these with values for your WiFi.
+wifi:
+  ssid: !env_var WIFI_SSID
+  password: !env_var WIFI_PWD
+
+  use_address: 192.168.1.65
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+# Enable over-the-air updates.
+ota:
+
+# Enable Web server.
+web_server:
+  port: 80
+# Sync time with Home Assistant.
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information.
+text_sensor:
+  # Expose ESPHome version as sensor.
+  - platform: version
+    name: herb_hydroponics ESPHome Version
+  # Expose WiFi information as sensors.
+  - platform: wifi_info
+    ip_address:
+      name: herb_hydroponics IP
+    ssid:
+      name: herb_hydroponics SSID
+    bssid:
+      name: herb_hydroponics BSSID
+    - platform: template
+    
+    name: "Herb Hydroponics Water Level Warning"
+    lambda: !lambda |-
+      if (id(water_level_perc).state <0.2) {
+        return"EMPTY";
+      } elseif (id(water_level_perc).state <0.5) {
+        return "NEARLY EMPTY";
+      } elseif (id(water_level_perc).state <1.1) {
+        return "GOOD";
+      } else {
+        return "ERROR"
+      }
+    update_interval: 60s
+    
+# Exposed switches.
+# Switch to restart the herb_hydroponics.
+switch:
+  - platform: restart
+    name: "herb_hydroponics Restart"
+
+  - platform: gpio
+    name: "herb_hydroponics Pump"
+    pin: D1
+    on_turn_on:
+      then:
+      - light.turn_on: 
+          id: "herb_hydroponics_LED"
+          effect: 
+    on_turn_off:
+    - logger.log: "Switch Turned Off!"
+
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2811
+    pin: D2
+    num_leds: 1
+    rgb_order: GRB
+    name: "herb_hydroponics LED"
+    id: "herb_hydroponics_LED"
+    effects:
+      - strobe:
+      - strobe:
+          name: Red Warning
+          colors:
+          - state: True
+            brightness: 100%
+            red: 100%
+            green: 0%
+            blue: 0%
+            duration: 500ms
+          - state: False
+            duration: 250ms
+      - strobe:
+          name: Amber Warning
+          colors:
+            - state: True
+              brightness: 100%
+              red: 100%
+              green: 75%
+              blue: 0%
+              duration: 1000ms
+            - state: False
+              duration: 500ms
+      - strobe:
+          name: Pump Warning
+          colors:
+            - state: True
+              brightness: 100%
+              red: 0%
+              green: 100%
+              blue: 0%
+              duration: 1000ms
+            - state: False
+              duration: 500ms
+    
+sensor:
+  # Uptime sensor.
+  - platform: uptime
+    name: herb_hydroponics Uptime
+
+  # WiFi Signal sensor.
+  - platform: wifi_signal
+    name: herb_hydroponics WiFi Signal
+    update_interval: 60s
+
+  - platform: ultrasonic
+    trigger_pin: D5
+    echo_pin: D6
+    name: "Water level in percent"
+    id: "water_level_perc"
+    update_interval: 10s
+    filters:
+    # Calculates in %
+    # Replace 0.42 by the height of your container. From the sensor to the bottom.
+    # I used this website to know how I should multiply my values :https://www.skillsyouneed.com/num/percent-change.html
+    - lambda: return (0.1-x)*(100/0.1);
+    unit_of_measurement: "%"
+
+  - platform: ultrasonic
+    trigger_pin: D5
+    echo_pin: D6
+    name: "Water level in cm"
+    update_interval: 10s
+    filters:
+    # Replace the 0.42 by the height of your container. From the sensor to the bottom.
+    # I multiplied by 100 in order to get CM since the sensor works in meters
+    - lambda: return (0.1-x)*100;
+    unit_of_measurement: "cm"
+  

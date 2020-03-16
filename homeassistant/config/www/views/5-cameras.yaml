@@ -1,0 +1,17 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Cameras
+    icon: mdi:cctv
+    id: cameras
+    path: cameras
+    cards:
+    - type: vertical-stack
+      cards:
+      # The markdown card will render markdown text.
+      - type: "custom:button-card"
+        name: Front Door
+        # entity: input_boolean.toggle_transport_api
+        # tap_action:
+        #   action: toggle
+        # styles:
+        #   card:
+        #   - height: 98px

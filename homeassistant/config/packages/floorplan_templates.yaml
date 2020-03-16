@@ -211,9 +211,17 @@ sensor:
       # living_room_motion_fill:
       #   device_class: motion
       #   value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+       # "{{ states('sensor.day_room_temperature') }}"
       day_room_therm:
         device_class: temperature
-        value_template: "{{ states('sensor.day_room_temperature') }}"
+        value_template:  >
+            {% if is_state('sensor.day_room_temperature', 'unavailable') %}
+              ?
+            {% else %}
+              states('sensor.day_room_temperature')
+            {% endif %}
+
+
       kitchen_therm:
         device_class: temperature
         value_template: "{{ states('sensor.kitchen_temperature') }}"

@@ -132,52 +132,52 @@
         entity_summary_3: sensor.dark_sky_summary_3d
         entity_summary_4: sensor.dark_sky_summary_4d
         entity_summary_5: sensor.dark_sky_summary_5d
-        entity_sun: sun.sun
-        entity_visibility: sensor.dark_sky_visibility
-        entity_daytime_high: sensor.dark_sky_daytime_high_temperature_0d
-        entity_wind_bearing: sensor.dark_sky_wind_bearing
-        entity_wind_speed: sensor.dark_sky_wind_speed
-        entity_humidity: sensor.dark_sky_humidity
-        entity_pressure: sensor.dark_sky_pressure
+        # entity_visibility: sensor.dark_sky_visibility
+        # entity_daytime_high: sensor.dark_sky_daytime_high_temperature_0d
+        # entity_wind_bearing: sensor.dark_sky_wind_bearing
+        # entity_wind_speed: sensor.dark_sky_wind_speed
+        # entity_humidity: sensor.dark_sky_humidity
+        # entity_pressure: sensor.dark_sky_pressure
         entity_apparent_temp: sensor.dark_sky_apparent_temperature
         entity_daily_summary: sensor.dark_sky_daily_summary
-        entity_pop: sensor.dark_sky_precip_probability
+        # entity_pop: sensor.dark_sky_precip_probability
         entity_pop_intensity: sensor.dark_sky_precip_intensity
         entity_pop_1: sensor.dark_sky_precip_probability_1d
         entity_pop_2: sensor.dark_sky_precip_probability_2d
         entity_pop_3: sensor.dark_sky_precip_probability_3d
         entity_pop_4: sensor.dark_sky_precip_probability_4d
         entity_pop_5: sensor.dark_sky_precip_probability_5d
+        entity_sun: sun.sun
         static_icons: true
 
-      - type: custom:flex-table-card
-        # title: Trains to Waterloo
-        max_rows: 5
-        entities:
-          include: sensor.next_train_to_wat
-        columns:
-          # - name: Origin
-          #   attr_as_list: next_trains
-          #   modify: x.origin_name
-          # - name: Destination
-          #   attr_as_list: next_trains
-          #   modify: x.destination_name
-          - name: Next Train to WAT
-            attr_as_list: next_trains
-            modify: x.scheduled
-          - name: Est
-            attr_as_list: next_trains
-            modify: x.estimated
-          - name: Status
-            attr_as_list: next_trains
-            modify: x.status
-        on_empty:
-          # to hide the entire flex-table (default: false)
-          hide: true
-          # if `!hide` show the following text instead of content
-          # text: "No trains to show"
-          # do not show the column headers (default: false)
-          hide_headers: true
+      # - type: custom:flex-table-card
+      #   # title: Trains to Waterloo
+      #   max_rows: 5
+      #   entities:
+      #     include: sensor.next_train_to_wat
+      #   columns:
+      #     # - name: Origin
+      #     #   attr_as_list: next_trains
+      #     #   modify: x.origin_name
+      #     # - name: Destination
+      #     #   attr_as_list: next_trains
+      #     #   modify: x.destination_name
+      #     - name: Next Train to WAT
+      #       attr_as_list: next_trains
+      #       modify: x.scheduled
+      #     - name: Est
+      #       attr_as_list: next_trains
+      #       modify: x.estimated
+      #     - name: Status
+      #       attr_as_list: next_trains
+      #       modify: x.status
+      #   on_empty:
+      #     # to hide the entire flex-table (default: false)
+      #     hide: true
+      #     # if `!hide` show the following text instead of content
+      #     # text: "No trains to show"
+      #     # do not show the column headers (default: false)
+      #     hide_headers: true
 
       # - type: glance
       #   title: Lights
