@@ -122,6 +122,10 @@ panel_iframe:
     title: ESPHome
     icon: mdi:chip
     url: !env_var esphome_env_domain
+  configurator:
+    title: HASS Configurator
+    icon: mdi:wrench
+    url: !env_var configurator_env_domain
 
 # shopping_list:
 
@@ -133,6 +137,8 @@ system_health:
 
 breaking_changes:
 
+shelly:
+  
 # weather:
 
 speedtestdotnet:

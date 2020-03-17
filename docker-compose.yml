@@ -176,20 +176,20 @@ services:
     #   - ./unifi-video/data:/var/lib/unifi-video/
     #   - ./unifi-video/log:/var/log/unifi-video/
 
-  # hass-configurator:
-  #   image: "causticlab/hass-configurator-docker:arm"
-  #   restart: always
-  #   container_name: configurator
-  #   environment:
-  #     - VIRTUAL_HOST=configurator${ENV_DOMAIN}
-  #     - VIRTUAL_PORT=3218
-  #   ports:
-  #     - 3218:3218
-  #   networks:
-  #     - net
-  #   volumes:
-  #     - "./configurator:/config"
-  #     - "./homeassistant/config:/hass-config"
+  hass-configurator:
+    image: "causticlab/hass-configurator-docker:arm"
+    restart: always
+    container_name: configurator
+    environment:
+      - VIRTUAL_HOST=configurator${ENV_DOMAIN}
+      - VIRTUAL_PORT=3218
+    ports:
+      - 3218:3218
+    networks:
+      - net
+    volumes:
+      - "./configurator:/config"
+      - "./homeassistant/config:/hass-config"
 
   esphome:
     image: "esphome/esphome"
