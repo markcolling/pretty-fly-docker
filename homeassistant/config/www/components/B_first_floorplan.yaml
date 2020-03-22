@@ -42,4 +42,17 @@ config:
         - class: 'battery-warning-on'
           state: 'on'
 
+    - entities:
+        - switch.shelly_shsw_1_b90033
+        - switch.shelly_shsw_1_ba6933
+        - switch.shelly_shsw_1_c4e83e
+        - light.shelly_shdm_1_f3a14a
+        - light.shelly_shdm_1_db3e10          
+      states:
+        - class: 'light-fill-off'
+          state: 'off'
+        - class: 'light-fill-on'
+          state: 'on'
+        - class: 'light-fill-unavailable'
+          state: 'unavailable'
   stylesheet: /local/floorplan/floorplan.css
