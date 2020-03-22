@@ -77,16 +77,15 @@ config:
         - sensor.day_room_temperature
         - sensor.kitchen_temperature
       text_template: '${entity.state ? entity.state + "\u00b0C" : "\#\#"}'
-      class_template: '${entity.state ? "active" : ""}'
-        # '
-        # var temp = parseFloat(entity.state.replace("°", ""));
-        # if (temp < 10)
-        #   return "temp-low";
-        # else if (temp < 30)
-        #   return "temp-medium";
+      class_template: '${(entity.state == "unavailable") ? "unavailable" : "active"}'
+        # str temp = entity.state
+        # if (temp == "unavailable")
+        #   return "unavailable";
         # else
-        #   return "temp-high";
+        #   return "active";
         # '
+        #
+        # #'${entity.state ? "active" : ""}'
   # - name: Sensors
     - entities:
         - sensor.day_room_therm
@@ -108,7 +107,7 @@ config:
         - sensor.day_room_humidity
         - sensor.kitchen_humidity
       text_template: '${entity.state ? entity.state + "\%" : "\#\#"}'
-      class_template: '${entity.state ? "active" : ""}'
+      class_template: '${(entity.state == "unavailable") ? "unavailable" : "active"}'
     # - entities:
     #     - switch.living_room_motion
     #   states:
@@ -116,4 +115,15 @@ config:
     #       state: 'off'
     #     - class: 'living-room_fill'
     #       state: 'on'
+
+    - entities:
+        - light.shelly_shdm_1_db3e10
+      states:
+        - class: 'light-fill-off'
+          state: 'off'
+        - class: 'light-fill-on'
+          state: 'on'
+        - class: 'light-fill-unavailable'
+          state: 'unavailable'
+
   stylesheet: /local/floorplan/floorplan.css

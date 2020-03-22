@@ -43,3 +43,15 @@
 .temp-high{
   fill: #d63737 !important;
 }
+/* .light-fill-off{
+  fill: #d63737 !important;
+} */
+.light-fill-on{
+  fill: #fbce42 !important;
+}
+.light-fill-unavailable{
+  fill: #d63737 !important;
+}
+.unavailable {
+  visibility: hidden !important;  
+}

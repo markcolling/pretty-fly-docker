@@ -21,7 +21,7 @@ resources:
     type: module
   - url: /local/custom_ui/dark-sky-weather-card.js?v=7.1
     type: module
-  - url: /local/floorplan/floorplan-card.js?v=1.1.14
+  - url: /local/floorplan/floorplan-card.js
     type: module
   - url: /community_plugin/button-card/button-card.js
     type: module
@@ -51,15 +51,15 @@ custom_header:
   #       options: show
   #       hide_tabs: 1
   # menu: overflow
-  hide_tabs: 1,2,3
+  hide_tabs: '1, 2, 3'
   exceptions:
     - conditions:
         user_agent: Mobile
         media_query: "(max-width: 600px)"
       config:
         options: show
-        hide_tabs: 0
-        default_tab: 1
+        hide_tabs: home
+        default_tab: overview-buttons
 
 views: !include_dir_merge_list www/views
 

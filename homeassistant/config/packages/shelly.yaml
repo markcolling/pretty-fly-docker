@@ -1,0 +1,4 @@
+shelly:
+  discover_by_ip:
+    - '192.168.1.50'
+  igmp_fix: true

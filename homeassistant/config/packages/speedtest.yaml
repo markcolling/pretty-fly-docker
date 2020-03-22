@@ -1,0 +1,8 @@
+speedtestdotnet:
+  scan_interval:
+    minutes: 20
+  server_id: 2789  # Vodafone UK
+  monitored_conditions:
+    - ping
+    - download
+    - upload

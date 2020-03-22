@@ -55,7 +55,7 @@ frontend:
 lovelace:
   mode: yaml
 
-lovelace_gen:
+# lovelace_gen:
 
 # PLATFORMS
 mqtt:
@@ -134,47 +134,8 @@ system_health:
 
 breaking_changes:
 
-shelly:
-  discover_by_ip:
-    - '192.168.1.50'
-  igmp_fix: true
-  
 # weather:
 
-speedtestdotnet:
-  scan_interval:
-    minutes: 20
-  server_id: 2789  # Vodafone UK
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
-# Example configuration.yaml entry with manually specified addresses
-sonos:
-  media_player:
-    hosts: 192.168.1.11
-
-#Enable Cameras
-camera:
-    # - platform: generic
-    #   name: Porch Camera
-    #   still_image_url: !secret Porch_Camera_URL
-    #   stream_source: !secret Porch_Camera_Source 
-  
-  - platform: generic
-    name: drive
-    still_image_url: !secret Drive_Camera_Still
-    stream_source: !secret Drive_Camera_Source 
-      
-    # - platform: generic
-    #   name: Garden Camera
-    #   still_image_url: !secret Garden_Camera_URL
-    #   stream_source: !secret Garden_Camera_Source 
- 
-#Enable stream
-stream:
- 
 # alarm_control_panel:
 #   - platform: yale_smart_alarm
 #     username: !secret yale_username
@@ -207,7 +168,7 @@ logger:
   default: warn
 #  logs:
 #    pyShelly: debug
-    
+
 ## HISTORY
 history:
 
