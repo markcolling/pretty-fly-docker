@@ -7,10 +7,65 @@
     - type: vertical-stack
       cards:
       - type: entities
-        title: Lights
+        title: Downstairs Lights
         show_header_toggle: true
         entities:
         - type: section
-          label: Dining Room
-        - entity: light.dining_room_ceiling
+          label: Kitchen
+          show_header_toggle: true
+        - entity: light.shelly_shdm_1_f3e93b
+          secondary_info: last-changed
+        - entity: light.shelly_shdm_1_f3e936
+          secondary_info: last-changed
+        - entity: switch.shelly_shsw_1_ba680b
+          secondary_info: last-changed
+        - type: section
+          label: Living Room          
+        - entity: light.shelly_shdm_1_f3ebd2
+          secondary_info: last-changed
+        - entity: light.shelly_shdm_1_f3a24c
+          secondary_info: last-changed
+        - type: section
+          label: Hall 
+        - entity: switch.shelly_shsw_1_c487ec
+          secondary_info: last-changed
+          
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Upstairs Lights
+        show_header_toggle: true
+        entities:
+        - type: section
+          label: Bedrooms
+        - entity: light.shelly_shdm_1_db3e10   
+          secondary_info: last-changed
+        - entity: light.shelly_shdm_1_f3a14a
+          secondary_info: last-changed
+        - entity: switch.shelly_shsw_1_b90033
+          secondary_info: last-changed
+        - type: section
+          label: Landing
+        - entity: switch.shelly_shsw_1_c4e83e
+          secondary_info: last-changed
+        - type: section
+          label: Bathroom
+        - entity: switch.shelly_shsw_1_ba6933
+          secondary_info: last-changed
+          
+    - type: vertical-stack
+      cards:
+      - type: entities
+        title: Outside Lights
+        show_header_toggle: true
+        entities:
+        - type: section
+          label: Front
+        - entity: switch.shelly_shsw_1_b8eff2
+          secondary_info: last-changed
+        - entity: switch.shelly_shsw_1_c4f29c
+          secondary_info: last-changed
+        - type: section
+          label: Back
+        - entity: switch.shelly_shsw_1_c4ef56
           secondary_info: last-changed

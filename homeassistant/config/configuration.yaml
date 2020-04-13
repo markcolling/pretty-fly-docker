@@ -63,43 +63,43 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
 
-# INFLUXDB
-influxdb:
-  host: influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret hass_username
-  password: !secret hass_password
-  default_measurement: state
-  include:
-    domains:
-      - sensor
-      - binary_sensor
-      - switch
-      - light
-  exclude:
-    entities:
-      - sensor.last_boot
-      - sensor.latest_ha_version
-      - sensor.current_ha_version
-      - sensor.yr_symbol
-  tags:
-    instance: prod
-    source: hass
-  # ssl: true
-  # verify_ssl: true
-  # max_retries: 3
-  # default_measurement: state
-  # exclude:
-  #   entities:
-  #      - entity.id1
-  #      - entity.id2
-  #   domains:
-  #      - automation
-  # include:
-  #   entities:
-  #      - entity.id3
-  #      - entity.id4
+# # INFLUXDB
+# influxdb:
+#   host: influxdb
+#   port: 8086
+#   database: homeassistant
+#   username: !secret hass_username
+#   password: !secret hass_password
+#   default_measurement: state
+#   include:
+#     domains:
+#       - sensor
+#       - binary_sensor
+#       - switch
+#       - light
+#   exclude:
+#     entities:
+#       - sensor.last_boot
+#       - sensor.latest_ha_version
+#       - sensor.current_ha_version
+#       - sensor.yr_symbol
+#   tags:
+#     instance: prod
+#     source: hass
+#   # ssl: true
+#   # verify_ssl: true
+#   # max_retries: 3
+#   # default_measurement: state
+#   # exclude:
+#   #   entities:
+#   #      - entity.id1
+#   #      - entity.id2
+#   #   domains:
+#   #      - automation
+#   # include:
+#   #   entities:
+#   #      - entity.id3
+#   #      - entity.id4
 
 # UI PANELS
 panel_iframe:

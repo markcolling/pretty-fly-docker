@@ -1,2 +1,18 @@
 binary_sensor.sonoff_rf_bridge:
     friendly_name: "Sonoff RF Bridge"
+# switch.shelly_shsw_1_c4f29c:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_ba680b:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_c487ec:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_b8eff2:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_c4ef56:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_b90033:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_ba6933:
+#     icon: "mdi:lightbulb"
+# switch.shelly_shsw_1_c4e83e:
+#     icon: "mdi:lightbulb"

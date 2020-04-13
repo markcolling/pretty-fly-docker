@@ -1,4 +1,4 @@
-- alias: 'Set theme at startup'
+- alias: Set theme at startup
   trigger:
     platform: homeassistant
     event: start
@@ -6,3 +6,46 @@
     service: frontend.set_theme
     data:
       name: Dark - Cyan
+  id: f406963bd1494070ae2daf0695d79b53
+- id: kitchen_light_sync_on
+  alias: Kitchen Light and Cupboard Sync - On
+  trigger:
+    platform: state
+    entity_id: light.shelly_shdm_1_f3e93b
+    to: 'on'
+  action:
+    service: light.turn_on
+    entity_id: light.kitchen_cupboard_light
+- id: kitchen_light_sync_off
+  alias: Kitchen Light and Cupboard Sync - Off
+  trigger:
+    platform: state
+    entity_id: light.shelly_shdm_1_f3e93b
+    to: 'off'
+  action:
+    service: light.turn_off
+    entity_id: light.kitchen_cupboard_light
+- id: '1586510867957'
+  alias: Turn Downstairs Bathroom Light off
+  description: ''
+  trigger:
+  - device_id: f110939f4a4a493fa9b6e7c279df15ab
+    domain: switch
+    entity_id: switch.shelly_shsw_1_ba680b
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    platform: device
+    type: turned_on
+  condition: []
+  action:
+  - device_id: f110939f4a4a493fa9b6e7c279df15ab
+    domain: light
+    entity_id: light.shelly_shsw_1_ba680b
+    type: turn_off
+  - data:
+      data:
+        type: announce
+      message: You left the light on you eeyjit
+    service: notify.alexa_media_mark_s_echo_dot

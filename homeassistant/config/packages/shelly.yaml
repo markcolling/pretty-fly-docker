@@ -2,3 +2,30 @@ shelly:
   discover_by_ip:
     - '192.168.1.50'
   igmp_fix: true
+  devices:  
+    - id: "B90033"
+      light_switch: true 
+      name: Back Bedroom Light
+    - id: "C4EF56"
+      light_switch: true 
+      name: Garden Light
+    - id: "BA6933"
+      light_switch: true    
+      name: Bathroom Light
+    - id: "BA680B"
+      light_switch: true 
+      name: Downstairs Bathroom Light
+    - id: "C487EC"
+      light_switch: true 
+      name: Hall Light
+    - id: "C4E83E"
+      light_switch: true
+      name: Landing Light
+    - id: "C4F29C"
+      light_switch: true 
+      name: Porch Light
+    - id: "B8EFF2"
+      light_switch: true    
+      name: Security Light
+      
+      

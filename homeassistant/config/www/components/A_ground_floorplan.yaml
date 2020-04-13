@@ -117,16 +117,16 @@ config:
     #       state: 'on'
 
     - entities:
-        - switch.shelly_shsw_1_c4f29c
-        - switch.shelly_shsw_1_ba680b
+        - light.shelly_shsw_1_c4f29c
+        - light.shelly_shsw_1_ba680b
         - light.shelly_shdm_1_f3e936
         - light.shelly_shdm_1_f3e93b
-        - switch.shelly_shsw_1_c487ec
+        - light.shelly_shsw_1_c487ec
         - light.shelly_shdm_1_f3ebd2
         - light.shelly_shdm_1_f3a24c
-        - switch.shelly_shsw_1_b8eff2
-        - switch.shelly_shsw_1_c4ef56
-
+        - light.shelly_shsw_1_b8eff2
+        - light.shelly_shsw_1_c4ef56
+        - light.kitchen_cupboard_light
       states:
         - class: 'light-fill-off'
           state: 'off'

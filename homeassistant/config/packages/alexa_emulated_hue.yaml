@@ -1,0 +1,19 @@
+# Example configuration.yaml entry
+emulated_hue:
+  host_ip: 172.19.0.3
+  listen_port: 8300 #8300
+  advertise_ip: 192.168.1.6
+  advertise_port: 80
+#   off_maps_to_on_domains:
+#     - script
+#     - scene
+  upnp_bind_multicast: true
+  expose_by_default: true
+  exposed_domains:
+    - light
+    - switch
+#   entities:
+#     light.bedroom_light:
+#       name: "Bedside Lamp"
+#     light.ceiling_lights:
+#       hidden: true
