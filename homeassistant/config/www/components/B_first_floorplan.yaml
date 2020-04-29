@@ -47,7 +47,8 @@ config:
         - light.shelly_shsw_1_ba6933
         - light.shelly_shsw_1_c4e83e
         - light.shelly_shdm_1_f3a14a
-        - light.shelly_shdm_1_db3e10          
+        - light.shelly_shdm_1_db3e10
+        - light.wled_light     
       states:
         - class: 'light-fill-off'
           state: 'off'

@@ -20,16 +20,18 @@
         - entity: light.shelly_shsw_1_ba680b
           secondary_info: last-changed
         - type: section
-          label: Living Room          
+          label: Living Room
         - entity: light.shelly_shdm_1_f3ebd2
           secondary_info: last-changed
         - entity: light.shelly_shdm_1_f3a24c
           secondary_info: last-changed
         - type: section
-          label: Hall 
+          label: Hall
         - entity: light.shelly_shsw_1_c487ec
           secondary_info: last-changed
-          
+        - entity: light.wled_light
+          secondary_info: last-changed
+
     - type: vertical-stack
       cards:
       - type: entities
@@ -38,7 +40,7 @@
         entities:
         - type: section
           label: Bedrooms
-        - entity: light.shelly_shdm_1_db3e10   
+        - entity: light.shelly_shdm_1_db3e10
           secondary_info: last-changed
         - entity: light.shelly_shdm_1_f3a14a
           secondary_info: last-changed
@@ -52,7 +54,7 @@
           label: Bathroom
         - entity: light.shelly_shsw_1_ba6933
           secondary_info: last-changed
-          
+
     - type: vertical-stack
       cards:
       - type: entities

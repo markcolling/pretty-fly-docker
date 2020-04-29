@@ -127,6 +127,7 @@ config:
         - light.shelly_shsw_1_b8eff2
         - light.shelly_shsw_1_c4ef56
         - light.kitchen_cupboard_light
+        - light.wled_light
       states:
         - class: 'light-fill-off'
           state: 'off'

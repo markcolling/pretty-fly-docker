@@ -7,7 +7,7 @@ ios-light-mode-dark-green:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -17,9 +17,10 @@ ios-light-mode-dark-green:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -76,7 +77,7 @@ ios-light-mode-dark-green-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -86,9 +87,10 @@ ios-light-mode-dark-green-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -145,7 +147,7 @@ ios-dark-mode-dark-green:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -155,9 +157,10 @@ ios-dark-mode-dark-green:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -214,7 +217,7 @@ ios-dark-mode-dark-green-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -224,9 +227,10 @@ ios-dark-mode-dark-green-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -283,7 +287,7 @@ ios-light-mode-light-blue:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -293,9 +297,10 @@ ios-light-mode-light-blue:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -352,7 +357,7 @@ ios-light-mode-light-blue-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -362,9 +367,10 @@ ios-light-mode-light-blue-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -421,7 +427,7 @@ ios-dark-mode-light-blue:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -431,9 +437,10 @@ ios-dark-mode-light-blue:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -490,7 +497,7 @@ ios-dark-mode-light-blue-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -500,9 +507,10 @@ ios-dark-mode-light-blue-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -559,7 +567,7 @@ ios-light-mode-light-green:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -569,9 +577,10 @@ ios-light-mode-light-green:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -628,7 +637,7 @@ ios-light-mode-light-green-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -638,9 +647,10 @@ ios-light-mode-light-green-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -697,7 +707,7 @@ ios-dark-mode-light-green:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -707,9 +717,10 @@ ios-dark-mode-light-green:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -766,7 +777,7 @@ ios-dark-mode-light-green-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-light-green.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -776,9 +787,10 @@ ios-dark-mode-light-green-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -835,7 +847,7 @@ ios-light-mode-orange:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-orange.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -845,9 +857,10 @@ ios-light-mode-orange:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -904,7 +917,7 @@ ios-light-mode-orange-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-orange.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -914,9 +927,10 @@ ios-light-mode-orange-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -973,7 +987,7 @@ ios-dark-mode-orange:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-orange.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -983,9 +997,10 @@ ios-dark-mode-orange:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1042,7 +1057,7 @@ ios-dark-mode-orange-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-orange.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1052,9 +1067,10 @@ ios-dark-mode-orange-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1111,7 +1127,7 @@ ios-light-mode-blue-red:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-blue-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1121,9 +1137,10 @@ ios-light-mode-blue-red:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1180,7 +1197,7 @@ ios-light-mode-blue-red-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-blue-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1190,9 +1207,10 @@ ios-light-mode-blue-red-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1249,7 +1267,7 @@ ios-dark-mode-blue-red:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-blue-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1259,9 +1277,10 @@ ios-dark-mode-blue-red:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1318,7 +1337,7 @@ ios-dark-mode-blue-red-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-blue-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1328,9 +1347,10 @@ ios-dark-mode-blue-red-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1387,7 +1407,7 @@ ios-light-mode-red:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1397,9 +1417,10 @@ ios-light-mode-red:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1456,7 +1477,7 @@ ios-light-mode-red-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1466,9 +1487,10 @@ ios-light-mode-red-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1525,7 +1547,7 @@ ios-dark-mode-red:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1535,9 +1557,10 @@ ios-dark-mode-red:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1594,7 +1617,7 @@ ios-dark-mode-red-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-red.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1604,9 +1627,10 @@ ios-dark-mode-red-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1663,7 +1687,7 @@ ios-light-mode-dark-blue:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1673,9 +1697,10 @@ ios-light-mode-dark-blue:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1732,7 +1757,7 @@ ios-light-mode-dark-blue-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 149, 9, 1)  # from Apple systemOrange light mode
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
   light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#e5e5ea"  # systemGray5 light mode
   secondary-background-color: rgba(255, 255, 255, 0.7)
@@ -1742,9 +1767,10 @@ ios-light-mode-dark-blue-alternative:
   primary-text-color: "#464a47"
   secondary-text-color: "#000000"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1801,7 +1827,7 @@ ios-dark-mode-dark-blue:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1811,9 +1837,10 @@ ios-dark-mode-dark-blue:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)
@@ -1870,7 +1897,7 @@ ios-dark-mode-dark-blue-alternative:
   # Global
   background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-blue.jpg')"
   lovelace-background: var(--background-image)
-  primary-color: rgba(255, 159, 9, 1)  # from Apple systemOrange dark mode
+  primary-color: "#ff9f09"  # from Apple systemOrange dark mode
   light-primary-color: "#B6B6C1"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
   primary-background-color: "#2c2c2e"  # systemGray5 dark mode
   secondary-background-color: rgba(25, 25, 25, 0.7)
@@ -1880,9 +1907,10 @@ ios-dark-mode-dark-blue-alternative:
   primary-text-color: "#FFF"
   secondary-text-color: "#d3d3d3"
   text-primary-color: "#FFF"
-  disabled-text-color: "#232323"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
   text-dark-color: "#FFF"
   # Sidebar Menu
+  sidebar-background-color: var(--primary-background-color)
   sidebar-icon-color: var(--light-primary-color)
   sidebar-text-color: "#F1F1F1"
   sidebar-selected-background-color: var(--primary-background-color)

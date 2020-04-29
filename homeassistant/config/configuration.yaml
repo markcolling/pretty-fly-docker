@@ -48,7 +48,8 @@ hacs:
   token: !secret hacs_token
 
 frontend:
-  themes: !include themes.yaml
+  themes: !include_dir_merge_named ./themes
+    # - !include themes.yaml
   javascript_version: auto
 
 # Lovelace

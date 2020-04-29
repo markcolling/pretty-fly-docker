@@ -6,7 +6,7 @@ services:
     container_name: "mqtt"
     restart: always
     networks:
-      - net
+      - pretty-fly-admin_net
     ports:
       - 1883:1883
       - 9001:9001
@@ -29,7 +29,7 @@ services:
     image: grafana/grafana:latest
     container_name: "grafana"
     networks:
-      - net
+      - pretty-fly-admin_net
     depends_on:
       - influxdb
     # links:
@@ -55,7 +55,7 @@ services:
     image: influxdb:latest
     container_name: "influxdb"
     networks:
-      - net
+      - pretty-fly-admin_net
     # healthcheck:
     #   test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
     #   interval: 30s
@@ -79,10 +79,10 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.106.6
+    image: homeassistant/home-assistant:0.109.0
     container_name: "hass"
     networks:
-      net:
+      pretty-fly-admin_net:
         ipv4_address: 172.19.0.14
     restart: always
     env_file:
@@ -118,7 +118,7 @@ services:
     #   - VIRTUAL_HOST=telegraf${ENV_DOMAIN}
     #
     networks:
-      - net
+      - pretty-fly-admin_net
     # links:
     #   - influxdb
     #command: bash -c "echo "deb http://ftp.us.debian.org/debian stretch main non-free" >> /etc/apt/sources.list"
@@ -132,7 +132,7 @@ services:
     image: chronograf:latest
     container_name: chronograf
     networks:
-      - net
+      - pretty-fly-admin_net
     environment:
       - VIRTUAL_HOST=chronograf$ENV_DOMAIN
       - VIRTUAL_PORT=8888
@@ -153,7 +153,7 @@ services:
       - PUID=1001
       # - FLOWS=/data/flows_prettyflypi.json
     networks:
-      - net
+      - pretty-fly-admin_net
     ports:
       - 1880:1880
       - 3456:3456
@@ -190,7 +190,7 @@ services:
     ports:
       - 3218:3218
     networks:
-      - net
+      - pretty-fly-admin_net
     volumes:
       - "./configurator:/config"
       - "./homeassistant/config:/hass-config"
@@ -206,7 +206,7 @@ services:
     ports:
       - 6052:6052
     networks:
-      - net
+      - pretty-fly-admin_net
     volumes:
       - "./esphome/config:/config"
     # devices:
@@ -215,5 +215,5 @@ services:
     #   # - "/dev/ttyUSB0"
     #   - "/dev/SLAB_USBtoUART:/dev/SLAB_USBtoUART"
 networks:
-  net:
-  default:
+  pretty-fly-admin_net:
+    external: true
