@@ -82,7 +82,8 @@ services:
     image: homeassistant/home-assistant:0.106.6
     container_name: "hass"
     networks:
-      - net
+      net:
+        ipv4_address: 172.19.0.14
     restart: always
     env_file:
       - ./homeassistant/config/ha.env

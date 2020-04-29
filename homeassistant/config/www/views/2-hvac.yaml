@@ -5,59 +5,50 @@
   path: heating
   panel: true
   cards:
-    - type: custom:layout-card
-      column_width: [13%,13%,74%]
+    - type: vertical-stack
       cards:
-        - type: vertical-stack
-          cards:
-          - type: sensor
-            entity: sensor.kitchen_temperature
-            name: Kitchen Temperature
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.kitchen_humidity
-            name: Kitchen Humidity
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.day_room_temperature
-            name: Day Room Temperature
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.day_room_humidity
-            name: Day Room Humidity
-            detail: 2
-            graph: line
-        - type: vertical-stack
-          cards:
-          - type: sensor
-            entity: sensor.kitchen_temperature
-            name: Kitchen Temperature
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.kitchen_humidity
-            name: Kitchen Humidity
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.day_room_temperature
-            name: Day Room Temperature
-            detail: 2
-            graph: line
-          - type: sensor
-            entity: sensor.day_room_humidity
-            name: Day Room Humidity
-            detail: 2
-            graph: line
-        - type: vertical-stack
-          cards:
-          - type: iframe
-            url: http://grafana.dev.prettyfly.net/d/ZURDkF1Wz/house-temperatures?orgId=1&from=1573948800000&to=1574197842558&panelId=2&fullscreen
-            aspect_ratio: 75%
-            # style: |
-            #   ha-card {
-            #     width:100%;
-            #   }
+      - type: entities
+        title: Downstairs Heating
+        show_header_toggle: false
+        entities:
+        - entity: climate.wiser_living_room
+        - entity: climate.wiser_kitchen
+      - type: entities
+        title: Upstairs Heating
+        show_header_toggle: false
+        entities:
+        - entity: climate.wiser_master
+        - entity: climate.wiser_bedroom_2
+        - entity: climate.wiser_bedroom_3
+      - type: entities
+        title: Heating Modes
+        show_header_toggle: false
+        entities:
+        - entity: switch.wiser_away_mode
+        - entity: switch.wiser_comfort_mode
+        - entity: switch.wiser_eco_mode
+        - entity: switch.wiser_valve_protection   
+          
+    # - type: vertical-stack
+    #   cards:
+    #   - type: entities
+    #     title: Upstairs Lights
+    #     show_header_toggle: true
+    #     entities:
+    #     - type: section
+    #       label: Bedrooms
+    #     - entity: light.shelly_shdm_1_db3e10   
+    #       secondary_info: last-changed
+    #     - entity: light.shelly_shdm_1_f3a14a
+    #       secondary_info: last-changed
+    #     - entity: light.shelly_shsw_1_b90033
+    #       secondary_info: last-changed
+    #     - type: section
+    #       label: Landing
+    #     - entity: light.shelly_shsw_1_c4e83e
+    #       secondary_info: last-changed
+    #     - type: section
+    #       label: Bathroom
+    #     - entity: light.shelly_shsw_1_ba6933
+    #       secondary_info: last-changed
+

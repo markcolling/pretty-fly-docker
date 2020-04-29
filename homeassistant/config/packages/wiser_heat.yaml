@@ -1,0 +1,7 @@
+wiser:
+  host: !secret wiserhubIP
+  password: !secret wiserhubSECRET
+  scan_interval: 300
+  minimum: -5
+  boost_temp: 2
+  boost_time: 30

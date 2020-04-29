@@ -17,7 +17,7 @@
           secondary_info: last-changed
         - entity: light.shelly_shdm_1_f3e936
           secondary_info: last-changed
-        - entity: switch.shelly_shsw_1_ba680b
+        - entity: light.shelly_shsw_1_ba680b
           secondary_info: last-changed
         - type: section
           label: Living Room          
@@ -27,7 +27,7 @@
           secondary_info: last-changed
         - type: section
           label: Hall 
-        - entity: switch.shelly_shsw_1_c487ec
+        - entity: light.shelly_shsw_1_c487ec
           secondary_info: last-changed
           
     - type: vertical-stack
@@ -42,15 +42,15 @@
           secondary_info: last-changed
         - entity: light.shelly_shdm_1_f3a14a
           secondary_info: last-changed
-        - entity: switch.shelly_shsw_1_b90033
+        - entity: light.shelly_shsw_1_b90033
           secondary_info: last-changed
         - type: section
           label: Landing
-        - entity: switch.shelly_shsw_1_c4e83e
+        - entity: light.shelly_shsw_1_c4e83e
           secondary_info: last-changed
         - type: section
           label: Bathroom
-        - entity: switch.shelly_shsw_1_ba6933
+        - entity: light.shelly_shsw_1_ba6933
           secondary_info: last-changed
           
     - type: vertical-stack
@@ -61,11 +61,11 @@
         entities:
         - type: section
           label: Front
-        - entity: switch.shelly_shsw_1_b8eff2
+        - entity: light.shelly_shsw_1_b8eff2
           secondary_info: last-changed
-        - entity: switch.shelly_shsw_1_c4f29c
+        - entity: light.shelly_shsw_1_c4f29c
           secondary_info: last-changed
         - type: section
           label: Back
-        - entity: switch.shelly_shsw_1_c4ef56
+        - entity: light.shelly_shsw_1_c4ef56
           secondary_info: last-changed
