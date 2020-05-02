@@ -49,3 +49,16 @@
         type: announce
       message: You left the light on you rascal
     service: notify.alexa_media_mark_s_echo_dot
+- id: '1588281655776'
+  alias: Turn light strip on an hour after sunset
+  description: ''
+  trigger:
+  - event: sunset
+    offset: '60'
+    platform: sun
+  condition: []
+  action:
+  - device_id: 28a5ea5a33c541edbbd4131bfcae0929
+    domain: light
+    entity_id: light.wled_light
+    type: turn_on

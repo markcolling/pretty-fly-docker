@@ -13,6 +13,8 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
   packages: !include_dir_named packages
+  whitelist_external_dirs:
+    - /config
 
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
@@ -175,7 +177,7 @@ history:
 
 ## Recorder
 recorder:
-  purge_keep_days: 31
+  purge_keep_days: 14
   # include:
   #   domains:
   #     sensor

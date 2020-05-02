@@ -11,7 +11,9 @@ sensor:
       - type: memory_use_percent
       - type: processor_use
       - type: disk_use_percent
+        arg: /
       - type: disk_free
+        arg: /
       - type: last_boot
 
   # - platform: command_line
@@ -21,40 +23,40 @@ sensor:
   #   unit_of_measurement: "°C"
   #   value_template: '{{ value | multiply(0.001) | round(1) }}'
 
-  # - platform: filesize
-  #   file_paths:
-  #     - !secret filesize_homeassistant_db
-  #     - !secret filesize_homeassistant_log
-  #     - !secret filesize_ozw_log
-  #     - !secret filesize_configuration
+  - platform: filesize
+    file_paths:
+      - !secret filesize_homeassistant_db
+      - !secret filesize_homeassistant_log
+      #- !secret filesize_ozw_log
+      #- !secret filesize_configuration
 
-sensor.speedtest_download:
-  friendly_name: "Download"
-  icon: mdi:download
-sensor.speedtest_upload:
-  friendly_name: "Upload"
-  icon: mdi:upload
-sensor.speedtest_ping:
-  friendly_name: "Ping"
-  icon: mdi:timer
-sensor.processor_use:
-  # <<: *customize
-  friendly_name: "Processor Usage"
-sensor.memory_use_percent:
-  # <<: *customize
-  friendly_name: "Memory Use"
-sensor.disk_use_percent:
-  # <<: *customize
-  friendly_name: "Disk Use"
-sensor.disk_free:
-  # <<: *customize
-  friendly_name: "Disk Free"
-sensor.last_boot:
-  # <<: *customize
-  friendly_name: "Last Boot"
-# sensor.cpu_temp:
+# sensor.speedtest_download:
+#   friendly_name: "Download"
+#   icon: mdi:download
+# sensor.speedtest_upload:
+#   friendly_name: "Upload"
+#   icon: mdi:upload
+# sensor.speedtest_ping:
+#   friendly_name: "Ping"
+#   icon: mdi:timer
+# sensor.processor_use:
 #   # <<: *customize
-#   friendly_name: "CPU Temp"
+#   friendly_name: "Processor Usage"
+# sensor.memory_use_percent:
+#   # <<: *customize
+#   friendly_name: "Memory Use"
+# sensor.disk_use_percent:
+#   # <<: *customize
+#   friendly_name: "Disk Use"
+# sensor.disk_free:
+#   # <<: *customize
+#   friendly_name: "Disk Free"
+# sensor.last_boot:
+#   # <<: *customize
+#   friendly_name: "Last Boot"
+# # sensor.cpu_temp:
+# #   # <<: *customize
+# #   friendly_name: "CPU Temp"
 
 
 # group:

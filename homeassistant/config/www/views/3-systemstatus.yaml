@@ -11,7 +11,7 @@
         # column_num: 4
         layout: vertical
         # column_width:
-        # max_width: [30%, 30%, 30%]
+        # max_width: [25%, 25%, 25%, 25%]
         cards:
         - type: entities
           show_header_toggle: off
@@ -19,9 +19,12 @@
             - type: section
               label: Software Versions (current/latest)
             - entity: sensor.ha_versions
-
+            - type: section
+              label: File Sizes
+            - entity: sensor.home_assistant_v2_db
+            - entity: sensor.home_assistant_log
+            
         - break
-
         # - type: entities
         #   show_header_toggle: off
         #   entities:
@@ -66,7 +69,7 @@
           show_header_toggle: off
           entities:
             - type: section
-              label: System Stats
+              label: NUC Stats
             - entity: sensor.memory_use_percent
             - entity: sensor.disk_use_percent
             - entity: sensor.disk_free
@@ -74,14 +77,29 @@
             # - entity: sensor.cpu_temp
             - type: section
               label: Synology Stats
-            # - entity: sensor.disk_status_volume_1
-            - entity: sensor.volume_status_volume_1
-            - entity: sensor.cpu_total_load_volume_1
-            - entity: sensor.volume_percentage_used_volume_1
-            - entity: sensor.volume_status_volume_2
-            - entity: sensor.cpu_total_load_volume_2
-            - entity: sensor.volume_percentage_used_volume_2
+            - entity: sensor.synology_average_disk_temp_volume_1
+            - entity: sensor.synology_maximum_disk_temp_volume_1
+            - entity: sensor.synology_status_volume_1
+            - entity: sensor.synology_total_size_volume_1
+            - entity: sensor.synology_used_space_volume_1
+            - entity: sensor.synology_volume_used_volume_1
+            - entity: sensor.synology_cpu_load_total
+            - entity: sensor.synology_memory_usage_real
+            - entity: sensor.synology_network_down
+            - entity: sensor.synology_network_up
 
+        - break
+        
+        - type: entities
+          show_header_toggle: off
+          entities:
+            - type: section
+              label: NUC Stats
+            - entity: sensor.memory_use_percent
+            - entity: sensor.disk_use_percent
+            - entity: sensor.disk_free
+            - entity: sensor.last_boot
+            
       # - type: vertical-stack
       #   cards:
       #     - type: custom:compact-custom-header

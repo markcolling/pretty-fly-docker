@@ -48,12 +48,21 @@ config:
         - light.shelly_shsw_1_c4e83e
         - light.shelly_shdm_1_f3a14a
         - light.shelly_shdm_1_db3e10
-        - light.wled_light     
       states:
         - class: 'light-fill-off'
           state: 'off'
         - class: 'light-fill-on'
           state: 'on'
         - class: 'light-fill-unavailable'
+          state: 'unavailable'
+          
+    - entities:
+        - light.wled_light
+      states:
+        - class: 'light-border-off'
+          state: 'off'
+        - class: 'light-border-on'
+          state: 'on'
+        - class: 'light-border-unavailable'
           state: 'unavailable'
   stylesheet: /local/floorplan/floorplan.css
