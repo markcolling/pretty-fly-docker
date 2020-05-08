@@ -56,6 +56,20 @@
           - height: 98px
           # - font-size: 12px
           # - font-weight: bold
+      - type: "custom:button-card"
+        icon: mdi:music
+        color: var(--primary-color)
+        color_type: icon
+        default_color: var(--primary-color)
+        styles:
+          card:
+          - height: 98px
+        name: SONOS
+        tap_action:
+          action: call-service
+          service: script.turn_on
+          service_data:
+            entity_id: script.sonos_app
 
       - break
       - !include ../components/A_ground_floorplan.yaml

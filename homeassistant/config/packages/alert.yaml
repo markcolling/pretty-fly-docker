@@ -1,0 +1,151 @@
+# AlmAct1 - switch to activate the alarm in Room1
+# AlmSnd1 - switch for a buzzer
+
+# automation:
+# - alias: 'Alarm_PIR_Room1'
+#   trigger:
+#     platform: in
+#     entity_id: binary_sensor.PIR1
+#     to: 'on'
+#   condition:
+#     - condition: state
+#       entity_id: switch.AlmAct1
+#       state: 'on'
+#     - condition: state
+#       entity_id: script.alarm_room1
+#       state: 'off'
+#   action:
+#     # start alarm on movement if alarm activated
+#     # and the alarm is not triggered
+#     service: script.turn_on
+#     entity_id: script.alarm_room1
+
+# - alias: 'flash_room1_start'
+#   trigger:
+#     platform: state
+#     entity_id: switch.AlmSnd1
+#     to: 'on'
+#   action:
+#     service: script.turn_on
+#     entity_id: script.flash_room1
+
+# - alias: 'flash_room1_stop'
+#   trigger:
+#     platform: state
+#     entity_id: switch.REL1
+#     to: 'off'
+#   condition:
+#     condition: state
+#     entity_id: switch.AlmSnd1
+#     state: 'off'
+#   action:
+#     service: script.turn_off
+#     entity_id: script.flash_room1
+input_boolean:  
+  flash_alert_boolean:
+    name: Flash Lights
+    icon: mdi:lightbulb
+    initial: off
+
+automation:
+- alias: 'Start Flashing Lights'
+  trigger:
+    platform: state
+    entity_id: input_boolean.flash_alert_boolean
+    state: 'on'     
+  action:
+    service: script.turn_on
+    entity_id: script.light_flash
+
+# - alias: 'Stop Flashing Lights'
+#   trigger:
+#     platform: state
+#     entity_id: input_boolean.flash_alert_boolean
+#     state: 'off'     
+#   action:
+#   service: script.turn_on
+#   entity_id: script.light_flash_cancel
+
+# {{expand('group.alert_lights') | selectattr('state', 'equalto', 'on') | map(attribute='entity_id') | join(', ')}}
+
+
+script:
+  light_flash:
+    alias: 'Flash Library On'
+    sequence:
+      - alias: 'Light Library On'
+        service: light.turn_on
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+          brightness: 150
+      - delay:
+          # time for flash light on
+          seconds: 1
+      - alias: 'Light Library On'
+        service: light.turn_on
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+          brightness: 70
+      - delay:
+          # time for flash light on
+          seconds: 0.3
+      - alias: 'Light Library On'
+        service: light.turn_on
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+          brightness: 150
+      - delay:
+          # time for flash light on
+          seconds: 0.3
+      - alias: 'Light Library On'
+        service: light.turn_on
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+          brightness: 70
+      - delay:
+          # time for flash light on
+          seconds: 0.3
+      - alias: 'Light Library On'
+        service: light.turn_on
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+          brightness: 150
+      - delay:
+          # time for flash light on
+          seconds: 0.3
+      - alias: 'Light Library Off'
+        service: homeassistant.turn_off
+        data:
+          entity_id: light.shelly_shdm_1_f3ebd2
+
+group:
+  alert_lights:
+    name: Alert Lights
+    entities:
+      - light.shelly_shdm_1_f3ebd2
+      - light.shelly_shdm_1_f3a24c
+      - light.shelly_shdm_1_db3e10
+      - light.shelly_shdm_1_f3a14a
+      
+#   flash_loop:
+#     alias: 'Flash loop'
+#     sequence:
+#       - delay:
+#           # time for flash light off
+#           seconds: 2
+#       - alias: loop_library
+#         service: script.turn_on
+#         data:
+#           entity_id: script.light_flash
+          
+#   light_flash_cancel:
+#     alias: Flash Cancel
+#     sequence:
+#       - alias: 'Cancel Light Flash'
+#         service: script.turn_off
+#         data:
+#           entity_id: script.light_flash
+#       - alias: 'Cancel Light Loop'
+#         service: script.turn_off
+#         data:
+#           entity_id: script.flash_loop

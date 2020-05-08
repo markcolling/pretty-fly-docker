@@ -137,6 +137,11 @@ system_health:
 
 breaking_changes:
 
+browser_mod:
+  devices:  
+    e3c5cf9d-8b56827e:
+      name: Kitchen Browser
+  
 # weather:
 
 # alarm_control_panel:
@@ -147,25 +152,6 @@ breaking_changes:
 ################################################################################################
 # RECORDER, HISTORY, LOGGER, INFLUXDB
 ################################################################################################
-
-# INFLUXDB
-influxdb:
-  host: influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret hass_username
-  password: !secret hass_password
-  default_measurement: state
-  include:
-    entities:
-      - sensor.kitchen_humidity
-      - sensor.kitchen_temperature
-      - sensor.day_room_humidity
-      - sensor.day_room_temperature
-      - sensor.dark_sky_temperature
-      - sensor.ch_target_temp
-    domains:
-      - sensors
 
 logger:
   default: warn

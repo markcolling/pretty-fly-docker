@@ -3,3 +3,13 @@ display:
     name: Kitchen Tablet
     host: !secret fully_kiosk_ip
     password: !secret fully_kiosk_password
+
+rest_command:
+  launch_sonos_on_tab:
+    url: !secret fully_launch_sonos_URL
+    method: POST
+    
+script:
+  sonos_app:
+    sequence:
+       - service: rest_command.launch_sonos_on_tab

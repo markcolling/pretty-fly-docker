@@ -1,0 +1,19 @@
+# INFLUXDB
+influxdb:
+  host: influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret hass_username
+  password: !secret hass_password
+  default_measurement: state
+  include:
+    entities:
+      - sensor.wiser_heating
+      - climate.wiser_master
+      - climate.wiser_bedroom_3
+      - climate.wiser_bedroom_2
+      - climate.wiser_living_room
+      - climate.wiser_kitchen
+    domains:
+      - lights
+      - climate
