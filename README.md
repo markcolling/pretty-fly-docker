@@ -63,3 +63,26 @@ TO DO:
 - Add trains
 - Add location
 - Update Sonoff RF Sensor
+- timer
+
+title: Timer
+ card:
+   type: "custom:button-card"
+   entity: sensor.mark_s_echo_dot_next_timer
+   show_state: true
+   show_name: false
+   color_type: card
+   color_off: rgb(218, 108, 108)
+   action: more-info
+   style:
+    font-size: 140px
+    font-weight: bold
+   styles:
+     state:
+       - font-size: 180px
+     card:
+       - width: 1200px
+       - height: 600px
+ deviceID:
+   - e3c5cf9d-8b56827e
+ large: true

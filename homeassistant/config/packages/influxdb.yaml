@@ -6,14 +6,35 @@ influxdb:
   username: !secret hass_username
   password: !secret hass_password
   default_measurement: state
+  tags_attributes: 
+    - friendly_name
   include:
     entities:
+      #WISER HEATING
       - sensor.wiser_heating
       - climate.wiser_master
       - climate.wiser_bedroom_3
       - climate.wiser_bedroom_2
       - climate.wiser_living_room
       - climate.wiser_kitchen
+      #WEATHER
+      - weather.dark_sky
+      #LIGHTS
+      - light.shelly_shsw_1_ba680b
+      - light.shelly_shsw_1_c4ef56
+      - light.shelly_shsw_1_c487ec
+      - light.shelly_shdm_1_f3e93b
+      - sensor.shelly_shdm_1_f3e93b_current_consumption
+      - sensor.shelly_shdm_1_f3e93b_total_consumption
+      - light.shelly_shsw_1_c4e83e
+      - light.shelly_shdm_1_f3ebd2
+      - sensor.shelly_shdm_1_f3ebd2_current_consumption
+      - sensor.shelly_shdm_1_f3ebd2_total_consumption
+      - light.shelly_shdm_1_f3a24c
+      - sensor.shelly_shdm_1_f3a24c_current_consumption
+      - sensor.shelly_shdm_1_f3a24c_total_consumption
+      - light.shelly_shdm_1_db3e10
+      - sensor.shelly_shdm_1_db3e10_current_consumption
     domains:
       - lights
       - climate
