@@ -5,30 +5,38 @@
   path: heating
   panel: true
   cards:
-    - type: vertical-stack
+    - type: horizontal-stack
       cards:
-      - type: entities
-        title: Downstairs Heating
-        show_header_toggle: false
-        entities:
-        - entity: climate.wiser_living_room
-        - entity: climate.wiser_kitchen
-      - type: entities
-        title: Upstairs Heating
-        show_header_toggle: false
-        entities:
-        - entity: climate.wiser_master
-        - entity: climate.wiser_bedroom_2
-        - entity: climate.wiser_bedroom_3
-      - type: entities
-        title: Heating Modes
-        show_header_toggle: false
-        entities:
-        - entity: switch.wiser_away_mode
-        - entity: switch.wiser_comfort_mode
-        - entity: switch.wiser_eco_mode
-        - entity: switch.wiser_valve_protection   
-          
+      - type: vertical-stack
+        cards:
+        - type: entities
+          title: Downstairs Heating
+          show_header_toggle: false
+          entities:
+          - entity: climate.wiser_living_room
+          - entity: climate.wiser_kitchen
+        - type: entities
+          title: Upstairs Heating
+          show_header_toggle: false
+          entities:
+          - entity: climate.wiser_master
+          - entity: climate.wiser_bedroom_2
+          - entity: climate.wiser_bedroom_3
+        - type: entities
+          title: Heating Modes
+          show_header_toggle: false
+          entities:
+          - entity: switch.wiser_away_mode
+          - entity: switch.wiser_comfort_mode
+          - entity: switch.wiser_eco_mode
+          - entity: switch.wiser_valve_protection
+      - type: vertical-stack
+        cards:
+          - type: iframe
+            # url: http://grafana.dev.prettyfly.net/d/ZURDkF1Wz/house-temperatures?orgId=1&theme=light&fullscreen
+            url: http://192.168.1.6:3000/d/ZURDkF1Wz/house-temperatures?orgId=1&theme=light&fullscreen
+            aspect_ratio: 110%
+
     # - type: vertical-stack
     #   cards:
     #   - type: entities
@@ -37,7 +45,7 @@
     #     entities:
     #     - type: section
     #       label: Bedrooms
-    #     - entity: light.shelly_shdm_1_db3e10   
+    #     - entity: light.shelly_shdm_1_db3e10
     #       secondary_info: last-changed
     #     - entity: light.shelly_shdm_1_f3a14a
     #       secondary_info: last-changed
@@ -51,4 +59,3 @@
     #       label: Bathroom
     #     - entity: light.shelly_shsw_1_ba6933
     #       secondary_info: last-changed
-

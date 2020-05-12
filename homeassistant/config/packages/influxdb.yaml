@@ -6,7 +6,7 @@ influxdb:
   username: !secret hass_username
   password: !secret hass_password
   default_measurement: state
-  tags_attributes: 
+  tags_attributes:
     - friendly_name
   include:
     entities:
@@ -17,6 +17,13 @@ influxdb:
       - climate.wiser_bedroom_2
       - climate.wiser_living_room
       - climate.wiser_kitchen
+      - sensor.main_heating_status
+      - sensor.kitchen_heating_status
+      - sensor.living_room_heating_status
+      - sensor.master_heating_status
+      - sensor.bed_3_heating_status
+      - sensor.bed_2_heating_status
+
       #WEATHER
       - weather.dark_sky
       #LIGHTS
@@ -38,3 +45,67 @@ influxdb:
     domains:
       - lights
       - climate
+
+sensor:
+  - platform: template
+    sensors:
+      main_heating_status:
+        friendly_name: "Main Heating Status"
+        value_template: >-
+          {% if is_state('sensor.wiser_heating', 'Off') %}
+            0
+          {% elif is_state('sensor.wiser_heating', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
+      kitchen_heating_status:
+        friendly_name: "Kitchen Heating Status"
+        value_template: >-
+          {% if is_state_attr('climate.wiser_kitchen', 'control_output_state', 'Off') %}
+            0
+          {% elif is_state_attr('climate.wiser_kitchen', 'control_output_state', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
+      living_room_heating_status:
+        friendly_name: "Living Room Heating Status"
+        value_template: >-
+          {% if is_state_attr('climate.wiser_living_room', 'control_output_state', 'Off') %}
+            0
+          {% elif is_state_attr('climate.wiser_living_room', 'control_output_state', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
+      master_heating_status:
+        friendly_name: "Master Heating Status"
+        value_template: >-
+          {% if is_state_attr('climate.wiser_master', 'control_output_state', 'Off') %}
+            0
+          {% elif is_state_attr('climate.wiser_master', 'control_output_state', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
+      bed_2_heating_status:
+        friendly_name: "Bedroom 2 Heating Status"
+        value_template: >-
+          {% if is_state_attr('climate.wiser_bedroom_2', 'control_output_state', 'Off') %}
+            0
+          {% elif is_state_attr('climate.wiser_bedroom_2', 'control_output_state', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
+      bed_3_heating_status:
+        friendly_name: "Bedroom 3 Heating Status"
+        value_template: >-
+          {% if is_state_attr('climate.wiser_bedroom_3', 'control_output_state', 'Off') %}
+            0
+          {% elif is_state_attr('climate.wiser_bedroom_3', 'control_output_state', 'On') %}
+            1
+          {% else %}
+            Error
+          {% endif %}
