@@ -3,27 +3,29 @@
     icon: mdi:cctv
     id: cameras
     path: cameras
-    # panel: true
+    panel: true
     cards:
-    - type: vertical-stack
-      cards:
-      # The markdown card will render markdown text.
-        - camera_image: camera.drive
-          camera_view: live
-          entities: []
-          title: Drive Camera
-          type: picture-glance
-        - camera_image: camera.drive
-          camera_view: live
-          entities: []
-          title: Porch Camera
-          type: picture-glance
-
-    - type: vertical-stack
-      cards:
-      # The markdown card will render markdown text.
-        - camera_image: camera.drive
-          camera_view: live
-          entities: []
-          title: Garden Camera
-          type: picture-glance
+      - type: custom:layout-card
+        max_width: 600px
+        cards:
+        - type: vertical-stack
+          cards:
+          # The markdown card will render markdown text.
+            - camera_image: camera.drive
+              camera_view: live
+              entities: []
+              title: Drive Camera
+              type: picture-glance
+            - camera_image: camera.garden
+              camera_view: live
+              entities: []
+              title: Garden Camera
+              type: picture-glance
+        - break
+        - type: vertical-stack
+          cards:
+            - camera_image: camera.porch
+              camera_view: live
+              entities: []
+              title: Porch Camera
+              type: picture-glance

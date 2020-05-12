@@ -16,6 +16,7 @@
           title: Downstairs Heating
           show_header_toggle: false
           entities:
+          - entity: sensor.wiser_heating
           - entity: climate.wiser_living_room
           - entity: climate.wiser_kitchen
         - type: entities

@@ -1,22 +1,23 @@
 camera:
-  - platform: generic
-    name: kitchen_tablet
-    still_image_url: !secret fully_kiosk_cam_still
-
-    # - platform: generic
-    #   name: Porch Camera
-    #   still_image_url: !secret Porch_Camera_URL
-    #   stream_source: !secret Porch_Camera_Source
+  # - platform: generic
+  #   name: kitchen_tablet
+  #   still_image_url: !secret fully_kiosk_cam_still
 
   - platform: generic
-    name: drive
+    name: Drive
     still_image_url: !secret Drive_Camera_Still
     stream_source: !secret Drive_Camera_Source
 
-    # - platform: generic
-    #   name: Garden Camera
-    #   still_image_url: !secret Garden_Camera_URL
-    #   stream_source: !secret Garden_Camera_Source
+  - platform: generic
+    name: Porch
+    still_image_url: !secret Porch_Camera_Still
+    stream_source: !secret Porch_Camera_Source
+
+  - platform: generic
+    name: Garden
+    still_image_url: !secret Garden_Camera_Still
+    stream_source: !secret Garden_Camera_Source
+
 
 #Enable stream
 stream:
