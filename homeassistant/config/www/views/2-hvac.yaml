@@ -5,7 +5,10 @@
   path: heating
   panel: true
   cards:
-    - type: horizontal-stack
+    # - type: horizontal-stack
+    #   cards:
+    - type: custom:layout-card
+      max_width: 600px
       cards:
       - type: vertical-stack
         cards:
@@ -30,11 +33,12 @@
           - entity: switch.wiser_comfort_mode
           - entity: switch.wiser_eco_mode
           - entity: switch.wiser_valve_protection
+      - break
       - type: vertical-stack
         cards:
           - type: iframe
             # url: http://grafana.dev.prettyfly.net/d/ZURDkF1Wz/house-temperatures?orgId=1&theme=light&fullscreen
-            url: http://192.168.1.6:3000/d/ZURDkF1Wz/house-temperatures?orgId=1&theme=light&fullscreen
+            url: !secret grafana_URL
             aspect_ratio: 110%
 
     # - type: vertical-stack
