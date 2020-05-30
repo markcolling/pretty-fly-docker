@@ -50,15 +50,81 @@
       message: You left the light on you rascal
     service: notify.alexa_media_mark_s_echo_dot
 - id: '1588281655776'
-  alias: Turn light strip on an hour after sunset
-  description: ''
+  alias: Stairs light - Sunset - on
+  description: Turn light strip on an hour after sunset
   trigger:
   - event: sunset
     offset: '60'
     platform: sun
   condition: []
   action:
+  - data:
+      brightness: 6
+      effect: solid
+      rgb_color:
+      - 114
+      - 158
+      - 255
+    entity_id: light.wled_light
+    service: light.turn_on
+- id: '1589143977791'
+  alias: Stairs light - Sunset - off
+  description: Turn LED strip off after 10.30pm
+  trigger:
+  - at: '22:30'
+    platform: time
+  condition: []
+  action:
   - device_id: 28a5ea5a33c541edbbd4131bfcae0929
     domain: light
     entity_id: light.wled_light
-    type: turn_on
+    type: turn_off
+- id: '1589384931456'
+  alias: Stairs - Nightlight - On
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.landing_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: or
+    conditions:
+    - after: '22:30'
+      condition: time
+    - before: sunrise
+      condition: sun
+  - condition: state
+    entity_id: light.wled_light
+    state: 'off'
+  action:
+  - data:
+      brightness: 5
+      effect: solid
+      rgb_color:
+      - 113
+      - 158
+      - 255
+    entity_id: light.wled_light
+    service: light.turn_on
+- id: '1589390232047'
+  alias: Stairs - Nightlight - Off
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.landing_motion
+    for: 00:10:00
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: or
+    conditions:
+    - after: '22:30'
+      condition: time
+    - before: sunrise
+      condition: sun
+  action:
+  - device_id: 28a5ea5a33c541edbbd4131bfcae0929
+    domain: light
+    entity_id: light.wled_light
+    type: turn_off

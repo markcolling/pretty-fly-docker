@@ -29,8 +29,6 @@
           label: Hall
         - entity: light.shelly_shsw_1_c487ec
           secondary_info: last-changed
-        - entity: light.wled_light
-          secondary_info: last-changed
 
     - type: vertical-stack
       cards:
@@ -49,6 +47,8 @@
         - type: section
           label: Landing
         - entity: light.shelly_shsw_1_c4e83e
+          secondary_info: last-changed
+        - entity: light.wled_light
           secondary_info: last-changed
         - type: section
           label: Bathroom
