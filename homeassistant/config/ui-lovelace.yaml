@@ -1,37 +1,39 @@
 title: Home Dashboard
 
 resources:
-  # - url: /community_plugin/compact-custom-header/compact-custom-header.js
+  # - url: /hacsfiles/compact-custom-header/compact-custom-header.js
   #   type: module
-  - url: /community_plugin/custom-header/custom-header.js
+  - url: /hacsfiles/custom-header/custom-header.js
     type: module
-  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module
-  - url: /community_plugin/lovelace-layout-card/layout-card.js
-    type: js
-  - url: /community_plugin/lovelace-card-tools/card-tools.js
-    type: js
-  - url: /community_plugin/bar-card/bar-card.js
-    type: js
-  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
-    type: js
-  - url: /community_plugin/lovelace-dummy-entity-row/dummy-entity-row.js
+  # - url: /hacsfiles/lovelace-layout-card/layout-card.js
+  #   type: module
+  - url: /hacsfiles/lovelace-layout-card/layout-card.js
     type: module
-  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+  - url: /hacsfiles/lovelace-card-tools/card-tools.js
+    type: js
+  - url: /hacsfiles/bar-card/bar-card.js
+    type: js
+  - url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+    type: js
+  - url: /hacsfiles/lovelace-dummy-entity-row/dummy-entity-row.js
+    type: module
+  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
     type: module
   - url: /local/custom_ui/dark-sky-weather-card.js?v=7.1
     type: module
   - url: /local/floorplan/floorplan-card.js
     type: module
-  - url: /community_plugin/button-card/button-card.js
+  - url: /hacsfiles/button-card/button-card.js
     type: module
-  - url: /community_plugin/flex-table-card/flex-table-card.js
+  - url: /hacsfiles/flex-table-card/flex-table-card.js
     type: js
-  - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
+  - url: /hacsfiles/secondaryinfo-entity-row/secondaryinfo-entity-row.js
     type: js
   - url: /local/custom_ui/thermostat-card.js
     type: module
-  - url: /community_plugin/lovelace-card-mod/card-mod.js
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
     type: module
   - type: css
     url: /local/custom_lovelace/custom.css
