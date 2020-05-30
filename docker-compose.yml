@@ -79,7 +79,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.109.0
+    image: homeassistant/home-assistant:0.110.4
     container_name: "hass"
     networks:
       pretty-fly-admin_net:
@@ -214,6 +214,37 @@ services:
     #   # - "/dev/cu.usbserial-0001:/dev/cu.usbserial-0001"
     #   # - "/dev/ttyUSB0"
     #   - "/dev/SLAB_USBtoUART:/dev/SLAB_USBtoUART"
+
+  teslamate:
+    image: teslamate/teslamate:latest
+    restart: always
+    env_file: "./teslamate/teslamate.env"
+    container_name: teslamate
+    environment:
+      - VIRTUAL_HOST=teslamate${ENV_DOMAIN}
+      - VIRTUAL_PORT=4000
+    ports:
+      - 4000:4000
+    volumes:
+      - ./teslamate/import:/opt/app/import
+    cap_drop:
+      - all
+    networks:
+      - pretty-fly-admin_net
+
+  postgresdb:
+    image: postgres:12
+    restart: always
+    container_name: postgresdb
+    env_file: "./postgresdb/postgresdb.env"
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgresdb/teslamate-db:/var/lib/postgresql/data
+    networks:
+      - pretty-fly-admin_net
+
+
 networks:
   pretty-fly-admin_net:
     external: true
