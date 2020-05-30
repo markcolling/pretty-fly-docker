@@ -94,11 +94,23 @@
           show_header_toggle: off
           entities:
             - type: section
-              label: NUC Stats
-            - entity: sensor.memory_use_percent
-            - entity: sensor.disk_use_percent
-            - entity: sensor.disk_free
-            - entity: sensor.last_boot
+              label: Kitchen Tablet Stats
+            - entity: sensor.kitchen_browser  
+            - type: attribute
+              entity: sensor.kitchen_browser  
+              name: Fully Kiosk Visible
+              attribute: visibility
+            - entity: sensor.kitchen_browser
+              name: Motion
+            - type: attribute
+              entity: binary_sensor.kitchen_browser  
+              attribute: charging
+              name: Charging
+            - type: attribute
+              entity: binary_sensor.kitchen_browser
+              attribute: battery_level
+              name: Tablet Battery
+              
             
       # - type: vertical-stack
       #   cards:

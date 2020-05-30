@@ -33,7 +33,21 @@ binary_sensor:
       payload_available: "Online"
       payload_not_available: "Offline"
       device_class: Motion
-      off_delay: 300
+      off_delay: 30
+    #   delay_on:
+    #     minutes: 0.5
       # qos: 1
       # retain: false
     #  friendly_name: "Downstairs Bathroom Window"
+    - platform: mqtt
+      name: "landing_motion"
+      state_topic: "tele/sonoff-rf-bridge/RESULT"
+      availability_topic: "tele/sonoff-rf-bridge/LWT"
+      value_template: '{{value_json.RfReceived.Data}}'
+      payload_on: "F001AE"
+      payload_off: ""
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      device_class: Motion
+      off_delay: 30
+    #   delay_off: 0.5

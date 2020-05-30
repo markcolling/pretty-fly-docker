@@ -70,7 +70,19 @@
           service: script.turn_on
           service_data:
             entity_id: script.sonos_app
-
+      - type: gauge
+        name: Tesla
+        unit: '%'
+        entity: sensor.tez_battery_sensor
+        severity:
+          green: 65
+          yellow: 25
+          red: 0
+        style: |
+          ha-card {
+            font-size: 1.2rem;
+          }
+          
       - break
       - !include ../components/A_ground_floorplan.yaml
       - break

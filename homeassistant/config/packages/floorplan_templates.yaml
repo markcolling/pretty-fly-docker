@@ -109,9 +109,9 @@ binary_sensor:
         value_template: "{{ is_state('input_boolean.toggle_battery_warning', 'on') }}"
 
 # ###### UPSTAIRS - Motion Fill Shapes ######
-#       landing_motion_fill:
-#         device_class: motion
-#         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      landing_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('binary_sensor.landing_motion', 'on') }}"
 #       bedroom_3_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"

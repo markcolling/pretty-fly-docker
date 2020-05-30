@@ -42,6 +42,9 @@
           - entity: binary_sensor.day_room_motion_1
             name: Day Room Motion Sensor
             secondary_info: last-changed
+          - entity: binary_sensor.landing_motion
+            name: Landing Motion Sensor
+            secondary_info: last-changed
       - break
       - type: entities
         title: All Automations
