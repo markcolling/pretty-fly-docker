@@ -82,7 +82,58 @@
           ha-card {
             font-size: 1.2rem;
           }
-          
+      - type: "custom:button-card"
+        entity: input_boolean.bins_put_out
+        show_name: false
+        show_entity_picture: true
+        entity_picture: >
+          [[[
+            if (states['sensor.recycling_bin_next'].state == "True")
+              return "/local/icons/bins/recycle_bin.svg";
+            else
+              return "/local/icons/bins/green_garden_waste.svg";
+          ]]]
+        # color: var(--primary-color)
+        # color_type: icon
+        # default_color: var(--primary-color)
+        styles:
+          card:
+          - height: 98px
+          - background-color: >
+              [[[
+                if (states['input_boolean.bins_put_out'].state == "off" && states['sensor.bins_should_be_out'].state == "True")
+                  return "#de3429";
+                else if (states['input_boolean.bins_put_out'].state == "on" && states['sensor.bins_should_be_out'].state == "False")
+                  return "#ff9800";
+                return "#00000000";
+              ]]]
+          - animation: >
+              [[[
+                if (states['input_boolean.bins_put_out'].state == "off" && states['sensor.bins_should_be_out'].state == "True")
+                  return "blink 2s ease infinite";
+                return "#00000000";
+              ]]]
+          entity_picture:
+            - height: >
+                [[[
+                  if (states['sensor.recycling_bin_next'].state == "True")
+                    return '80%';
+                  else
+                    return '60%';
+                ]]]
+            - width: 100%
+        # name: Bins
+        tap_action:
+          action: toggle
+          entity: input_boolean.bins_put_out
+          confirmation:
+            text: >
+              [[[
+                if (entity.state == "off")
+                  return "Have you put the bins out?";
+                else
+                  return "Have you brought the bins in?";
+              ]]]
       - break
       - !include ../components/A_ground_floorplan.yaml
       - break
