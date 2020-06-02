@@ -1,0 +1,96 @@
+sensor:
+  - platform: template
+    sensors:
+      recycling_bin_next:
+        entity_id: []
+        friendly_name: "Recycling Bin This Week"
+        value_template: "{{ ((as_timestamp(now()) - as_timestamp('2020-05-19 00:00:00'))) / 86400 |int % 14 < 7 }}"
+        # entity_picture_template: >-
+        #   {{ '/local/icons/bins/recycle_bin.svg'}}
+      # recycling_bin_today:
+      #   entity_id: []
+      #   friendly_name: "Recycling Bin Today"
+      #   value_template: "{{ ((as_timestamp(now()) - as_timestamp('2019-05-10 00:00:00'))) / 86400 |int % 14 < 1 }}"
+      #   entity_picture_template: >-
+      #     {{ '/local/icons/recyclinggreenbin/recycling_bin_today.png'}}
+      green_bin_next:
+        entity_id: []
+        friendly_name: "Green Bin & Garden Waste This Week"
+        value_template: "{{ ((as_timestamp(now()) - as_timestamp('2020-05-12 00:00:00'))) / 86400 |int % 14 < 7 }}"
+        # entity_picture_template: >-
+        #   {{ '/local/icons/bins/green_garden_waste.svg'}}
+      # green_bin_today:
+      #   entity_id: []
+      #   friendly_name: "Green Bin Today"
+      #   value_template: "{{ ((as_timestamp(now()) - as_timestamp('2020-05-03 00:00:00'))) / 86400 |int % 14 < 1 }}"
+      #   entity_picture_template: >-
+      #     {{ '/local/icons/recyclinggreenbin/green_waste_bin_today.png'}}
+      bins_should_be_out:
+        entity_id: []
+        friendly_name: "Bins should be out"
+        value_template: "{{ ((as_timestamp(now()) - as_timestamp('2020-05-10 19:00:00'))) / 86400 |int % 7 < 0.7083333333333334 }}"
+
+input_boolean:
+  bins_put_out:
+    name: Bins are out
+    icon: mdi:trash
+
+
+#######TEMPLATE TEST#########
+
+# Recycling Bin
+# Now = {{ ((as_timestamp(now()) - as_timestamp('2020-05-19 00:00:00'))) / 86400 |int % 14 < 7 }}
+#
+# Man = {{ ((as_timestamp('2020-06-02 00:00:01') - as_timestamp('2020-05-19 00:00:00'))) / 86400 | int % 14 < 7 }}
+# Man remainder = {{ ((as_timestamp('2020-06-02 00:00:01') - as_timestamp('2020-05-19 00:00:00'))) / 86400 | int % 14}}
+#
+# Green Bin
+# Now = {{ ((as_timestamp(now()) - as_timestamp('2020-05-12 00:00:00'))) / 86400 |int % 14 < 7 }}
+#
+# Man = {{ ((as_timestamp('2020-06-02 00:00:01') - as_timestamp('2020-05-12 00:00:00'))) / 86400 | int % 14 < 7 }}
+# Man remainder = {{ ((as_timestamp('2020-06-02 00:00:01') - as_timestamp('2020-05-12 00:00:00'))) / 86400 | int % 14 }}
+
+automation:
+  - alias: 'Update Bin Night'
+    trigger:
+      - event: start
+        platform: homeassistant
+      - platform: time_pattern
+        hours: '/1'
+        minutes: 0
+        seconds: 0
+    action:
+      - service: homeassistant.update_entity
+        entity_id: sensor.recycling_bin_next, sensor.green_bin_next
+  - alias: 'Bin Night'
+    initial_state: 'on'
+    trigger:
+      - platform: time
+        at: '19:00:00'
+      - platform: time
+        at: '21:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: '{{ now().weekday() == 6 }}'
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: sensor.recycling_bin_next
+              state: 'True'
+            - condition: state
+              entity_id: sensor.green_bin_next
+              state: 'True'
+        - condition: state
+          entity_id: input_boolean.bins_put_out
+          state: 'False'
+    action:
+      - service: notify.notify
+        data_template:
+          message: '{%- if (states.sensor.recycling_bin_next.state) == "True" -%} Recycling Bin Night {%- else -%} Green Bin & Garden Waste Tonight {%- endif -%}'
+          title: Bins Out Tonight
+      - service: notify.mobile_app_mark_s_iphone
+        data_template:
+          message: '{%- if (states.sensor.recycling_bin_next.state) == "True" -%} Recycling Bin Night {%- else -%} Green Bin & Garden Waste Tonight {%- endif -%}'
+          title: Bins Out Tonight
