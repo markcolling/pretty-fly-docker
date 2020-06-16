@@ -1,0 +1,19 @@
+utility_meter:
+  elec_1_month:
+    source: sensor.shelly_shem_b9ebe7_1_total_consumption
+    cycle: monthly
+  elec_1_week:
+    source: sensor.shelly_shem_b9ebe7_1_total_consumption
+    cycle: week
+  elec_1_day:
+    source: sensor.shelly_shem_b9ebe7_1_total_consumption
+    cycle: day
+  elec_2_month:
+    source: sensor.shelly_shem_b9ebe7_2_total_consumption
+    cycle: monthly
+  elec_2_week:
+    source: sensor.shelly_shem_b9ebe7_2_total_consumption
+    cycle: week
+  elec_2_day:
+    source: sensor.shelly_shem_b9ebe7_2_total_consumption
+    cycle: day

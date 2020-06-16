@@ -79,7 +79,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.110.4
+    image: homeassistant/home-assistant:0.111.3
     container_name: "hass"
     networks:
       pretty-fly-admin_net:
@@ -244,6 +244,17 @@ services:
     networks:
       - pretty-fly-admin_net
 
+  chromecast-kiosk:
+    image: rez0n/chromecast-kiosk
+    restart: always
+    container_name: chromecast-kiosk
+    environment:
+      - VIRTUAL_HOST=kiosk${ENV_DOMAIN}
+      - VIRTUAL_PORT=8082
+    ports:
+      - 8082:8080
+    networks:
+      - pretty-fly-admin_net
 
 networks:
   pretty-fly-admin_net:

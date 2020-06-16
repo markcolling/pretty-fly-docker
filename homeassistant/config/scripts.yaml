@@ -1,1 +1,13 @@
-{}
+
+timer_pop_up:
+  sequence:
+    - service: browser_mod.popup
+      data_template:
+        service_data: >-
+          large: true
+          card:
+            type: iframe
+            url: >-
+              ${/local/custom_lovelace/jquery-countdown-master/index.html?timer=" {{ states['sensor.template_kitchen_timer'].state }}
+          deviceID:
+          - 3f097fe0-d3dd0f22

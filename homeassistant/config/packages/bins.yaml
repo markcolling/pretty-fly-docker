@@ -61,7 +61,7 @@ automation:
         seconds: 0
     action:
       - service: homeassistant.update_entity
-        entity_id: sensor.recycling_bin_next, sensor.green_bin_next
+        entity_id: sensor.recycling_bin_next, sensor.green_bin_next, sensor.bins_should_be_out
   - alias: 'Bin Night'
     initial_state: 'on'
     trigger:

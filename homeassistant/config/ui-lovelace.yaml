@@ -37,7 +37,8 @@ resources:
     type: module
   - type: css
     url: /local/custom_lovelace/custom.css
-
+  - url: /hacsfiles/config-template-card/config-template-card.js
+    type: module
 
 custom_header:
   compact_mode: true

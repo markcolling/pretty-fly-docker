@@ -37,9 +37,13 @@
         show_header_toggle: true
         entities:
         - type: section
-          label: Bedrooms
+          label: Master Bedroom
         - entity: light.shelly_shdm_1_db3e10
           secondary_info: last-changed
+        - entity: light.shelly_shsw_1_a4cf12f42d0b
+          secondary_info: last-changed
+        - type: section
+          label: Other Bedrooms
         - entity: light.shelly_shdm_1_f3a14a
           secondary_info: last-changed
         - entity: light.shelly_shsw_1_b90033

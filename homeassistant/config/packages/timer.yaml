@@ -1,0 +1,72 @@
+# sensor:
+#   - platform: time_date
+#     display_options:
+#       - 'time'
+#       - 'date_time_utc'
+#       - 'time_date'
+#
+# binary_sensor:
+#  - platform: template
+#    sensors:
+#       kitchen_timer:
+#         friendly_name: Kitchen Timer
+#         value_template: '{{(as_timestamp(now()) - as_timestamp(states.sensor.mark_s_echo_dot_next_timer))}}'
+#         sensor_class: timestamp
+#         entity_id: sensor.time
+
+
+# {{as_timestamp(states.sensor.mark_s_echo_dot_next_timer.state)- as_timestamp(states('sensor.time'))}}
+
+sensor:
+  - platform: template
+    sensors:
+      template_kitchen_timer:
+        friendly_name: 'Kitchen Timer End Time'
+        value_template: '{{ (as_timestamp(states("sensor.mark_s_echo_dot_next_timer"))  | timestamp_custom("%H:%M:%S")) }}'
+
+timer:
+  kitchen_echo:
+
+automation:
+  - id: '1588025947405'
+    alias: Setup Timer
+    description: ''
+    trigger:
+    - entity_id: sensor.mark_s_echo_dot_next_timer
+      from: unavailable
+      platform: state
+    condition: []
+    action:
+    - data_template:
+        duration: >
+          {{(as_timestamp(states('sensor.mark_s_echo_dot_next_timer')) - as_timestamp(now())) | timestamp_custom("%H:%M:%S", false)}}
+      entity_id: timer.kitchen_echo
+      service: timer.start
+  - id: '1588100241295'
+    alias: Teardown Timer
+    description: ''
+    trigger:
+    - entity_id: sensor.mark_s_echo_dot_next_timer
+      platform: state
+      to: unavailable
+    condition: []
+    action:
+    - data: {}
+      entity_id: timer.kitchen_echo
+      service: timer.cancel
+
+
+
+
+# large: true
+# card:
+# - type: 'custom:config-template-card'
+#   entities:
+#     - sensor.template_kitchen_timer
+#   card:
+#     type: iframe
+#     url: >-
+#       ${'/local/custom_lovelace/jquery-countdown-master/index.html?timer='+states['sensor.template_kitchen_timer'].state}
+#
+# deviceID:
+#   - 3f097fe0-d3dd0f22
