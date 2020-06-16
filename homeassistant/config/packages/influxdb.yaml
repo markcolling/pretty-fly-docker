@@ -42,18 +42,24 @@ influxdb:
       - sensor.shelly_shdm_1_f3a24c_total_consumption
       - light.shelly_shdm_1_db3e10
       - sensor.shelly_shdm_1_db3e10_current_consumption
-      
+
       #TESLA
       - sensor.tez_mileage_sensor
       - sensor.tez_battery_sensor
       - sensor.tez_range_sensor
       - switch.tez_charger_switch
-      
+
+      #Energy
+      - sensor.shelly_shem_b9ebe7_1_current_consumption
+      - sensor.shelly_shem_b9ebe7_1_total_consumption
+      - sensor.shelly_shem_b9ebe7_2_current_consumption
+      - sensor.shelly_shem_b9ebe7_2_total_consumption
 
     domains:
       - lights
       - climate
-
+      - utility_meter
+      
 sensor:
   - platform: template
     sensors:
