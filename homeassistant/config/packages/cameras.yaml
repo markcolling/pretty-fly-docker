@@ -18,6 +18,10 @@ camera:
     still_image_url: !secret Garden_Camera_Still
     stream_source: !secret Garden_Camera_Source
 
+  - platform: generic
+    name: Nursery
+    still_image_url: !secret Nursery_Camera_Still
+    stream_source: !secret Nursery_Camera_Source
 
 #Enable stream
 stream:

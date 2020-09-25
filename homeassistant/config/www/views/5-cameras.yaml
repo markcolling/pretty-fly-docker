@@ -29,3 +29,10 @@
               entities: []
               title: Porch Camera
               type: picture-glance
+            - type: vertical-stack
+              cards:
+                - camera_image: camera.nursery
+                  camera_view: live
+                  entities: []
+                  title: Nursery Camera
+                  type: picture-glance

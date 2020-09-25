@@ -13,6 +13,13 @@
       - type: vertical-stack
         cards:
         - type: entities
+          title: Temperature Sensors
+          entities:
+          - entity: sensor.xiaomi_1_temperature
+          - entity: sensor.xiaomi_2_temperature
+        #   - entity: sensor.tesla_outside_temp
+          - entity: weather.dark_sky
+        - type: entities
           title: Downstairs Heating
           show_header_toggle: false
           entities:
@@ -26,14 +33,14 @@
           - entity: climate.wiser_master
           - entity: climate.wiser_bedroom_2
           - entity: climate.wiser_bedroom_3
-        - type: entities
-          title: Heating Modes
-          show_header_toggle: false
-          entities:
-          - entity: switch.wiser_away_mode
-          - entity: switch.wiser_comfort_mode
-          - entity: switch.wiser_eco_mode
-          - entity: switch.wiser_valve_protection
+        # - type: entities
+        #   title: Heating Modes
+        #   show_header_toggle: false
+        #   entities:
+        #   - entity: switch.wiser_away_mode
+        #   - entity: switch.wiser_comfort_mode
+        #   - entity: switch.wiser_eco_mode
+        #   - entity: switch.wiser_valve_protection
       - break
       - type: vertical-stack
         cards:

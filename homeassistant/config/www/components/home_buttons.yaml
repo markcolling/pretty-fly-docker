@@ -95,3 +95,24 @@
           else
             return "Have you brought the bins in?";
         ]]]
+- type: "custom:button-card"
+  entity: switch.wiser_smart_plug
+  icon: mdi:televison
+  color: var(--primary-text-color)
+  color_type: icon
+  default_color: var(--disabled-text-color)
+  tap_action:
+    action: toggle
+  name: TV Switch
+  state:
+    - value: 'on'
+      color: var(--primary-color)
+      icon: mdi:television
+    - value: 'off'
+      color: var(--primary-text-color)
+      icon: mdi:television-off
+  styles:
+    card:
+    - height: 98px
+    # - font-size: 12px
+    # - font-weight: bold

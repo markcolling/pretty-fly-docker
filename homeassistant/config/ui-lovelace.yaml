@@ -61,8 +61,8 @@ custom_header:
   hide_tabs: '1, 2, 3'
   exceptions:
     - conditions:
-        user_agent: Mobile
-        media_query: "(max-width: 600px)"
+        user_agent: iPhone
+        media_query: "(max-width: 500px)"
       config:
         options: show
         hide_tabs: home

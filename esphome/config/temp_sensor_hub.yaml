@@ -31,19 +31,19 @@ sensor:
   - platform: xiaomi_lywsdcgq
     mac_address: 58:2D:34:36:B0:9A
     temperature:
-      name: "Day Room Temperature"
+      name: "Xiaomi 1 Temperature"
     humidity:
-      name: "Day Room Humidity"
+      name: "Xiaomi 1 Humidity"
     battery_level:
-      name: "Day Room Battery Level"
+      name: "Xiaomi 1 Battery Level"
   - platform: xiaomi_lywsdcgq
     mac_address: 58:2D:34:36:B2:89
     temperature:
-      name: "Kitchen Temperature"
+      name: "Xiaomi 2 Temperature"
     humidity:
-      name: "Kitchen Humidity"
+      name: "Xiaomi 2 Humidity"
     battery_level:
-      name: "Kitchen Battery Level"
+      name: "Xiaomi 2 Battery Level"
 
 # time:
 #   - platform: homeassistant

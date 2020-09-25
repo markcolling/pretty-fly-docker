@@ -1,0 +1,34 @@
+# Title of the view. Will be used as the tooltip for tab icon
+- title: Electricity
+  icon: mdi:power-socket-uk
+  id: electricity
+  path: electricity
+  panel: true
+  cards:
+    - type: iframe
+        # url: http://grafana.dev.prettyfly.net/d/ZURDkF1Wz/house-temperatures?orgId=1&theme=light&fullscreen
+      url: !secret grafana_URL_elec
+      aspect_ratio: 110%
+
+    # - type: vertical-stack
+    #   cards:
+    #   - type: entities
+    #     title: Upstairs Lights
+    #     show_header_toggle: true
+    #     entities:
+    #     - type: section
+    #       label: Bedrooms
+    #     - entity: light.shelly_shdm_1_db3e10
+    #       secondary_info: last-changed
+    #     - entity: light.shelly_shdm_1_f3a14a
+    #       secondary_info: last-changed
+    #     - entity: light.shelly_shsw_1_b90033
+    #       secondary_info: last-changed
+    #     - type: section
+    #       label: Landing
+    #     - entity: light.shelly_shsw_1_c4e83e
+    #       secondary_info: last-changed
+    #     - type: section
+    #       label: Bathroom
+    #     - entity: light.shelly_shsw_1_ba6933
+    #       secondary_info: last-changed

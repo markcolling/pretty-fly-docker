@@ -139,7 +139,20 @@
         #   - entity: timer.kitchen_echo
         #     state: active
         #     type: conditional
-
+      - type: gauge
+        name: Current Usage
+        unit: 'W'
+        entity: sensor.shelly_shem_b9ebe7_1_current_consumption
+        severity:
+          green: 0
+          yellow: 350
+          red: 450
+        min: 0
+        max: 1000
+        style: |
+          ha-card {
+            font-size: 1.2rem;
+          }
       - break
       - !include ../components/A_ground_floorplan.yaml
       - break
@@ -163,13 +176,13 @@
       - type: weather-forecast
         entity: weather.dark_sky
         name: Walton-On-Thames
-      - type: 'custom:config-template-card'
-        entities:
-          - sensor.template_kitchen_timer
-        card:
-          type: iframe
-          url: >-
-            ${'/local/custom_lovelace/jquery-countdown-master/index.html?timer='+states['sensor.template_kitchen_timer'].state}
+    #   - type: 'custom:config-template-card'
+    #     entities:
+    #       - sensor.template_kitchen_timer
+    #     card:
+    #       type: iframe
+    #       url: >-
+    #         ${'/local/custom_lovelace/jquery-countdown-master/index.html?timer='+states['sensor.template_kitchen_timer'].state}
 
     #   - type: custom:dark-sky-weather-card
     #     entity_current_conditions: sensor.dark_sky_icon

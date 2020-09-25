@@ -30,5 +30,5 @@ shelly:
     - id: "A4cf12f42d0b"
       light_switch: true
       name: Bedside Light - Mark
-    - id: "B9ebe7"
-      name: Energy Monitor
+    # - id: "B9ebe7"
+    #   name: Energy Monitor

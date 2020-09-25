@@ -1,0 +1,24 @@
+ffmpeg:
+
+binary_sensor:
+  - platform: ffmpeg_noise
+    name: nursery_noise
+    input: !secret Nursery_Camera_Source
+    extra_arguments: -filter:a highpass=f=300,lowpass=f=2500,volume=volume=2 -codec:a libmp3lame -ar 16000
+    initial_state: false
+    duration: 2
+    reset: 60
+    peak: -32
+    
+input_boolean:
+  baby_monitor_mum:
+    name: Baby Monitor Mum
+    initial: off
+  baby_monitor_dad:
+    name: Baby Monitor Dad
+    initial: off
+  baby_monitor_tablet:
+    name: Baby Monitor Tablet
+    initial: off
+    
+

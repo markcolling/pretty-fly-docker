@@ -1,0 +1,35 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Baby Monitor
+    icon: mdi:baby-carriage
+    id: baby-monitor
+    path: baby-monitor
+    panel: true
+    cards:
+      - type: custom:layout-card
+        max_width: 600px
+        cards:
+        - type: vertical-stack
+          cards:
+            - camera_image: camera.nursery
+              camera_view: live
+              entities: []
+              title: Nursery Camera
+              type: picture-glance
+        - type: vertical-stack
+          cards:
+          - type: entities
+            title: Baby Monitor
+            show_header_toggle: true
+            entities:
+            # - type: section
+            #   label: Kitchen
+            #   show_header_toggle: true
+            - entity: input_boolean.baby_monitor_tablet
+              secondary_info: last-changed
+            - entity: input_boolean.baby_monitor_mum
+              secondary_info: last-changed
+            - entity: input_boolean.baby_monitor_dad
+              secondary_info: last-changed
+            - entity: binary_sensor.nursery_noise
+              secondary_info: last-changed
+            

@@ -79,7 +79,7 @@ services:
 
   home-assistant:
     #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.111.3
+    image: homeassistant/home-assistant:0.114.4
     container_name: "hass"
     networks:
       pretty-fly-admin_net:

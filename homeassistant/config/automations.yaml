@@ -98,15 +98,9 @@
     entity_id: light.wled_light
     state: 'off'
   action:
-  - data:
-      brightness: 5
-      effect: solid
-      rgb_color:
-      - 113
-      - 158
-      - 255
-    entity_id: light.wled_light
+  - entity_id: light.wled_light
     service: light.turn_on
+  mode: single
 - id: '1589390232047'
   alias: Stairs - Nightlight - Off
   description: ''
@@ -122,9 +116,111 @@
     - after: '22:30'
       condition: time
     - before: sunrise
+      before_offset: 00:10:00
       condition: sun
   action:
   - device_id: 28a5ea5a33c541edbbd4131bfcae0929
     domain: light
     entity_id: light.wled_light
     type: turn_off
+  mode: single
+- id: '1598365780441'
+  alias: Baby Monitor - Turn On
+  description: ''
+  trigger:
+  - entity_id: input_boolean.baby_monitor_dad
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: input_boolean.baby_monitor_mum
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: input_boolean.baby_monitor_tablet
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: binary_sensor.nursery_noise
+    state: unavailable
+  action:
+  - data: {}
+    service: ffmpeg.start
+  mode: single
+- id: '1598366206303'
+  alias: Baby Monitor - Turn Off
+  description: ''
+  trigger:
+  - entity_id: input_boolean.baby_monitor_dad
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: input_boolean.baby_monitor_mum
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: input_boolean.baby_monitor_tablet
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: not
+      conditions:
+      - condition: state
+        entity_id: binary_sensor.nursery_noise
+        state: unavailable
+    - condition: state
+      entity_id: input_boolean.baby_monitor_dad
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.baby_monitor_mum
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.baby_monitor_tablet
+      state: 'off'
+  action:
+  - data: {}
+    service: ffmpeg.stop
+  mode: single
+- id: '1598907036890'
+  alias: Baby Monitor - Notify Dad
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.nursery_noise
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.baby_monitor_dad
+    state: 'on'
+  action:
+  - data:
+      data:
+        attachment:
+          content-type: jpg
+          hide-thumbnail: false
+          url: http://192.168.1.6:8123/local/snapshot.jpg
+        entity_id: camera.nursery
+        push:
+          category: camera
+      message: The baby is making noise!
+    service: notify.mobile_app_mark_s_iphone
+  mode: single
+- id: '1600765627311'
+  alias: Dishwasher Warning
+  description: ''
+  trigger:
+  - entity_id: switch.shelly_shsw_pm_f2760d
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      message: Dishwasher has turned off
+    service: notify.mobile_app_mark_s_iphone
+  mode: single

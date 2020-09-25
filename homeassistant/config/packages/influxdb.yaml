@@ -24,6 +24,7 @@ influxdb:
       - sensor.bed_3_heating_status
       - sensor.bed_2_heating_status
 
+
       #WEATHER
       - weather.dark_sky
       #LIGHTS
@@ -54,7 +55,20 @@ influxdb:
       - sensor.shelly_shem_b9ebe7_1_total_consumption
       - sensor.shelly_shem_b9ebe7_2_current_consumption
       - sensor.shelly_shem_b9ebe7_2_total_consumption
-
+      - sensor.elec_1_hour
+      - sensor.elec_1_day
+      - sensor.elec_1_week
+      - sensor.elec_1_month
+      - sensor.elec_2_hour
+      - sensor.elec_2_day
+      - sensor.elec_2_week
+      - sensor.elec_2_month
+      - sensor.shelly_shsw_pm_f2760d_current_consumption
+      
+      #TEMPERATURE
+      - sensor.xiaomi_1_temperature
+      - sensor.xiaomi_2_temperature
+      
     domains:
       - lights
       - climate
