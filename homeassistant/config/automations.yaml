@@ -83,7 +83,11 @@
   alias: Stairs - Nightlight - On
   description: ''
   trigger:
-  - entity_id: binary_sensor.landing_motion
+  - entity_id: binary_sensor.z1_motion_landing_ias_zone
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.z2_motion_hall_ias_zone
     from: 'off'
     platform: state
     to: 'on'
@@ -105,7 +109,12 @@
   alias: Stairs - Nightlight - Off
   description: ''
   trigger:
-  - entity_id: binary_sensor.landing_motion
+  - entity_id: binary_sensor.z1_motion_landing_ias_zone
+    for: 00:10:00
+    from: 'on'
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.z2_motion_hall_ias_zone
     for: 00:10:00
     from: 'on'
     platform: state
@@ -123,7 +132,7 @@
     domain: light
     entity_id: light.wled_light
     type: turn_off
-  mode: single
+  mode: restart
 - id: '1598365780441'
   alias: Baby Monitor - Turn On
   description: ''
@@ -211,7 +220,7 @@
     service: notify.mobile_app_mark_s_iphone
   mode: single
 - id: '1600765627311'
-  alias: Dishwasher Warning
+  alias: Dishwasher - Warning
   description: ''
   trigger:
   - entity_id: switch.shelly_shsw_pm_f2760d
@@ -223,4 +232,48 @@
   - data:
       message: Dishwasher has turned off
     service: notify.mobile_app_mark_s_iphone
+  mode: single
+- id: '1601123895499'
+  alias: Dishwasher - Running
+  description: ''
+  trigger:
+  - above: '2000'
+    entity_id: sensor.shelly_shsw_pm_f2760d_current_consumption
+    for: 00:00:30
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      option: Running
+    entity_id: input_select.dishwasher_status
+    service: input_select.select_option
+  mode: single
+- id: '1601124832415'
+  alias: Dishwasher - Complete
+  description: ''
+  trigger:
+  - below: '10'
+    entity_id: sensor.shelly_shsw_pm_f2760d_current_consumption
+    for: 00:06:00
+    platform: numeric_state
+  condition:
+  - condition: state
+    entity_id: input_select.dishwasher_status
+    state: Running
+  action:
+  - data:
+      option: Complete
+    entity_id: input_select.dishwasher_status
+    service: input_select.select_option
+  - data:
+      message: Dishwasher is complete
+    service: notify.mobile_app_mark_s_iphone
+  - delay: 02:00:00
+  - condition: state
+    entity_id: input_select.dishwasher_status
+    state: Complete
+  - data:
+      option: Inactive
+    entity_id: input_select.dishwasher_status
+    service: input_select.select_option
   mode: single

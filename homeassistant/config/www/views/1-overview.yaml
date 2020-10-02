@@ -139,6 +139,34 @@
         #   - entity: timer.kitchen_echo
         #     state: active
         #     type: conditional
+      - type: "custom:button-card"
+        entity: input_select.dishwasher_status
+        color: var(--disabled-text-color)
+        color-type: icon
+        #show_status: true
+        show_name: true
+        state:
+          - value: Running
+            #icon: mdi:dishwasher
+            color: var(--label-badge-yellow)
+            name: "In progress"
+            styles:
+              icon: 
+                - animation: "blink 2s ease infinite"
+          - value: Inactive
+            #icon: mdi:dishwasheroff
+            color: var(--primary-color)
+            name: "Inactive"
+          - value: Complete
+            #icon: mdi:dishwasheralert
+            color: green
+            name: "Complete"
+            styles:
+              icon: 
+                - animation: "blink 2s ease infinite"
+        styles:
+          card:
+          - height: 98px
       - type: gauge
         name: Current Usage
         unit: 'W'

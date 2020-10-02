@@ -1,0 +1,97 @@
+input_boolean:
+  guest_mode_active:
+  light_switch_used:
+
+binary_sensor:
+  - platform: template
+    name: motion_triggered
+    
+  - platform: bayesian
+    name: house_occupied
+    device_class: presence
+    prior: 0.83
+    probability_threshold: 0.8
+    observations:
+      - entity_id: 'sensor.mobile_app_mark_s_iphone'
+        prob_given_true: 0.75
+        prob_given_false: 0.025
+        platform: 'state'
+        to_state: 'on'
+      - entity_id: 'sensor.mobile_app_mark_s_iphone'
+        prob_given_true: 0.20
+        prob_given_false: 0.975
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'sensor.mobile_app_katie_s_iphone'
+        prob_given_true: 0.75
+        prob_given_false: 0.025
+        platform: 'state'
+        to_state: 'on'
+      - entity_id: 'sensor.mobile_app_katie_s_iphone'
+        prob_given_true: 0.20
+        prob_given_false: 0.975
+        platform: 'state'
+        to_state: 'off'
+      - entity_id: 'input_boolean.guest_mode_active'
+        prob_given_true: 1.00
+        prob_given_false: 0
+        platform: 'state'
+        to_state: 'true'
+          
+  - platform: bayesian
+    name: house_other_activity
+    device_class: presence
+    prior: 0.83
+    probability_threshold: 0.5
+    observations:
+      - entity_id: 'binary_sensor.motion_triggered'
+        prob_given_true: 0.15
+        prob_given_false: 0.0
+        platform: 'state'
+        to_state: 'on' 
+      - entity_id: 'binary_sensor.motion_triggered'
+        prob_given_true: 0.8
+        prob_given_false: 0.95
+        platform: 'state'
+        to_state: 'off' 
+      - entity_id: 'input_boolean.light_switch_clicked'
+        prob_given_true: 0.4
+        prob_given_false: 0.1
+        platform: 'state'
+        to_state: 'on' 
+      - entity_id: 'input_boolean.light_switch_clicked'
+        prob_given_true: 0.4
+        prob_given_false: 0.39
+        platform: 'state'
+        to_state: 'off' 
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

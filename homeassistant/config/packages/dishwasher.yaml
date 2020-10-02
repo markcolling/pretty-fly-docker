@@ -1,0 +1,9 @@
+input_select:
+  dishwasher_status:
+    name: Dishwasher Status
+    options:
+      - Running
+      - Inactive
+      - Complete
+    initial: Inactive
+    icon: mdi:dishwasher

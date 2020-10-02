@@ -27,9 +27,9 @@ binary_sensor:
 #       kitchen_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('binary_sensor.day_room_motion_1', 'on') }}"
-#       hallway_motion_fill:
-#         device_class: motion
-#         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      hallway_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('binary_sensor.z2_motion_hall_ias_zone', 'on') }}"
 #       front_door_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
@@ -111,7 +111,7 @@ binary_sensor:
 # ###### UPSTAIRS - Motion Fill Shapes ######
       landing_motion_fill:
         device_class: motion
-        value_template: "{{ is_state('binary_sensor.landing_motion', 'on') }}"
+        value_template: "{{ is_state('binary_sensor.z1_motion_landing_ias_zone', 'on') }}"
 #       bedroom_3_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"

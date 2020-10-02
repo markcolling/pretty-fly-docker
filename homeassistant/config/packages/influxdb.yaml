@@ -64,7 +64,7 @@ influxdb:
       - sensor.elec_2_week
       - sensor.elec_2_month
       - sensor.shelly_shsw_pm_f2760d_current_consumption
-      
+      - sensor.shelly_shsw_pm_f2760d_total_consumption
       #TEMPERATURE
       - sensor.xiaomi_1_temperature
       - sensor.xiaomi_2_temperature
