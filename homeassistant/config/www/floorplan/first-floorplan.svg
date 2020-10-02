@@ -32,11 +32,8 @@
         opacity: 0.25;
       }
 
-      .cls-10, .cls-5 {
-        fill: #5b71b6;
-      }
-
       .cls-5 {
+        fill: #39a3dc;
         opacity: 0.3;
       }
 
@@ -52,6 +49,10 @@
 
       .cls-8 {
         fill: #ababab;
+      }
+
+      .cls-10 {
+        fill: #5b71b6;
       }
     </style>
   </defs>
