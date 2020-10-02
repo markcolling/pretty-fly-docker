@@ -1,8 +1,8 @@
-# input_boolean:
-#   toggle_motion_fill:
-#       name: Toggle Motion Fill
-#       initial: off
-#       icon: mdi:toggle-switch
+input_boolean:
+  toggle_motion_fill:
+      name: Toggle Motion Fill
+      initial: off
+      icon: mdi:toggle-switch
 #   toggle_battery_warning:
 #       name: Toggle Battery Warning
 #       initial: off
@@ -18,6 +18,7 @@ binary_sensor:
     sensors:
 
 # ###### DOWNSTAIRS - Motion Fill Shapes ######
+<<<<<<< HEAD
 #       living_room_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
@@ -47,6 +48,37 @@ binary_sensor:
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
 #
 #
+=======
+      living_room_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      library_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      kitchen_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('binary_sensor.day_room_motion_1', 'on') }}"
+      hallway_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      front_door_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      downstairs_bathroom_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      outdoor_side_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      outdoor_front_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      outdoor_back_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+
+
+>>>>>>> 52201e39f5faccb4e28ff6c5aaa5d4acd6f664e7
 # ###### DOWNSTAIRS - Motion Stroke Shapes ######
 #       living_room_motion_border:
 #         device_class: motion
@@ -111,6 +143,7 @@ binary_sensor:
 # ###### UPSTAIRS - Motion Fill Shapes ######
       landing_motion_fill:
         device_class: motion
+<<<<<<< HEAD
         value_template: "{{ is_state('binary_sensor.z1_motion_landing_ias_zone', 'on') }}"
 #       bedroom_3_motion_fill:
 #         device_class: motion
@@ -124,6 +157,21 @@ binary_sensor:
 #       bedroom_2_motion_fill:
 #         device_class: motion
 #         value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+=======
+        value_template: "{{ is_state('binary_sensor.landing_motion', 'on') }}"
+      bedroom_3_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      bedroom_1_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      bathroom_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+      bedroom_2_motion_fill:
+        device_class: motion
+        value_template: "{{ is_state('input_boolean.toggle_motion_fill', 'on') }}"
+>>>>>>> 52201e39f5faccb4e28ff6c5aaa5d4acd6f664e7
 
 # ###### UPSTAIRS - Motion Stroke Shapes ######
 #
