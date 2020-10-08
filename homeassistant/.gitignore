@@ -47,4 +47,6 @@ ozw_log.txt
 # !/config/custom_components/breaking_changes/.keep
 !/config/www/
 !/config/www/**
+/config/camera_snapshots/**
+.HA_VERSION
 .HA_version
