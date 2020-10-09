@@ -1,0 +1,51 @@
+OctopusAgile:
+  region_code: "C"
+  mpan: 1900008031152
+  serial: D0333980
+  auth: !secret octopus_key
+  startdate: "2020-10-08"
+  # moneymakers:
+  # - switch.water_heater: null
+  # - climate.downstairs:
+  #     params:
+  #       temp: 25
+  # timers:
+  # - day_from: today
+  #   day_to: tomorrow
+  #   entity_id: switch.water_heater
+  #   numHrs: 5
+  #   params: null
+  #   requirements:
+  #     - day_from: today
+  #       day_to: tomorrow
+  #       numHrs: 1
+  #       time_from: '19:00:00'
+  #       time_to: '06:00:00'
+  #     - day_from: tomorrow
+  #       day_to: tomorrow
+  #       numHrs: 1
+  #       time_from: '10:00:00'
+  #       time_to: '16:00:00'
+  #   time_from: '19:00:00'
+  #   time_to: '19:00:00'
+  #
+  # run_devices:
+  # - energy_time: 2.5
+  #   entity_id: dishwasher
+  #   run_before: '08:00:00'
+  #   run_time: 3.5
+  # - energy_time: 2.5
+  #   entity_id: washer
+  #   run_before: '08:00:00'
+  #   run_time: 2.5
+  # - energy_time: 5
+  #   entity_id: wash_dry
+  #   run_before: '08:00:00'
+  #   run_time: 5
+  # - energy_time: 2.5
+  #   entity_id: dry
+  #   run_before: '08:00:00'
+  #   run_time: 2.5
+
+sensor:
+- platform: "OctopusAgile"
