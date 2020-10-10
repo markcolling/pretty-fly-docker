@@ -98,11 +98,11 @@
       condition: time
     - before: sunrise
       condition: sun
-  - condition: state
-    entity_id: light.wled_light
-    state: 'off'
   action:
   - entity_id: light.wled_light
+    service: light.turn_on
+  - data: {}
+    entity_id: light.shelly_shsw_1_b90033
     service: light.turn_on
   mode: single
 - id: '1589390232047'
@@ -132,6 +132,9 @@
     domain: light
     entity_id: light.wled_light
     type: turn_off
+  - data: {}
+    entity_id: light.shelly_shsw_1_b90033
+    service: light.turn_off
   mode: restart
 - id: '1598365780441'
   alias: Baby Monitor - Turn On
@@ -276,4 +279,28 @@
       option: Inactive
     entity_id: input_select.dishwasher_status
     service: input_select.select_option
+  mode: single
+- id: '1602168261029'
+  alias: Notification - Person on drive
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: image_processing.drive_image_recognition
+    above: '0'
+    attribute: ROI person count
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: person.mark_colling
+      state: home
+  action:
+  - service: notify.mobile_app_mark_s_iphone
+    data:
+      message: There is someone on the drive
+      data:
+        attachment:
+          content-type: jpeg
+          hide-thumbnail: false
+          url: /config/camera_snapshots/drive_image_recognition_latest.jpg
   mode: single

@@ -39,6 +39,8 @@ resources:
     url: /local/custom_lovelace/custom.css
   - url: /hacsfiles/config-template-card/config-template-card.js
     type: module
+  - url: /local/custom_ui/agile-rates-card.js
+    type: module
 
 custom_header:
   compact_mode: true

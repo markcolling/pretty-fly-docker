@@ -18,9 +18,10 @@ image_processing:
       - car
     source:
       - entity_id: camera.Drive_sub
-        name: drive_image_recogntion
+        name: drive_image_recognition
 
 camera:
   - platform: local_file
-    file_path: /config/camera_snapshots/deepstack_object_local_file_latest.jpg
+    file_path: /config/camera_snapshots/drive_image_recognition_latest.jpg
     name: deepstack_latest_person
+

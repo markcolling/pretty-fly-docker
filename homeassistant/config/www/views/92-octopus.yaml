@@ -1,0 +1,14 @@
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Octopus
+    icon: mdi:mdi-speedometer
+    id: octopus
+    path: octopus
+    panel: true
+    cards:
+      - type: entity
+        title: Entities card
+        entities:
+          entity: octopusagile.rates
+          type: 'custom:agile-rates-card'
+        
+        

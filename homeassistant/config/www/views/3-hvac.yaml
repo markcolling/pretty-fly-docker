@@ -17,7 +17,7 @@
           entities:
           - entity: sensor.xiaomi_1_temperature
           - entity: sensor.xiaomi_2_temperature
-        #   - entity: sensor.tesla_outside_temp
+          - entity: sensor.z1_temp_outdoor
           - entity: weather.dark_sky
         - type: entities
           title: Downstairs Heating
