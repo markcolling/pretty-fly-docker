@@ -101,8 +101,8 @@ services:
 #      - 192.168.1.6:5353:5353/udp
     volumes:
       - ./homeassistant/config:/config
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
+    # devices:
+    #   - $DEVICES
     environment:
       - TZ=Europe/London
       - VIRTUAL_HOST=home-assistant$ENV_DOMAIN
@@ -290,6 +290,20 @@ services:
       - DEEPSTACK_TIMEOUT=120
     ports:
       - '8501:8501'
+
+  octograph:
+    container_name: octograph
+    restart: always
+    build: ./octograph/build
+    env_file:
+      - ./octograph/build/octograph.env
+    # volumes:
+    #   - ./octograph/config:/
+    # environment:
+      # - VIRTUAL_HOST=octograph${ENV_DOMAIN}
+      # - VIRTUAL_PORT=8501
+    # ports:
+    #   - '8501:8501'
 
 networks:
   pretty-fly-admin_net:
