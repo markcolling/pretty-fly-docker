@@ -1,0 +1,22 @@
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegramAPIkey
+    allowed_chat_ids:
+      - !secret telegram_mark_chatID # example: 123456789 for the chat_id of a user
+      - !secret telegram_Hassalerts_chatID
+      - !secret telegram_Hasslogs_chatID
+
+# Example configuration.yaml entry for the notifier
+notify:
+  - platform: telegram
+    name: mark
+    chat_id: !secret telegram_mark_chatID
+  - platform: telegram
+    name: hass_alerts
+    chat_id: !secret telegram_Hassalerts_chatID
+  - platform: telegram
+    name: hass_logs
+    chat_id: !secret telegram_Hasslogs_chatID
+
+folder_watcher:
+  - folder: /config/camera_snapshots

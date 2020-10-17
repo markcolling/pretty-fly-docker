@@ -41,7 +41,9 @@ resources:
     type: module
   - url: /local/custom_ui/agile-rates-card.js
     type: module
-
+  - url: /hacsfiles/bignumber-card/bignumber-card.js
+    type: module
+    
 custom_header:
   compact_mode: true
   options: clock

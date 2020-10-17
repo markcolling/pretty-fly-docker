@@ -101,9 +101,9 @@
   action:
   - entity_id: light.wled_light
     service: light.turn_on
-  - data: {}
-    entity_id: light.shelly_shsw_1_b90033
-    service: light.turn_on
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.sonoff_basic_on_off
   mode: single
 - id: '1589390232047'
   alias: Stairs - Nightlight - Off
@@ -133,8 +133,8 @@
     entity_id: light.wled_light
     type: turn_off
   - data: {}
-    entity_id: light.shelly_shsw_1_b90033
-    service: light.turn_off
+    service: switch.turn_off
+    entity_id: switch.sonoff_basic_on_off
   mode: restart
 - id: '1598365780441'
   alias: Baby Monitor - Turn On
@@ -244,12 +244,20 @@
     entity_id: sensor.shelly_shsw_pm_f2760d_current_consumption
     for: 00:00:30
     platform: numeric_state
-  condition: []
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.dishwasher_status
+      state: Running
   action:
   - data:
       option: Running
     entity_id: input_select.dishwasher_status
     service: input_select.select_option
+  - service: notify.hass_logs
+    data:
+      message: Dishwasher - Started
   mode: single
 - id: '1601124832415'
   alias: Dishwasher - Complete
@@ -271,6 +279,9 @@
   - data:
       message: Dishwasher is complete
     service: notify.mobile_app_mark_s_iphone
+  - data:
+      message: Dishwasher - Complete
+    service: notify.hass_logs
   - delay: 02:00:00
   - condition: state
     entity_id: input_select.dishwasher_status
@@ -288,19 +299,147 @@
     entity_id: image_processing.drive_image_recognition
     above: '0'
     attribute: ROI person count
-  condition:
-  - condition: not
-    conditions:
-    - condition: state
-      entity_id: person.mark_colling
-      state: home
+  - platform: numeric_state
+    entity_id: image_processing.porch_image_recognition
+    attribute: ALL person count
+    above: '0'
+  condition: []
   action:
-  - service: notify.mobile_app_mark_s_iphone
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: person.mark_colling
+        state: not home
+      sequence:
+      - service: notify.hass_logs
+        data:
+          title: Drive motion
+          message: There is motion on the drive
+          data:
+            photo:
+            - file: /config/camera_snapshots/porch/porch_image_recognition_latest.jpg
+              caption: '{{ state_attr("image_processing.porch_image_recognition",
+                "last_target_detection") }}'
+    - conditions:
+      - condition: state
+        entity_id: person.mark_colling
+        state: home
+      sequence:
+      - service: notify.mobile_app_mark_s_iphone
+        data:
+          message: There is someone on the drive
+          data:
+            attachment:
+              content-type: jpeg
+            push:
+              category: camera
+            entity_id: camera.porch_latest
+    default: []
+  - service: browser_mod.popup
     data:
-      message: There is someone on the drive
-      data:
-        attachment:
-          content-type: jpeg
-          hide-thumbnail: false
-          url: /config/camera_snapshots/drive_image_recognition_latest.jpg
+      title: Person at door
+      card:
+        type: picture-glance
+        camera_image: camera.porch_latest
+        camera_view: live
+        entities: []
+        title: Porch Camera
+      deviceID:
+      - e3c5cf9d-8b56827e
+      large: true
+  - delay: 00:00:15
+  - service: browser_mod.close_popup
+    data: {}
   mode: single
+- id: '1602617511676'
+  alias: Notification - New camera image
+  description: ''
+  trigger:
+  - platform: event
+    event_data:
+      event_type: created
+    event_type: folder_watcher
+  condition: []
+  action:
+  - service: notify.hass_logs
+    data:
+      title: Driveway alert
+      message: Created {{ trigger.event.data.file }} in {{ trigger.event.data.folder
+        }}
+      data:
+        photo:
+        - file: '{{ trigger.event.data.path }}'
+  mode: single
+- id: '1602707507315'
+  alias: Notification - Person in Garden
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: image_processing.garden_image_recognition
+    above: '0'
+    attribute: ROI person count
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: person.mark_colling
+        state: home
+      sequence:
+      - service: notify.mobile_app_mark_s_iphone
+        data:
+          message: There is someone in the garden
+          data:
+            attachment:
+              content-type: jpeg
+            push:
+              category: camera
+            entity_id: camera.garden_latest
+    - conditions:
+      - condition: state
+        entity_id: person.mark_colling
+        state: not home
+      sequence:
+      - service: notify.pfhassbot
+        data:
+          title: Garden motion
+          message: There is motion in the garden
+          data:
+            photo:
+            - file: /config/camera_snapshots/garden/garden_image_recognition_latest.jpg
+              caption: '{{ state_attr("image_processing.garden_image_recognition",
+                "last_target_detection") }}'
+    default: []
+  mode: single
+- id: '1602879187847'
+  alias: Kitchen - Nightlight
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.z2_motion_hall_ias_zone
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: binary_sensor.z3_kitchen_motion_ias_zone
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.kitchen_browser
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: or
+    conditions:
+    - condition: sun
+      before: sunrise
+    - condition: sun
+      after: sunset
+  action:
+  - service: light.turn_on
+    data: {}
+    entity_id: light.kitchen_cupboard_light
+  - delay: 00:10:00
+  - service: light.turn_off
+    data: {}
+    entity_id: light.kitchen_cupboard_light
+  mode: restart

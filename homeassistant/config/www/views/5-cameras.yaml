@@ -11,12 +11,12 @@
         - type: vertical-stack
           cards:
           # The markdown card will render markdown text.
-            - camera_image: camera.drive
+            - camera_image: camera.prettyflynas_drive_camera
               camera_view: live
               entities: []
               title: Drive Camera
               type: picture-glance
-            - camera_image: camera.garden
+            - camera_image: camera.prettyflynas_back_garden_camera
               camera_view: live
               entities: []
               title: Garden Camera
@@ -24,7 +24,7 @@
         - break
         - type: vertical-stack
           cards:
-            - camera_image: camera.porch
+            - camera_image: camera.prettyflynas_porch_camera
               camera_view: live
               entities: []
               title: Porch Camera

@@ -13,10 +13,6 @@ camera:
     still_image_url: !secret Drive_Camera_Still
     stream_source: !secret Drive_sub_Camera_Source
 
-  - platform: local_file
-    name: Drive_still
-    file_path: !secret Drive_Camera_Still
-
   - platform: generic
     name: Porch
     still_image_url: !secret Porch_Camera_Still
@@ -32,11 +28,20 @@ camera:
     still_image_url: !secret Nursery_Camera_Still
     stream_source: !secret Nursery_Camera_Source
 
-  - platform: generic
-    name: Drive_SYNO
-    still_image_url: !secret Drive_SYNO_Camera_Still
-    stream_source: !secret Drive_SYNO_Camera_Source
+#   - platform: generic
+#     name: Drive_SYNO
+#     still_image_url: !secret Drive_SYNO_Camera_Still
+#     stream_source: !secret Drive_SYNO_Camera_Source
 
+#   - platform: generic
+#     name: Porch_SYNO
+#     still_image_url: !secret Porch_SYNO_Camera_Still
+#     stream_source: !secret Porch_SYNO_Camera_Source
+
+#   - platform: generic
+#     name: Garden_SYNO
+#     still_image_url: !secret Garden_SYNO_Camera_Still
+#     stream_source: !secret Garden_SYNO_Camera_Source
 
 #Enable stream
 stream:

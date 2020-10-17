@@ -48,6 +48,8 @@
           secondary_info: last-changed
         - entity: light.shelly_shsw_1_b90033
           secondary_info: last-changed
+        - entity: switch.sonoff_basic_on_off
+          secondary_info: last-changed
         - type: section
           label: Landing
         - entity: light.shelly_shsw_1_c4e83e
