@@ -54,7 +54,6 @@
   description: Turn light strip on an hour after sunset
   trigger:
   - event: sunset
-    offset: '60'
     platform: sun
   condition: []
   action:
@@ -67,6 +66,7 @@
       - 255
     entity_id: light.wled_light
     service: light.turn_on
+  mode: single
 - id: '1589143977791'
   alias: Stairs light - Sunset - off
   description: Turn LED strip off after 10.30pm
@@ -83,13 +83,17 @@
   alias: Stairs - Nightlight - On
   description: ''
   trigger:
-  - entity_id: binary_sensor.z1_motion_landing_ias_zone
-    from: 'off'
+  - from: 'off'
     platform: state
     to: 'on'
+    entity_id: binary_sensor.z1_landing_motion_ias_zone
   - entity_id: binary_sensor.z2_motion_hall_ias_zone
     from: 'off'
     platform: state
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.z4_nursery_motion_ias_zone
+    from: 'off'
     to: 'on'
   condition:
   - condition: or
@@ -109,16 +113,11 @@
   alias: Stairs - Nightlight - Off
   description: ''
   trigger:
-  - entity_id: binary_sensor.z1_motion_landing_ias_zone
-    for: 00:10:00
+  - for: 00:10:00
     from: 'on'
     platform: state
     to: 'off'
-  - entity_id: binary_sensor.z2_motion_hall_ias_zone
-    for: 00:10:00
-    from: 'on'
-    platform: state
-    to: 'off'
+    entity_id: binary_sensor.z1_landing_motion_ias_zone
   condition:
   - condition: or
     conditions:
@@ -135,7 +134,7 @@
   - data: {}
     service: switch.turn_off
     entity_id: switch.sonoff_basic_on_off
-  mode: restart
+  mode: single
 - id: '1598365780441'
   alias: Baby Monitor - Turn On
   description: ''
@@ -309,20 +308,6 @@
     - conditions:
       - condition: state
         entity_id: person.mark_colling
-        state: not home
-      sequence:
-      - service: notify.hass_logs
-        data:
-          title: Drive motion
-          message: There is motion on the drive
-          data:
-            photo:
-            - file: /config/camera_snapshots/porch/porch_image_recognition_latest.jpg
-              caption: '{{ state_attr("image_processing.porch_image_recognition",
-                "last_target_detection") }}'
-    - conditions:
-      - condition: state
-        entity_id: person.mark_colling
         state: home
       sequence:
       - service: notify.mobile_app_mark_s_iphone
@@ -335,6 +320,31 @@
               category: camera
             entity_id: camera.porch_latest
     default: []
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.notify_katie_of_front_door
+        state: 'on'
+      sequence:
+      - service: notify.mobile_app_katie_mcginns_iphone
+        data:
+          message: There is someone on the drive
+          data:
+            attachment:
+              content-type: jpeg
+            push:
+              category: camera
+            entity_id: camera.porch_latest
+    default: []
+  - service: notify.hass_logs
+    data:
+      title: Drive motion
+      message: There is motion on the drive
+      data:
+        photo:
+        - file: /config/camera_snapshots/porch/porch_image_recognition_latest.jpg
+          caption: '{{ state_attr("image_processing.porch_image_recognition", "last_target_detection")
+            }}'
   - service: browser_mod.popup
     data:
       title: Person at door
@@ -347,7 +357,10 @@
       deviceID:
       - e3c5cf9d-8b56827e
       large: true
-  - delay: 00:00:15
+  - service: light.turn_on
+    data: {}
+    entity_id: light.kitchen_browser
+  - delay: 00:00:30
   - service: browser_mod.close_popup
     data: {}
   mode: single

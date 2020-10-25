@@ -45,13 +45,39 @@
           - entity: binary_sensor.landing_motion
             name: Landing Motion Sensor
             secondary_info: last-changed
+          - type: section
+            label: Zigbee Sensor Status            
+          - entity: binary_sensor.z1_landing_motion_ias_zone
+            name: Landing Motion Sensor
+            secondary_info: last-changed     
+          - entity: binary_sensor.z2_motion_hall_ias_zone
+            name: Hall Motion Sensor
+            secondary_info: last-changed  
+          - entity: binary_sensor.z3_kitchen_motion_ias_zone
+            name: Kitchen Motion Sensor
+            secondary_info: last-changed  
+          - entity: binary_sensor.z4_nursery_motion_ias_zone
+            name: Nursery Motion Sensor
+            secondary_info: last-changed  
       - break
       - type: entities
         title: All Automations
         show_header_toggle: true
         entities:
           - type: section
-            label: API Automations
+            label: Notifications
+          - entity: input_boolean.notify_katie_of_front_door
+            icon: mdi:camera
+            secondary_info: last-changed
+            name: Drive Notifications - Katie
+          - type: section
+            label: Automations
           - entity: input_boolean.toggle_transport_api
             icon: mdi:train
+            secondary_info: last-changed
+          - entity: input_boolean.guest_mode_active
+            icon: mdi:home
+            secondary_info: last-changed
+          - entity: automation.kitchen_nightlight_on
+            icon: mdi:light-bulb
             secondary_info: last-changed

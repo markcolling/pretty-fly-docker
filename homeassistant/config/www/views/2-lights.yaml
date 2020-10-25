@@ -29,7 +29,8 @@
           label: Hall
         - entity: light.shelly_shsw_1_c487ec
           secondary_info: last-changed
-
+        - entity: switch.wiser_understairs_lamp
+          secondary_info: last-changed
     - type: vertical-stack
       cards:
       - type: entities
