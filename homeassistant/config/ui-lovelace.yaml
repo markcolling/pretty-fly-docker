@@ -43,34 +43,36 @@ resources:
     type: module
   - url: /hacsfiles/bignumber-card/bignumber-card.js
     type: module
+  - url: /local/custom_ui/zha-network-visualization-card.js
+    type: module
     
-custom_header:
-  compact_mode: true
-  options: clock
-  swipe: true
-  background: var(--app-header-background-color)
-  elements_color: var(--app-header-text-color)
-  active_tab_color: var(--state-icon-active-color)
-  tab_indicator_color: var(--state-icon-active-color)
-  # kiosk_mode: true
-  # conditional_styles:
-  #   - user_agent: Mobile
-  #     # condition:
-  #     #   state: off                      # When input_boolean is off...
-  #     # background: url('/local/bg.jpg')  # change background image and...
-  #     config:
-  #       options: show
-  #       hide_tabs: 1
-  # menu: overflow
-  hide_tabs: '1, 2, 3'
-  exceptions:
-    - conditions:
-        user_agent: iPhone
-        media_query: "(max-width: 500px)"
-      config:
-        options: show
-        hide_tabs: home
-        default_tab: overview-buttons
+# custom_header:
+#   compact_mode: true
+#   options: clock
+#   swipe: true
+#   background: var(--app-header-background-color)
+#   elements_color: var(--app-header-text-color)
+#   active_tab_color: var(--state-icon-active-color)
+#   tab_indicator_color: var(--state-icon-active-color)
+#   # kiosk_mode: true
+#   # conditional_styles:
+#   #   - user_agent: Mobile
+#   #     # condition:
+#   #     #   state: off                      # When input_boolean is off...
+#   #     # background: url('/local/bg.jpg')  # change background image and...
+#   #     config:
+#   #       options: show
+#   #       hide_tabs: 1
+#   # menu: overflow
+#   hide_tabs: '1, 2, 3'
+#   exceptions:
+#     - conditions:
+#         user_agent: iPhone
+#         media_query: "(max-width: 500px)"
+#       config:
+#         options: show
+#         hide_tabs: home
+#         default_tab: overview-buttons
 
 views: !include_dir_merge_list www/views
 

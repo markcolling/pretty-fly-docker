@@ -24,7 +24,6 @@ influxdb:
       - sensor.bed_3_heating_status
       - sensor.bed_2_heating_status
 
-
       #WEATHER
       - weather.dark_sky
       #LIGHTS
@@ -43,6 +42,10 @@ influxdb:
       - sensor.shelly_shdm_1_f3a24c_total_consumption
       - light.shelly_shdm_1_db3e10
       - sensor.shelly_shdm_1_db3e10_current_consumption
+      - switch.shelly_shsw_1_a4cf12f41faf #table
+      - light.shelly_shsw_1_a4cf12f42d0b #marks bedside light
+      - switch.shelly_shsw_1_a4cf12f46b5a  #tall lamp
+      - switch.sonoff_basic_on_off #nursery night light
 
       #TESLA
       - sensor.tez_mileage_sensor
@@ -65,9 +68,31 @@ influxdb:
       - sensor.elec_2_month
       - sensor.shelly_shsw_pm_f2760d_current_consumption
       - sensor.shelly_shsw_pm_f2760d_total_consumption
+      #dishswasher
+      - switch.shelly_shsw_pm_f2760d 
+      - sensor.shelly_shsw_pm_f2760d_total_consumption
+      - sensor.shelly_shsw_pm_f2760d_current_consumption
+      #washing machine
+      - switch.shelly_shsw_pm_f27e6f
+      - sensor.shelly_shsw_pm_f27e6f_current_consumption
+      - sensor.shelly_shsw_pm_f27e6f_total_consumption
+      #tumble dryer
+      - switch.shelly_shsw_pm_f2febe
+      - sensor.shelly_shsw_pm_f2febe_total_consumption
+      - sensor.shelly_shsw_pm_f2febe_current_consumption
+      
       #TEMPERATURE
       - sensor.xiaomi_1_temperature
       - sensor.xiaomi_2_temperature
+      - sensor.z1_temp_outdoor
+      - sensor.z2_temp_temperature
+      - sensor.z3_temp_temperature
+      - sensor.z1_humidity_outdoor
+      - sensor.z2_temp_humidity
+      - sensor.z3_temp_humidity
+       
+
+
       
     domains:
       - lights

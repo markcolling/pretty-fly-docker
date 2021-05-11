@@ -1,29 +1,29 @@
 #component
-sensor:
-  - platform: command_line
-    name: influxdb_container
-    command: 'docker exec influxdb env | grep INFLUXDB_VERSION | cut -d\"=\" -f2'
-    scan_interval: 3600
+# sensor:
+#   - platform: command_line
+#     name: influxdb_container
+#     command: 'docker exec influxdb env | grep INFLUXDB_VERSION | cut -d\"=\" -f2'
+#     scan_interval: 3600
     
-  - platform: command_line
-    name: influxdb_repositories
-    command: "curl -L -s https://registry.hub.docker.com/v2/repositories/library/influxdb/tags|jq .results[0].last_updated"
-    scan_interval: 3600
+#   - platform: command_line
+#     name: influxdb_repositories
+#     command: "curl -L -s https://registry.hub.docker.com/v2/repositories/library/influxdb/tags|jq .results[0].last_updated"
+#     scan_interval: 3600
     
-  - platform: command_line
-    name: grafana_container
-    command: "docker exec grafana more /usr/share/grafana/VERSION"
-    scan_interval: 3600
+#   - platform: command_line
+#     name: grafana_container
+#     command: "docker exec grafana more /usr/share/grafana/VERSION"
+#     scan_interval: 3600
     
-  - platform: command_line
-    name: grafana_repositories
-    command: "curl -L -s https://registry.hub.docker.com/v2/repositories/grafana/grafana/tags|jq .results[0].last_updated"
-    scan_interval: 3600
+#   - platform: command_line
+#     name: grafana_repositories
+#     command: "curl -L -s https://registry.hub.docker.com/v2/repositories/grafana/grafana/tags|jq .results[0].last_updated"
+#     scan_interval: 3600
     
-  - platform: command_line
-    name: nodered_container
-    command: 'docker exec nodered env | grep NODE_RED_VERSION | cut -d\"=\" -f2'
-    scan_interval: 3600
+#   - platform: command_line
+#     name: nodered_container
+#     command: 'docker exec nodered env | grep NODE_RED_VERSION | cut -d\"=\" -f2'
+#     scan_interval: 3600
 
 # #automation
 # - alias: Notify docker updates

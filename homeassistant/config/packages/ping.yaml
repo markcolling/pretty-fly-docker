@@ -1,2 +1,2 @@
-binary_sensor.synology_nas:
-  icon: mdi:nas
+# binary_sensor.synology_nas:
+#   icon: mdi:nas

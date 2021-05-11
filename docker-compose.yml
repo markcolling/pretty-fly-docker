@@ -57,11 +57,11 @@ services:
     container_name: "influxdb"
     networks:
       - pretty-fly-admin_net
-    # healthcheck:
-    #   test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
-    #   interval: 30s
-    #   timeout: 1s
-    #   retries: 24
+    healthcheck:
+      test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
+      interval: 30s
+      timeout: 1s
+      retries: 24
     environment:
       - TZ=Europe/London
       - VIRTUAL_HOST=influxdb${ENV_DOMAIN}
@@ -75,12 +75,20 @@ services:
     restart: on-failure
     volumes:
       - ./influxdb:/var/lib/influxdb
+    #deploy:
+    #  resources:
+    #    limits:
+    #      cpus: ‘0.5’
+    #      memory: 3.5G
+    #  reservations:
+    #    cpus: ‘0.10’
+    #    memory: 3G
     # env_file:
     #   - ${INFLUXDB_envfile}
 
   home-assistant:
-    #image: homeassistant/home-assistant:rc
-    image: homeassistant/home-assistant:0.116.0
+    image: homeassistant/home-assistant:rc
+    #image: homeassistant/home-assistant:2021.2.3
     container_name: "hass"
     networks:
       pretty-fly-admin_net:
@@ -98,6 +106,7 @@ services:
       #retries: 6
     ports:
       - 8123:8123
+      - 5684:5683/udp
 #      - 192.168.1.6:5683:5683/udp
 #      - 192.168.1.6:5353:5353/udp
     volumes:
@@ -291,6 +300,8 @@ services:
       - DEEPSTACK_TIMEOUT=120
     ports:
       - '8501:8501'
+    networks:
+      - pretty-fly-admin_net
 
   octograph:
     container_name: octograph
@@ -305,6 +316,8 @@ services:
       # - VIRTUAL_PORT=8501
     # ports:
     #   - '8501:8501'
+    networks:
+      - pretty-fly-admin_net
 
 networks:
   pretty-fly-admin_net:

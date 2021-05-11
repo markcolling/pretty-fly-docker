@@ -73,7 +73,7 @@
       - type: gauge
         name: Tesla
         unit: '%'
-        entity: sensor.tez_battery_sensor
+        entity: sensor.tesla_battery_level
         severity:
           green: 65
           yellow: 25

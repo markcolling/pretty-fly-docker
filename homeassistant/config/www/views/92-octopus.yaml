@@ -5,24 +5,26 @@
     path: octopus
     panel: true
     cards:
-      - type: 'custom:bignumber-card'
-        title: Current Rate
-        entity: sensor.octopus_agile_current_rate
-        scale: 30px
-        from: left
-        min: 0
-        max: 30
-        severity:
-          - value: 9
-            style: 'var(--label-badge-green)'
-          - value: 15
-            style: 'var(--label-badge-yellow)'
-          - value: 30
-            style: 'var(--label-badge-red)'
-      - type: 'custom:agile-rates-card'
-        entity: octopusagile.rates
-        cols: 4
-        mediumlimit: 9
-        highlimit: 15
+      - type: 'vertical-stack'
+        cards:
+        - type: 'custom:bignumber-card'
+          title: Current Rate
+          entity: sensor.octopus_agile_current_rate
+          scale: 30px
+          from: left
+          min: 0
+          max: 30
+          severity:
+            - value: 9
+              style: 'var(--label-badge-green)'
+            - value: 15
+              style: 'var(--label-badge-yellow)'
+            - value: 30
+              style: 'var(--label-badge-red)'
+        - type: 'custom:agile-rates-card'
+          entity: octopusagile.rates
+          cols: 4
+          mediumlimit: 9
+          highlimit: 15
         
         
