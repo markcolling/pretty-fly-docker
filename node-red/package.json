@@ -5,7 +5,7 @@
     "dependencies": {
         "node-red-contrib-alexa": "0.0.7",
         "node-red-contrib-alexa-home-skill": "~0.1.17",
-        "node-red-contrib-home-assistant-websocket": "~0.13.1",
+        "node-red-contrib-home-assistant-websocket": "~0.45.2",
         "node-red-contrib-interval-length": "0.0.3",
         "node-red-contrib-ramp-thermostat": "~0.8.2"
     }
